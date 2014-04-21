@@ -33,16 +33,11 @@
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<ri.version>0.2-SNAPSHOT</ri.version>
+		<lib.version>${project.version}</lib.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>4.11</version>
-				<scope>test</scope>
-			</dependency>
 			<dependency>
 				<groupId>javax.measure</groupId>
 				<artifactId>unit-api-core</artifactId>
@@ -58,6 +53,11 @@
 				<artifactId>unit-api-quantity</artifactId>
 				<version>${jsr.version}</version>
 			</dependency>
+			<dependency>
+                <groupId>javax.measure</groupId>
+                <artifactId>unit-api-util</artifactId>
+                <version>${jsr.version}</version>
+            </dependency>
 			<dependency>
 				<groupId>org.unitsofmeasurement</groupId>
 				<artifactId>unit-ri</artifactId>

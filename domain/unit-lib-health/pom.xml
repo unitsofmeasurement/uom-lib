@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.unitsofmeasurement.lib</groupId>
+		<artifactId>unit-lib-domain</artifactId>
+		<version>0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>unit-lib-health</artifactId>
+	<dependencies>
+		<dependency>
+			<groupId>javax.measure</groupId>
+			<artifactId>unit-api-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.measure</groupId>
+			<artifactId>unit-api-quantity</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.measure</groupId>
+			<artifactId>unit-api-util</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.unitsofmeasurement</groupId>
+			<artifactId>unit-ri</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<configuration>
+					<instructions>
+						<Export-Package>org.unitsofmeasurement.domain.health.*</Export-Package>
+						<Private-Package>!*</Private-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<packaging>bundle</packaging>
+	<name>Units of Measurement Health Specific Libraries</name>
+	<url>https://github.com/unitsofmeasurement/unit-lib/tree/master/domain/health</url>
+</project>

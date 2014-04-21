@@ -8,4 +8,7 @@
   <artifactId>unit-lib-domain</artifactId>
   <packaging>pom</packaging>
   <name>Units of Measurement Domain Specific Libraries</name>
+  <modules>
+  	<module>unit-lib-health</module>
+  </modules>
 </project>
