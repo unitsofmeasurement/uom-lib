@@ -31,36 +31,36 @@ import org.unitsofmeasurement.ri.util.SI;
  */
 public class Health extends AbstractSystemOfUnits {
 	
-	/**
-	 * The singleton instance of {@code Health}.
-	 */
-	private static final Health INSTANCE = new Health();
+    /**
+     * The singleton instance of {@code Health}.
+     */
+    private static final Health INSTANCE = new Health();
 
-	/**
-	 * Default constructor (prevents this class from being instantiated).
-	 */
-	private Health() {
-	}
-	
-	private static final Unit<Heartbeat> BEAT = addUnit(new BaseUnit<Heartbeat>(
-			"b"));
+    /**
+     * Default constructor (prevents this class from being instantiated).
+     */
+    private Health() {
+    }
 
-	/** BPM */
-	public static final Unit<HeartRate> BPM = addUnit(BEAT.divide(SI.SECOND.multiply(60)).asType(HeartRate.class));
+    private static final Unit<Heartbeat> BEAT = addUnit(new BaseUnit<Heartbeat>(
+                    "b"));
 
-	@Override
-	public String getName() {
-		return Health.class.getSimpleName();
-	}
+    /** BPM */
+    public static final Unit<HeartRate> BPM = addUnit(BEAT.divide(SI.SECOND.multiply(60)).asType(HeartRate.class));
 
-	/**
-	 * Returns the singleton instance of this class.
-	 * 
-	 * @return the Seismic system instance.
-	 */
-	public static final SystemOfUnits getInstance() {
-		return INSTANCE;
-	}
+    @Override
+    public String getName() {
+            return Health.class.getSimpleName();
+    }
+
+    /**
+     * Returns the singleton instance of this class.
+     * 
+     * @return the Seismic system instance.
+     */
+    public static final SystemOfUnits getInstance() {
+            return INSTANCE;
+    }
 
     /**
      * Adds a new unit not mapped to any specified quantity type.
@@ -73,24 +73,24 @@ public class Health extends AbstractSystemOfUnits {
         return unit;
     }
 
-	/**
-	 * Adds a new named unit to the collection.
-	 * 
-	 * @param unit
-	 *            the unit being added.
-	 * @param name
-	 *            the name of the unit.
-	 * @return <code>unit</code>.
-	 */
-	@SuppressWarnings({ "unchecked", "unused" })
-	private static <U extends Unit<?>> U addUnit(U unit, String name) {
-		if (name != null && unit instanceof AbstractUnit) {
-			AbstractUnit<?> aUnit = (AbstractUnit<?>) unit;
-			// aUnit.setName(name);
-			INSTANCE.units.add(aUnit);
-			return (U) aUnit;
-		}
-		INSTANCE.units.add(unit);
-		return unit;
-	}
+    /**
+     * Adds a new named unit to the collection.
+     * 
+     * @param unit
+     *            the unit being added.
+     * @param name
+     *            the name of the unit.
+     * @return <code>unit</code>.
+     */
+    @SuppressWarnings({ "unchecked", "unused" })
+    private static <U extends Unit<?>> U addUnit(U unit, String name) {
+            if (name != null && unit instanceof AbstractUnit) {
+                    AbstractUnit<?> aUnit = (AbstractUnit<?>) unit;
+                    // aUnit.setName(name);
+                    INSTANCE.units.add(aUnit);
+                    return (U) aUnit;
+            }
+            INSTANCE.units.add(unit);
+            return unit;
+    }
 }
