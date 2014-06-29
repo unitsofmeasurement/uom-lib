@@ -4,11 +4,14 @@
 	<groupId>org.unitsofmeasurement.lib</groupId>
 	<artifactId>unit-lib</artifactId>
 	<version>0.2-SNAPSHOT</version>
-    <parent>
-        <version>0.6-SNAPSHOT</version>
-        <artifactId>unitsofmeasurement-parent</artifactId>
-        <groupId>org.unitsofmeasurement</groupId>
-    </parent>
+	<parent>
+		<version>0.6-SNAPSHOT</version>
+		<artifactId>unitsofmeasurement-parent</artifactId>
+		<groupId>org.unitsofmeasurement</groupId>
+	</parent>
+	<modules>
+		<module>domain</module>
+	</modules>
 	<packaging>pom</packaging>
 	<name>Units of Measurement Libraries</name>
 	<url>http://github.com/unitsofmeasurement/unit-lib</url>
@@ -32,7 +35,7 @@
 		<jdkVersion>1.7</jdkVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>${project.version}</ri.version>
+		<ri.version>0.3-SNAPSHOT</ri.version>
 		<lib.version>${project.version}</lib.version>
 	</properties>
 
@@ -84,10 +87,15 @@
 			</plugin>
 		</plugins>
 	</build>
-	<modules>
-		<module>domain</module>
-	</modules>
-	
+
+	<distributionManagement>
+		<site>
+			<id>www.unitsofmeasurement.org</id>
+			<url>scp://www.unitsofmeasurement.org/www/docs/lib/</url>
+		</site>
+	</distributionManagement>
+
+
 	<profiles>
 		<profile>
 			<id>license</id>
