@@ -13,13 +13,13 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.unitsofmeasurement.domain.health;
+package org.unitsofmeasurement.domain.health.ri;
 
 import javax.measure.Unit;
 import javax.measure.util.SystemOfUnits;
 
-import org.unitsofmeasurement.domain.health.types.HeartRate;
-import org.unitsofmeasurement.domain.health.types.Heartbeat;
+import org.unitsofmeasurement.domain.health.HeartRate;
+import org.unitsofmeasurement.domain.health.Heartbeat;
 import org.unitsofmeasurement.ri.AbstractUnit;
 import org.unitsofmeasurement.ri.BaseUnit;
 import org.unitsofmeasurement.ri.util.AbstractSystemOfUnits;

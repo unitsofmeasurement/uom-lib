@@ -13,20 +13,8 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.unitsofmeasurement.domain.health.types;
-
-import javax.measure.Quantity;
-
 /**
- * Heart rate refers to the speed of the heartbeat, 
- * specifically the number of heartbeats per unit of time. 
- * The heart rate is typically expressed as beats per minute (bpm). 
- * The heart rate can vary according to the body's physical needs, 
- * including the need to absorb oxygen and excrete carbon dioxide.
+ * @author Werner Keil
  *
- * @author <a href="mailto:uomo@catmedia.us">Werner Keil</a>
- * @version 1.0
  */
-public interface HeartRate extends Quantity<HeartRate> {
-
-}
+package org.unitsofmeasurement.domain.health.ri;

@@ -13,32 +13,16 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.unitsofmeasurement.domain.health.types;
+package org.unitsofmeasurement.domain.health;
 
-import javax.measure.Unit;
-
-import org.unitsofmeasurement.ri.BaseQuantity;
+import javax.measure.Quantity;
 
 /**
- * Represents the speed of heart beat. The standard unit for this quantity is
- * "bpm" (Beats per Minute).
+ * Heartbeat is a unit of heart beats.
  * 
- * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.2, Date: 2014-04-21
+ * @author <a href="mailto:uomo@catmedia.us">Werner Keil</a>
+ * @version 1.0
  */
-public final class HeartRateAmount extends BaseQuantity<HeartRate> implements
-		HeartRate {
+public interface Heartbeat extends Quantity<Heartbeat> {
 
-	/**
-	 * 
-	 */
-	// private static final long serialVersionUID = -7105140153324121388L;
-
-	private HeartRateAmount(Number number, Unit<HeartRate> unit) {
-		super(number, unit);
-	}
-
-	public static HeartRateAmount of(Number number, Unit<HeartRate> unit) {
-		return new HeartRateAmount(number, unit);
-	}
 }

@@ -2,29 +2,24 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.unitsofmeasurement.lib</groupId>
-    <artifactId>unit-lib</artifactId>
+    <artifactId>unit-lib-domain</artifactId>
     <version>0.2-SNAPSHOT</version>
   </parent>
-  <artifactId>unit-lib-domain</artifactId>
-  <packaging>pom</packaging>
-  <name>Units of Measurement Domain Specific Libraries</name>
-  <modules>
-  	<module>unit-lib-health</module>
-  	<module>unit-lib-health-ri</module>
-  </modules>
+  <artifactId>unit-lib-health-ri</artifactId>
+  <name>Units of Measurement Health for RI</name>
   
-  <dependencyManagement>
-    <dependencies>
+  <dependencies>
         <dependency>
-            <groupId>org.unitsofmeasurement</groupId>
-            <artifactId>unit-ri</artifactId>
-            <version>${ri.version}</version>
+            <groupId>javax.measure</groupId>
+            <artifactId>unit-api</artifactId>
         </dependency>
         <dependency>
             <groupId>org.unitsofmeasurement.lib</groupId>
             <artifactId>unit-lib-health</artifactId>
-            <version>${lib.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.unitsofmeasurement</groupId>
+            <artifactId>unit-ri</artifactId>
         </dependency>
     </dependencies>
-  </dependencyManagement>
 </project>

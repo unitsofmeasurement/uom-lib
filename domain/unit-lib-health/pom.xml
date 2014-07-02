@@ -7,6 +7,8 @@
 		<version>0.2-SNAPSHOT</version>
 	</parent>
 	<artifactId>unit-lib-health</artifactId>
+	<packaging>bundle</packaging>
+    <name>Units of Measurement Health Specific Libraries</name>
 	<dependencies>
 		<dependency>
 			<groupId>javax.measure</groupId>
@@ -32,7 +34,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	<packaging>bundle</packaging>
-	<name>Units of Measurement Health Specific Libraries</name>
 	<url>https://github.com/unitsofmeasurement/unit-lib/tree/master/domain/health</url>
 </project>

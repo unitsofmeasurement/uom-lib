@@ -31,8 +31,8 @@
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
 	<properties>
-		<project.build.javaVersion>1.7</project.build.javaVersion>
-		<jdkVersion>1.7</jdkVersion>
+		<project.build.javaVersion>1.6</project.build.javaVersion>
+		<jdkVersion>1.6</jdkVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<ri.version>0.3-SNAPSHOT</ri.version>

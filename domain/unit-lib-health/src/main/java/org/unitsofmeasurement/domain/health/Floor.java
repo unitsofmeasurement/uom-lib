@@ -1,6 +1,6 @@
 /**
  *  Unit-API - Units of Measurement API for Java
- *  Copyright 2013-2014, Jean-Marie Dautelle, Werner Keil, V2COM and individual
+ *  Copyright 2014, Jean-Marie Dautelle, Werner Keil, V2COM and individual
  *  contributors by the @author tag.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +13,16 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.unitsofmeasurement.domain.health.types;
+package org.unitsofmeasurement.domain.health;
 
 import javax.measure.Quantity;
 
 /**
- * Heartbeat is a unit of heart beats.
+ * Floor is a unit of floors.
  * 
  * @author <a href="mailto:uomo@catmedia.us">Werner Keil</a>
  * @version 1.0
  */
-public interface Heartbeat extends Quantity<Heartbeat> {
+public interface Floor extends Quantity<Floor> {
 
 }
