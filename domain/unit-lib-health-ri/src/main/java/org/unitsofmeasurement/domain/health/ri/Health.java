@@ -18,8 +18,7 @@ package org.unitsofmeasurement.domain.health.ri;
 import javax.measure.Unit;
 import javax.measure.util.SystemOfUnits;
 
-import org.unitsofmeasurement.domain.health.HeartRate;
-import org.unitsofmeasurement.domain.health.Heartbeat;
+import org.unitsofmeasurement.domain.health.*;
 import org.unitsofmeasurement.ri.AbstractUnit;
 import org.unitsofmeasurement.ri.BaseUnit;
 import org.unitsofmeasurement.ri.util.AbstractSystemOfUnits;
@@ -27,7 +26,7 @@ import org.unitsofmeasurement.ri.util.SI;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.4
+ * @version 0.5
  */
 public class Health extends AbstractSystemOfUnits {
 	
@@ -52,7 +51,15 @@ public class Health extends AbstractSystemOfUnits {
     public String getName() {
             return Health.class.getSimpleName();
     }
+    
+    /** Step */
+    private static final Unit<Step> STEP = addUnit(new BaseUnit<Step>(
+            "st"));
 
+    /** Floor */
+    private static final Unit<Floor> FLOOR = addUnit(new BaseUnit<Floor>(
+            "flr"));
+    
     /**
      * Returns the singleton instance of this class.
      * 
