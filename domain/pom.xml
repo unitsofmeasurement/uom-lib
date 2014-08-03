@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.unitsofmeasurement.lib</groupId>
     <artifactId>unit-lib</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.2</version>
   </parent>
   <artifactId>unit-lib-domain</artifactId>
   <packaging>pom</packaging>
