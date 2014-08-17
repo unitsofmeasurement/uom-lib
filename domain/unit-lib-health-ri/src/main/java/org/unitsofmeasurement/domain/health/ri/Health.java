@@ -16,17 +16,17 @@
 package org.unitsofmeasurement.domain.health.ri;
 
 import javax.measure.Unit;
-import javax.measure.util.SystemOfUnits;
+import javax.measure.SystemOfUnits;
 
 import org.unitsofmeasurement.domain.health.*;
 import org.unitsofmeasurement.ri.AbstractUnit;
 import org.unitsofmeasurement.ri.BaseUnit;
-import org.unitsofmeasurement.ri.util.AbstractSystemOfUnits;
+import org.unitsofmeasurement.ri.AbstractSystemOfUnits;
 import org.unitsofmeasurement.ri.util.SI;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.5
+ * @version 0.5.1
  */
 public class Health extends AbstractSystemOfUnits {
 	
