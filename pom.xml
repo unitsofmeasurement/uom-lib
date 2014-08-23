@@ -3,9 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.unitsofmeasurement.lib</groupId>
 	<artifactId>unit-lib</artifactId>
-	<version>0.3-SNAPSHOT</version>
+	<version>0.3</version>
 	<parent>
-		<version>0.7-SNAPSHOT</version>
+		<version>0.6.3</version>
 		<artifactId>unitsofmeasurement-parent</artifactId>
 		<groupId>org.unitsofmeasurement</groupId>
 	</parent>
@@ -35,7 +35,7 @@
 		<jdkVersion>1.6</jdkVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>0.4-SNAPSHOT</ri.version>
+		<ri.version>0.4</ri.version>
 		<lib.version>${project.version}</lib.version>
 	</properties>
 
