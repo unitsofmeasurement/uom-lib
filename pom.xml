@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>uom-lib</artifactId>
-	<version>0.3</version>
+	<version>0.4-SNAPSHOT</version>
 	<parent>
 		<groupId>tec.uom</groupId>
 		<artifactId>uom-parent</artifactId>
@@ -41,7 +41,7 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>org.unitsofmeasurement</groupId>
+				<groupId>tec.uom</groupId>
 				<artifactId>unit-ri</artifactId>
 				<version>${ri.version}</version>
 			</dependency>
@@ -93,7 +93,6 @@
 			<url>scp://www.unitsofmeasurement.org/www/docs/lib/</url>
 		</site>
 	</distributionManagement>
-
 
 	<profiles>
 		<profile>
@@ -154,4 +153,5 @@
 			</build>
 		</profile>
 	</profiles>
+	<groupId>tec.uom.lib</groupId>
 </project>
