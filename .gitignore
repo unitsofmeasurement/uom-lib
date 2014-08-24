@@ -13,3 +13,7 @@ hs_err_pid*
 /target
 /.settings
 /.project
+/.classpath
+/.project
+/.idea/
+nb-configuration.xml
