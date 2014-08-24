@@ -20,7 +20,6 @@
         <dependency>
             <groupId>tec.uom.lib</groupId>
             <artifactId>uom-lib-health</artifactId>
-            <version>${lib.version}</version>
         </dependency>
     </dependencies>
 </project>
