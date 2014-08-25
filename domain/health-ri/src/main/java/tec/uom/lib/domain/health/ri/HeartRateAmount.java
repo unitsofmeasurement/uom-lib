@@ -18,7 +18,7 @@ package tec.uom.lib.domain.health.ri;
 import javax.measure.Unit;
 
 import tec.uom.lib.domain.health.HeartRate;
-import tec.uom.ri.BaseQuantity;
+import tec.units.ri.BaseQuantity;
 
 /**
  * Represents the speed of heart beat. The standard unit for this quantity is

@@ -22,10 +22,10 @@ import tec.uom.lib.domain.health.Floor;
 import tec.uom.lib.domain.health.HeartRate;
 import tec.uom.lib.domain.health.Heartbeat;
 import tec.uom.lib.domain.health.Step;
-import tec.uom.ri.AbstractSystemOfUnits;
-import tec.uom.ri.AbstractUnit;
-import tec.uom.ri.BaseUnit;
-import tec.uom.ri.util.SI;
+import tec.units.ri.AbstractSystemOfUnits;
+import tec.units.ri.AbstractUnit;
+import tec.units.ri.BaseUnit;
+import tec.units.ri.util.SI;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
