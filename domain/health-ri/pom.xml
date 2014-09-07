@@ -6,7 +6,7 @@
 		<version>0.4-SNAPSHOT</version>
 	</parent>
   <artifactId>uom-lib-health-ri</artifactId>
-  <name>Units of Measurement Health for RI</name>
+  <name>Units of Measurement Health Specific Library for RI</name>
   
   <dependencies>
         <dependency>
