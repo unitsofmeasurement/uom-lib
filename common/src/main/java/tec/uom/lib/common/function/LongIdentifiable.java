@@ -25,12 +25,12 @@ package tec.uom.lib.common.function;
  * whose functional method is {@link #getId()}.
  * 
  * @author Werner KEIL
- * @version 1.0.4 $Date: 2014/09/17 $
+ * @version 1.0.1 $Date: 2014/09/17 $
  * @see {@link Identifiable}
  */
-public interface IntIdentifiable {
+public interface LongIdentifiable {
     /**
      * @return an Id
      */
-    public int getId();
+    public long getId();
 }

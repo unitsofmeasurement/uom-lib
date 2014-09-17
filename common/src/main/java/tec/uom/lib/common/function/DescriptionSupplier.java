@@ -1,6 +1,6 @@
 /**
  *  Unit-API - Units of Measurement API for Java
- *  Copyright 2003-2014, Werner Keil and individual
+ *  Copyright 2013-2014, Jean-Marie Dautelle, Werner Keil, V2COM and individual
  *  contributors by the @author tag.
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,21 +16,21 @@
 package tec.uom.lib.common.function;
 
 /**
- * Interface for objects with an long-valued Id.
- * 
+ * Provides String description to implementations
+ *
  * <p>There is no requirement that a distinct result be returned each
  * time the supplier is invoked, unless implementing classes enforce it.
  * 
- * <p>This is a <a href="http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html#package.description">functional interface</a>
- * whose functional method is {@link #getId()}.
+ * <p>This is a <a href="http://download.java.net/jdk8/docs/api/java/util/function/package-summary.html">functional interface</a>
+ * whose functional method is {@link #getDescription()}.
  * 
- * @author Werner KEIL
- * @version 1.0.4 $Date: 2014/09/17 $
- * @see {@link Identifiable}
+ * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
  */
-public interface IntIdentifiable {
+//equivalent to @FunctionalInterface
+public interface DescriptionSupplier {
+	
     /**
-     * @return an Id
+     * @return a description
      */
-    public int getId();
+    String getDescription();
 }
