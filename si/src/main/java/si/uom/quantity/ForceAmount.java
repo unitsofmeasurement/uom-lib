@@ -18,7 +18,7 @@ package si.uom.quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Force;
 
-import tec.units.ri.BaseQuantity;
+import tec.units.ri.quantity.BaseQuantity;
 
 /**
  * Represents a quantity that tends to produce an acceleration of a body in the

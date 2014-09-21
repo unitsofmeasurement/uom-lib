@@ -18,7 +18,7 @@ package si.uom.quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Acceleration;
 
-import tec.units.ri.BaseQuantity;
+import tec.units.ri.quantity.BaseQuantity;
 
 /**
  * Represents the rate of change of velocity with respect to time.

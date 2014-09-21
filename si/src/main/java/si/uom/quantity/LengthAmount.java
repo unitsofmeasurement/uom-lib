@@ -18,7 +18,7 @@ package si.uom.quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Length;
 
-import tec.units.ri.BaseQuantity;
+import tec.units.ri.quantity.BaseQuantity;
 
 /**
  * Represents the extent of something along its greatest

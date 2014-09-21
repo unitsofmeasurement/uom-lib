@@ -18,7 +18,7 @@ package si.uom.quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Mass;
 
-import tec.units.ri.BaseQuantity;
+import tec.units.ri.quantity.BaseQuantity;
 
 /**
  * Represents the measure of the quantity of matter that a body or an object contains.

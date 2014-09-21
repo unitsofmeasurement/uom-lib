@@ -19,7 +19,7 @@ import javax.measure.Measurement;
 import javax.measure.Unit;
 import javax.measure.quantity.Temperature;
 
-import tec.units.ri.BaseQuantity;
+import tec.units.ri.quantity.BaseQuantity;
 
 /**
  * @author Werner Keil

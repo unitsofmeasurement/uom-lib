@@ -24,7 +24,7 @@ import tec.uom.lib.domain.health.Heartbeat;
 import tec.uom.lib.domain.health.Step;
 import tec.units.ri.AbstractSystemOfUnits;
 import tec.units.ri.AbstractUnit;
-import tec.units.ri.BaseUnit;
+import tec.units.ri.unit.BaseUnit;
 import tec.units.ri.util.SI;
 
 /**
