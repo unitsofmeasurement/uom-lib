@@ -5,16 +5,16 @@
 		<artifactId>uom-lib-domain</artifactId>
 		<version>0.4-SNAPSHOT</version>
 	</parent>
-  <artifactId>uom-lib-health-ri</artifactId>
-  <name>Units of Measurement Health Specific Library for RI</name>
+  <artifactId>uom-lib-health-se</artifactId>
+  <name>Units of Measurement Health Specific Library for Java SE</name>
   
     <!-- ======================================================= -->
     <!-- Build Settings -->
     <!-- ======================================================= -->
     <properties>
-       <jdkVersion>1.7</jdkVersion>
+       <jdkVersion>1.8</jdkVersion>
         <project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
-        <maven.compile.targetLevel>1.7</maven.compile.targetLevel>
+        <maven.compile.targetLevel>1.8</maven.compile.targetLevel>
         <maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
     </properties>
     
@@ -24,8 +24,8 @@
             <artifactId>unit-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>tec.units</groupId>
-            <artifactId>unit-ri</artifactId>
+            <groupId>tec.uom</groupId>
+            <artifactId>uom-se</artifactId>
         </dependency>
         <dependency>
             <groupId>tec.uom.lib</groupId>
