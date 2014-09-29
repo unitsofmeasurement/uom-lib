@@ -11,7 +11,7 @@
   <modules>
   	<!--  >health</module -->
   	<module>health-ri</module>
-  	<!--  module>health-se</module -->
+  	<module>health-se</module>
   </modules>
   
   <dependencyManagement>

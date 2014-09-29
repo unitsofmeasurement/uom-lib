@@ -22,6 +22,7 @@ import tec.uom.lib.domain.health.Floor;
 import tec.uom.lib.domain.health.HeartRate;
 import tec.uom.lib.domain.health.Heartbeat;
 import tec.uom.lib.domain.health.Step;
+import tec.uom.se.unit.ProductUnit;
 import tec.units.ri.AbstractSystemOfUnits;
 import tec.units.ri.AbstractUnit;
 import tec.units.ri.unit.BaseUnit;
@@ -33,74 +34,76 @@ import tec.units.ri.util.SI;
  */
 public class Health extends AbstractSystemOfUnits {
 
-    /**
-     * The singleton instance of {@code Health}.
-     */
-    private static final Health INSTANCE = new Health();
+	/**
+	 * The singleton instance of {@code Health}.
+	 */
+	private static final Health INSTANCE = new Health();
 
-    /**
-     * Default constructor (prevents this class from being instantiated).
-     */
-    private Health() {
-    }
+	/**
+	 * Default constructor (prevents this class from being instantiated).
+	 */
+	private Health() {
+	}
 
-    private static final Unit<Heartbeat> BEAT = addUnit(new BaseUnit<Heartbeat>(
-                    "b"));
+	private static final Unit<Heartbeat> BEAT = addUnit(new BaseUnit<Heartbeat>(
+			"b"));
 
-    /** BPM */
-    public static final Unit<HeartRate> BPM = addUnit(BEAT.divide(SI.SECOND.multiply(60)).asType(HeartRate.class));
+	/** BPM */
+	public static final Unit<HeartRate> BPM = addUnit(new ProductUnit<HeartRate>(
+			BEAT.divide(SI.SECOND.multiply(60))));
 
-    @Override
-    public String getName() {
-            return Health.class.getSimpleName();
-    }
+	@Override
+	public String getName() {
+		return Health.class.getSimpleName();
+	}
 
-    /** Step */
-    private static final Unit<Step> STEP = addUnit(new BaseUnit<Step>(
-            "st"));
+	/** Step */
+	@SuppressWarnings("unused")
+	private static final Unit<Step> STEP = addUnit(new BaseUnit<Step>("st"));
 
-    /** Floor */
-    private static final Unit<Floor> FLOOR = addUnit(new BaseUnit<Floor>(
-            "flr"));
+	/** Floor */
+	@SuppressWarnings("unused")
+	private static final Unit<Floor> FLOOR = addUnit(new BaseUnit<Floor>("flr"));
 
-    /**
-     * Returns the singleton instance of this class.
-     *
-     * @return the Seismic system instance.
-     */
-    public static final SystemOfUnits getInstance() {
-            return INSTANCE;
-    }
+	/**
+	 * Returns the singleton instance of this class.
+	 *
+	 * @return the Seismic system instance.
+	 */
+	public static final SystemOfUnits getInstance() {
+		return INSTANCE;
+	}
 
-    /**
-     * Adds a new unit not mapped to any specified quantity type.
-     *
-     * @param  unit the unit being added.
-     * @return <code>unit</code>.
-     */
-    private static <U extends Unit<?>>  U addUnit(U unit) {
-        INSTANCE.units.add(unit);
-        return unit;
-    }
+	/**
+	 * Adds a new unit not mapped to any specified quantity type.
+	 *
+	 * @param unit
+	 *            the unit being added.
+	 * @return <code>unit</code>.
+	 */
+	private static <U extends Unit<?>> U addUnit(U unit) {
+		INSTANCE.units.add(unit);
+		return unit;
+	}
 
-    /**
-     * Adds a new named unit to the collection.
-     *
-     * @param unit
-     *            the unit being added.
-     * @param name
-     *            the name of the unit.
-     * @return <code>unit</code>.
-     */
-    @SuppressWarnings({ "unchecked", "unused" })
-    private static <U extends Unit<?>> U addUnit(U unit, String name) {
-            if (name != null && unit instanceof AbstractUnit) {
-                    AbstractUnit<?> aUnit = (AbstractUnit<?>) unit;
-                    // aUnit.setName(name);
-                    INSTANCE.units.add(aUnit);
-                    return (U) aUnit;
-            }
-            INSTANCE.units.add(unit);
-            return unit;
-    }
+	/**
+	 * Adds a new named unit to the collection.
+	 *
+	 * @param unit
+	 *            the unit being added.
+	 * @param name
+	 *            the name of the unit.
+	 * @return <code>unit</code>.
+	 */
+	@SuppressWarnings({ "unchecked", "unused" })
+	private static <U extends Unit<?>> U addUnit(U unit, String name) {
+		if (name != null && unit instanceof AbstractUnit) {
+			AbstractUnit<?> aUnit = (AbstractUnit<?>) unit;
+			// aUnit.setName(name);
+			INSTANCE.units.add(aUnit);
+			return (U) aUnit;
+		}
+		INSTANCE.units.add(unit);
+		return unit;
+	}
 }
