@@ -9,7 +9,7 @@
   <packaging>pom</packaging>
   <name>Units of Measurement Domain Specific Libraries</name>
   <modules>
-  	<!--  >health</module -->
+  	<module>health</module>
   	<module>health-ri</module>
   	<module>health-se</module>
   </modules>
