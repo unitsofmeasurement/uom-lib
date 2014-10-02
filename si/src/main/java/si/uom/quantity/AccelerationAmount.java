@@ -26,7 +26,7 @@ import tec.units.ri.quantity.BaseQuantity;
  *
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.6.1, $Date: 2014-04-03 03:38:25 +0200 (Do, 03 Apr 2014) $
+ * @version 1.6.2, $Date: 2014-10-01 $
  */
 public final class AccelerationAmount extends BaseQuantity<Acceleration> 
    implements Acceleration {
@@ -34,9 +34,13 @@ public final class AccelerationAmount extends BaseQuantity<Acceleration>
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -3979825836742796484L;
+//	private static final long serialVersionUID = -3979825836742796484L;
 
 	public AccelerationAmount(Number number, Unit<Acceleration> unit) {
 		super(number, unit);
+	}
+	
+	public static final AccelerationAmount of(Number number, Unit<Acceleration> unit) {
+		return new AccelerationAmount(number, unit);
 	}
 }
