@@ -18,14 +18,14 @@ package tec.uom.lib.domain.health.se;
 import javax.measure.Unit;
 
 import tec.uom.lib.domain.health.HeartRate;
-import tec.units.ri.quantity.BaseQuantity;
+import tec.uom.se.quantity.BaseQuantity;
 
 /**
  * Represents the speed of heart beat. The standard unit for this quantity is
  * "bpm" (Beats per Minute).
  *
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.3, Date: 2014-07-03
+ * @version 0.3.1, Date: 2014-10-01
  */
 public final class HeartRateAmount extends BaseQuantity<HeartRate> implements
 		HeartRate {
@@ -33,13 +33,10 @@ public final class HeartRateAmount extends BaseQuantity<HeartRate> implements
 	/**
 	 *
 	 */
-	// private static final long serialVersionUID = -7105140153324121388L;
-
-	private HeartRateAmount(Number number, Unit<HeartRate> unit) {
+	private static final long serialVersionUID = -7105140153324121388L;
+	
+	// of() won't work here due to being defined in BaseQuantity ;-|
+	public HeartRateAmount(Number number, Unit<HeartRate> unit) {
 		super(number, unit);
-	}
-
-	public static HeartRateAmount of(Number number, Unit<HeartRate> unit) {
-		return new HeartRateAmount(number, unit);
 	}
 }

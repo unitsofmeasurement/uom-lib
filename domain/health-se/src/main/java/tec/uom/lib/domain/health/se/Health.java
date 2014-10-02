@@ -23,14 +23,14 @@ import tec.uom.lib.domain.health.HeartRate;
 import tec.uom.lib.domain.health.Heartbeat;
 import tec.uom.lib.domain.health.Step;
 import tec.uom.se.unit.ProductUnit;
-import tec.units.ri.AbstractSystemOfUnits;
-import tec.units.ri.AbstractUnit;
-import tec.units.ri.unit.BaseUnit;
-import tec.units.ri.util.SI;
+import tec.uom.se.AbstractSystemOfUnits;
+import tec.uom.se.AbstractUnit;
+import tec.uom.se.unit.BaseUnit;
+import tec.uom.se.util.SI;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.5.1
+ * @version 0.5.2
  */
 public class Health extends AbstractSystemOfUnits {
 
