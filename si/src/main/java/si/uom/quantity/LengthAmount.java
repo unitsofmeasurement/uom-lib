@@ -16,6 +16,7 @@
 package si.uom.quantity;
 
 import javax.measure.Unit;
+import javax.measure.quantity.Area;
 import javax.measure.quantity.Length;
 
 import tec.units.ri.quantity.BaseQuantity;
@@ -27,7 +28,7 @@ import tec.units.ri.quantity.BaseQuantity;
  *
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.6, $Date: 2014-08-31 $
+ * @version 0.7, $Date: 2014-08-31 $
  */
 public final class LengthAmount extends BaseQuantity<Length> implements Length {
 
@@ -38,5 +39,11 @@ public final class LengthAmount extends BaseQuantity<Length> implements Length {
 
 	public LengthAmount(Number number, Unit<Length> unit) {
 		super(number, unit);
+	}
+
+	@Override
+	public Area multiply(Length l) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
