@@ -18,7 +18,7 @@ package si.uom.quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Acceleration;
 
-import tec.units.ri.quantity.BaseQuantity;
+import tec.units.ri.quantity.NumberQuantity;
 
 /**
  * Represents the rate of change of velocity with respect to time.
@@ -28,7 +28,7 @@ import tec.units.ri.quantity.BaseQuantity;
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.6.2, $Date: 2014-10-01 $
  */
-public final class AccelerationAmount extends BaseQuantity<Acceleration> 
+public final class AccelerationAmount extends NumberQuantity<Acceleration> 
    implements Acceleration {
 
 	/**

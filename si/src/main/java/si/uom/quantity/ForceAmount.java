@@ -18,7 +18,7 @@ package si.uom.quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Force;
 
-import tec.units.ri.quantity.BaseQuantity;
+import tec.units.ri.quantity.NumberQuantity;
 
 /**
  * Represents a quantity that tends to produce an acceleration of a body in the
@@ -29,7 +29,7 @@ import tec.units.ri.quantity.BaseQuantity;
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.3, $Date: 2013-05-21 $
  */
-public final class ForceAmount extends BaseQuantity<Force> implements Force {
+public final class ForceAmount extends NumberQuantity<Force> implements Force {
 
 	public ForceAmount(Number number, Unit<Force> unit) {
 		super(number, unit);

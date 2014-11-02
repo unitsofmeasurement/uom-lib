@@ -18,13 +18,13 @@ package si.uom.quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Temperature;
 
-import tec.units.ri.quantity.BaseQuantity;
+import tec.units.ri.quantity.NumberQuantity;
 
 /**
  * @author Werner Keil
  * @version 1.5.1, $Date: 2014-10-01 $
  */
-public final class TemperatureAmount extends BaseQuantity<Temperature>
+public final class TemperatureAmount extends NumberQuantity<Temperature>
 		implements Temperature {
 
 	/**

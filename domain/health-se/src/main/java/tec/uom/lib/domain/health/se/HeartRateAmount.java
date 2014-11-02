@@ -18,16 +18,16 @@ package tec.uom.lib.domain.health.se;
 import javax.measure.Unit;
 
 import tec.uom.lib.domain.health.HeartRate;
-import tec.uom.se.quantity.BaseQuantity;
+import tec.uom.se.quantity.NumberQuantity;
 
 /**
  * Represents the speed of heart beat. The standard unit for this quantity is
  * "bpm" (Beats per Minute).
  *
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.3.1, Date: 2014-10-01
+ * @version 0.4, Date: 2014-11-02
  */
-public final class HeartRateAmount extends BaseQuantity<HeartRate> implements
+public final class HeartRateAmount extends NumberQuantity<HeartRate> implements
 		HeartRate {
 
 	/**

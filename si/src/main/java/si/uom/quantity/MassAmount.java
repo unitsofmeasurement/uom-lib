@@ -18,7 +18,7 @@ package si.uom.quantity;
 import javax.measure.Unit;
 import javax.measure.quantity.Mass;
 
-import tec.units.ri.quantity.BaseQuantity;
+import tec.units.ri.quantity.NumberQuantity;
 
 /**
  * Represents the measure of the quantity of matter that a body or an object contains.
@@ -30,7 +30,7 @@ import tec.units.ri.quantity.BaseQuantity;
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.7, $Date: 2013-12-26 $
  */
-public final class MassAmount extends BaseQuantity<Mass> implements Mass {
+public final class MassAmount extends NumberQuantity<Mass> implements Mass {
 
 	/**
 	 * 

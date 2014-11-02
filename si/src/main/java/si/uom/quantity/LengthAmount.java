@@ -19,7 +19,7 @@ import javax.measure.Unit;
 import javax.measure.quantity.Area;
 import javax.measure.quantity.Length;
 
-import tec.units.ri.quantity.BaseQuantity;
+import tec.units.ri.quantity.NumberQuantity;
 
 /**
  * Represents the extent of something along its greatest
@@ -30,7 +30,7 @@ import tec.units.ri.quantity.BaseQuantity;
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 0.7, $Date: 2014-08-31 $
  */
-public final class LengthAmount extends BaseQuantity<Length> implements Length {
+public final class LengthAmount extends NumberQuantity<Length> implements Length {
 
 	/**
 	 * 
