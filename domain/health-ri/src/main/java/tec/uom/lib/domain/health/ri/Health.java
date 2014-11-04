@@ -15,8 +15,8 @@
  */
 package tec.uom.lib.domain.health.ri;
 
-import javax.measure.SystemOfUnits;
 import javax.measure.Unit;
+import javax.measure.spi.SystemOfUnits;
 
 import tec.uom.lib.domain.health.Floor;
 import tec.uom.lib.domain.health.HeartRate;
