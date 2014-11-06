@@ -19,6 +19,7 @@ import javax.measure.Unit;
 
 import tec.uom.lib.domain.health.HeartRate;
 import tec.uom.se.quantity.NumberQuantity;
+import tec.uom.se.quantity.Quantities;
 
 /**
  * Represents the speed of heart beat. The standard unit for this quantity is
@@ -30,13 +31,17 @@ import tec.uom.se.quantity.NumberQuantity;
 public final class HeartRateAmount extends NumberQuantity<HeartRate> implements
 		HeartRate {
 
+	protected HeartRateAmount(Number number, Unit<HeartRate> unit) {
+		super(number, unit);
+	}
+
 	/**
 	 *
 	 */
 	private static final long serialVersionUID = -7105140153324121388L;
 	
 	// of() won't work here due to being defined in BaseQuantity ;-|
-	public HeartRateAmount(Number number, Unit<HeartRate> unit) {
-		super(number, unit);
+	public static HeartRateAmount of(Number number, Unit<HeartRate> unit) {
+		return (HeartRateAmount) Quantities.getQuantity(number, unit);
 	}
 }
