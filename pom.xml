@@ -24,8 +24,8 @@
 	<description>Units of Measurement Libraries - extending and complementing JSR 363</description>
 	<licenses>
 		<license>
-			<name>Apache 2.0</name>
-			<url>LICENSE</url>
+			<name>BSD</name>
+			<url>LICENSE.txt</url>
 		</license>
 	</licenses>
 
