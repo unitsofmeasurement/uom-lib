@@ -38,6 +38,7 @@
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<ri.version>0.6-SNAPSHOT</ri.version>
+		<se.version>0.6-SNAPSHOT</se.version>
 		<lib.version>${project.version}</lib.version>
 	</properties>
 
@@ -97,15 +98,15 @@
 		</site>
 	</distributionManagement>
 
-    <!-- Additional repositories -->
-    <!-- Helps to resolve Parent POM -->
-    <repositories>
-        <repository>
-            <id>geotoolkit</id>
-            <name>Geotoolkit.org project</name>
-            <url>http://maven.geotoolkit.org</url>
-        </repository>
-    </repositories>
+    	<!-- Additional repositories -->
+    	<!-- Helps to resolve Parent POM -->
+    	<repositories>
+        	<repository>
+            		<id>geotoolkit</id>
+            		<name>Geotoolkit.org project</name>
+            		<url>http://maven.geotoolkit.org</url>
+        	</repository>
+    	</repositories>
     
 	<profiles>
 		<profile>
