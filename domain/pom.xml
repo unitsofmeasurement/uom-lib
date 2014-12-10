@@ -29,7 +29,7 @@
         <dependency>
         <groupId>tec.uom</groupId>
             <artifactId>uom-se</artifactId>
-            <version>${ri.version}</version>
+            <version>${se.version}</version>
         </dependency>
     </dependencies>
   </dependencyManagement>
