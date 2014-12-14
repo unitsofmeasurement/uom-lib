@@ -3,7 +3,7 @@
   <parent>
     <groupId>tec.uom.lib</groupId>
     <artifactId>uom-lib</artifactId>
-    <version>0.5</version>
+    <version>0.6-SNAPSHOT</version>
   </parent>
   <artifactId>uom-lib-common</artifactId>
   <name>Units of Measurement Common Library</name>

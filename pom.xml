@@ -3,14 +3,14 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>uom-lib</artifactId>
 	<groupId>tec.uom.lib</groupId>
-	<version>0.5</version>
+	<version>0.6-SNAPSHOT</version>
 	<parent>
 		<groupId>tec.uom</groupId>
 		<artifactId>uom-parent</artifactId>
-		<version>0.7</version>
+		<version>0.8-SNAPSHOT</version>
 	</parent>
 	<modules>
-	    <module>common</module>
+		<module>common</module>
 		<module>si</module>
 		<module>domain</module>
 	</modules>
@@ -37,7 +37,7 @@
 		<jdkVersion>1.7</jdkVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>0.7</ri.version>
+		<ri.version>0.8-SNAPSHOT</ri.version>
 		<se.version>0.6</se.version>
 		<lib.version>${project.version}</lib.version>
 	</properties>
@@ -98,16 +98,16 @@
 		</site>
 	</distributionManagement>
 
-    	<!-- Additional repositories -->
-    	<!-- Helps to resolve Parent POM -->
-    	<repositories>
-        	<repository>
-            		<id>geotoolkit</id>
-            		<name>Geotoolkit.org project</name>
-            		<url>http://maven.geotoolkit.org</url>
-        	</repository>
-    	</repositories>
-    
+	<!-- Additional repositories -->
+	<!-- Helps to resolve Parent POM -->
+	<repositories>
+		<repository>
+			<id>geotoolkit</id>
+			<name>Geotoolkit.org project</name>
+			<url>http://maven.geotoolkit.org</url>
+		</repository>
+	</repositories>
+
 	<profiles>
 		<profile>
 			<id>license</id>
@@ -118,42 +118,26 @@
 				</property>
 			</activation>
 			<build>
-				<pluginManagement>
-					<plugins>
-						<!-- ======================================================= -->
-						<!-- License -->
-						<!-- ======================================================= -->
-						<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>license-maven-plugin</artifactId> 
-							<version>1.4</version> </plugin> -->
-						<plugin>
-							<groupId>com.google.code.maven-license-plugin</groupId>
-							<artifactId>maven-license-plugin</artifactId>
-							<version>1.4.0</version>
-							<configuration>
-								<basedir>${basedir}</basedir>
-								<header>src/etc/header.txt</header>
-								<quiet>false</quiet>
-								<failIfMissing>true</failIfMissing>
-								<aggregate>false</aggregate>
-								<encoding>UTF-8</encoding>
-								<excludes>
-									<exclude>target/**</exclude>
-									<exclude>nbproject/**</exclude>
-									<exclude>LICENSE*.txt</exclude>
-									<exclude>README.*</exclude>
-									<exclude>checkstyle*.*</exclude>
-									<exclude>*.css</exclude>
-								</excludes>
-							</configuration>
-						</plugin>
-						<!-- TODO enable this only for major upgrades (ensure to copy LICENSE.txt 
-							to LICENSE.bak first) -->
-					</plugins>
-				</pluginManagement>
 				<plugins>
 					<plugin>
 						<groupId>com.google.code.maven-license-plugin</groupId>
 						<artifactId>maven-license-plugin</artifactId>
+						<configuration>
+							<basedir>${basedir}</basedir>
+							<header>src/etc/header.txt</header>
+							<quiet>false</quiet>
+							<failIfMissing>true</failIfMissing>
+							<aggregate>false</aggregate>
+							<encoding>UTF-8</encoding>
+							<excludes>
+								<exclude>target/**</exclude>
+								<exclude>nbproject/**</exclude>
+								<exclude>LICENSE*.txt</exclude>
+								<exclude>README.*</exclude>
+								<exclude>checkstyle*.*</exclude>
+								<exclude>*.css</exclude>
+							</excludes>
+						</configuration>
 						<executions>
 							<execution>
 								<phase>compile</phase>
