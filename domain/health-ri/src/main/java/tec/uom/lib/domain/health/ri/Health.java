@@ -37,7 +37,6 @@ import tec.uom.lib.domain.health.HeartRate;
 import tec.uom.lib.domain.health.Heartbeat;
 import tec.uom.lib.domain.health.Step;
 import tec.units.ri.AbstractSystemOfUnits;
-import tec.units.ri.AbstractUnit;
 import tec.units.ri.unit.BaseUnit;
 import tec.units.ri.util.SI;
 
@@ -95,26 +94,5 @@ public class Health extends AbstractSystemOfUnits {
     private static <U extends Unit<?>>  U addUnit(U unit) {
         INSTANCE.units.add(unit);
         return unit;
-    }
-
-    /**
-     * Adds a new named unit to the collection.
-     *
-     * @param unit
-     *            the unit being added.
-     * @param name
-     *            the name of the unit.
-     * @return <code>unit</code>.
-     */
-    @SuppressWarnings({ "unchecked", "unused" })
-    private static <U extends Unit<?>> U addUnit(U unit, String name) {
-            if (name != null && unit instanceof AbstractUnit) {
-                    AbstractUnit<?> aUnit = (AbstractUnit<?>) unit;
-                    // aUnit.setName(name);
-                    INSTANCE.units.add(aUnit);
-                    return (U) aUnit;
-            }
-            INSTANCE.units.add(unit);
-            return unit;
     }
 }
