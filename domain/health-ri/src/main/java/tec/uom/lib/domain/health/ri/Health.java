@@ -37,7 +37,7 @@ import tec.uom.lib.domain.health.HeartRate;
 import tec.uom.lib.domain.health.Heartbeat;
 import tec.uom.lib.domain.health.Step;
 import tec.units.ri.AbstractSystemOfUnits;
-import tec.units.ri.spi.SI;
+import tec.units.ri.util.SI;
 import tec.units.ri.unit.BaseUnit;
 
 /**

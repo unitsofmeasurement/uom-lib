@@ -3,7 +3,7 @@
   <parent>
 		<groupId>tec.uom.lib</groupId>
 		<artifactId>uom-lib-domain</artifactId>
-		<version>0.6-SNAPSHOT</version>
+		<version>0.6</version>
 	</parent>
   <artifactId>uom-lib-health-se</artifactId>
   <name>Units of Measurement Health Specific Library for Java SE</name>
