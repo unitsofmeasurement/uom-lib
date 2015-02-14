@@ -3,11 +3,12 @@
   <parent>
     <groupId>tec.uom.lib</groupId>
     <artifactId>uom-lib</artifactId>
-    <version>0.6</version>
+    <version>0.7-SNAPSHOT</version>
   </parent>
-  <artifactId>uom-lib-domain</artifactId>
+  <groupId>tec.uom.domain</groupId>
+  <artifactId>uom-domain</artifactId>
   <packaging>pom</packaging>
-  <name>Units of Measurement Domain Specific Libraries</name>
+  <name>Units of Measurement Domain Specific Modules</name>
   <modules>
   	<module>health</module>
   	<module>health-ri</module>
@@ -22,8 +23,8 @@
             <version>${ri.version}</version>
         </dependency>
         <dependency>
-            <groupId>tec.uom.lib</groupId>
-            <artifactId>uom-lib-health</artifactId>
+            <groupId>tec.uom.domain</groupId>
+            <artifactId>uom-health</artifactId>
             <version>${lib.version}</version>
         </dependency>
         <dependency>

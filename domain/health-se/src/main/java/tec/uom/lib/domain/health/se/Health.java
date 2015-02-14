@@ -1,6 +1,6 @@
 /**
  *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2014, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -40,11 +40,11 @@ import tec.uom.se.unit.ProductUnit;
 import tec.uom.se.AbstractSystemOfUnits;
 import tec.uom.se.AbstractUnit;
 import tec.uom.se.unit.BaseUnit;
-import tec.uom.se.util.SI;
+import tec.uom.se.spi.SI;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.5.2
+ * @version 0.6
  */
 public class Health extends AbstractSystemOfUnits {
 

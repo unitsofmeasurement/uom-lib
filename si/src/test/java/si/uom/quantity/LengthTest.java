@@ -30,7 +30,7 @@
 package si.uom.quantity;
 
 import static org.junit.Assert.*;
-import static tec.units.ri.util.SI.METRE;
+import static tec.units.ri.spi.SI.METRE;
 
 import javax.measure.quantity.Length;
 

@@ -32,7 +32,7 @@ package si.uom.quantity;
 import si.uom.quantity.AccelerationAmount;
 import si.uom.quantity.ForceAmount;
 import si.uom.quantity.MassAmount;
-import tec.units.ri.util.SI;
+import tec.units.ri.spi.SI;
 
 /**
  *
