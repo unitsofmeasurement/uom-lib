@@ -4,11 +4,11 @@
 	<parent>
 		<groupId>tec.uom.lib</groupId>
 		<artifactId>uom-lib</artifactId>
-		<version>0.6-SNAPSHOT</version>
+		<version>0.6</version>
 	</parent>
 	<groupId>si.uom</groupId>
 	<artifactId>uom-si</artifactId>
-	<version>0.2-SNAPSHOT</version>
+	<version>0.2</version>
 	<name>Units of Measurement SI Quantities</name>
 
 	<!-- ======================================================= -->
