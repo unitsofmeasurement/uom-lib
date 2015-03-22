@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>tec.uom</groupId>
 		<artifactId>uom-parent</artifactId>
-		<version>0.8-SNAPSHOT</version>
+		<version>0.8-RC2</version>
 	</parent>
 	<modules>
 		<module>common</module>
@@ -16,10 +16,10 @@
 	</modules>
 	<packaging>pom</packaging>
 	<name>Units of Measurement Libraries</name>
-	<url>http://github.com/unitsofmeasurement/unit-lib</url>
+	<url>http://github.com/unitsofmeasurement/uom-lib</url>
 	<organization>
 		<name>Units of Measurement project</name>
-		<url>http://www.unitsofmeasurement.org</url>
+		<url>http://unitsofmeasurement.github.io</url>
 	</organization>
 	<description>Units of Measurement Libraries - extending and complementing JSR 363</description>
 	<licenses>
@@ -28,12 +28,17 @@
 			<url>LICENSE.txt</url>
 		</license>
 	</licenses>
-
+    <scm>
+        <connection>scm:git:https://github.com/unitsofmeasurement/uom-lib.git</connection>
+        <developerConnection>scm:git:https://github.com/unitsofmeasurement/uom-lib.git</developerConnection>
+        <url>https://github.com/unitsofmeasurement/uom-lib.git</url>
+    </scm>
+    
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
 	<properties>
-		<project.build.javaVersion>1.6</project.build.javaVersion>
+		<project.build.javaVersion>1.7</project.build.javaVersion>
 		<jdkVersion>1.7</jdkVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
