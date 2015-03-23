@@ -10,9 +10,9 @@
   <packaging>pom</packaging>
   <name>Units of Measurement Domain Specific Modules</name>
   <modules>
-  	<module>health</module>
+  	<module>health</module> <!--  
   	<module>health-ri</module>
-  	<module>health-se</module>
+  	<module>health-se</module> -->
   </modules>
   
   <dependencyManagement>
