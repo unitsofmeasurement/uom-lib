@@ -3,6 +3,10 @@ unit-lib
 
 Units of Measurement Libraries - extending and complementing JSR 363
 
+[![Circle CI](https://circleci.com/gh/unitsofmeasurement/uom-lib.svg?style=svg)](https://circleci.com/gh/unitsofmeasurement/uom-lib) 
+[![License](http://img.shields.io/badge/license-BSD3-blue.svg)](http://opensource.org/licenses/BSD-3-Clause)
+
+
 Currently the following libraries/modules are defined
 
 * [**Common**](common) a common library reusable across Java ME or SE complimenting the JSR 363 API.
