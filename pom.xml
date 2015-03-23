@@ -42,6 +42,7 @@
 		<jdkVersion>1.7</jdkVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+		<jsr.version>0.8-RC1</jsr.version>
 		<ri.version>0.8-RC1</ri.version>
 		<se.version>0.7</se.version>
 		<lib.version>${project.version}</lib.version>
