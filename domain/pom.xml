@@ -5,8 +5,8 @@
     <artifactId>uom-lib</artifactId>
     <version>0.7-SNAPSHOT</version>
   </parent>
-  <groupId>tec.uom.domain</groupId>
-  <artifactId>uom-domain</artifactId>
+  <groupId>tec.uom.lib</groupId>
+  <artifactId>uom-lib-domain</artifactId>
   <packaging>pom</packaging>
   <name>Units of Measurement Domain Specific Modules</name>
   <modules>
