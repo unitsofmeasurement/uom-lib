@@ -1,3 +1,4 @@
+package si.uom.quantity;
 /**
  *  Unit-API - Units of Measurement API for Java
  *  Copyright (c) 2005-2014, Jean-Marie Dautelle, Werner Keil, V2COM.
@@ -35,4 +36,3 @@
  * @author Werner
  *
  */
-package si.uom.quantity;

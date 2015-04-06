@@ -27,37 +27,31 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package si.uom.quantity;
+package si.uom.quantity.impl;
 
 import javax.measure.Unit;
-import javax.measure.quantity.Area;
-import javax.measure.quantity.Length;
+import javax.measure.quantity.Mass;
 
 import tec.units.ri.quantity.NumberQuantity;
 
 /**
- * Represents the extent of something along its greatest
- * dimension or the extent of space between two objects or places.
- * The metric system unit for this quantity is "m" (metre).
+ * Represents the measure of the quantity of matter that a body or an object contains.
+ * The mass of the body is not dependent on gravity and therefore is different from but
+ * proportional to its weight.
+ * The metric system unit for this quantity is "kg" (kilogram).
  *
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.7, $Date: 2014-08-31 $
+ * @version 1.7, $Date: 2013-12-26 $
  */
-public final class LengthAmount extends NumberQuantity<Length> implements Length {
+public final class MassAmount extends NumberQuantity<Mass> implements Mass {
 
 	/**
 	 * 
 	 */
-//	private static final long serialVersionUID = -1088138019909223368L;
+//	private static final long serialVersionUID = -3190275944382844647L;
 
-	public LengthAmount(Number number, Unit<Length> unit) {
+	public MassAmount(Number number, Unit<Mass> unit) {
 		super(number, unit);
-	}
-
-	@Override
-	public Area multiply(Length l) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

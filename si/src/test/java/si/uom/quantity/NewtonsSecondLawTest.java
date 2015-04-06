@@ -38,9 +38,9 @@ import javax.measure.quantity.Force;
 
 import org.junit.Test;
 
-import si.uom.quantity.AccelerationAmount;
-import si.uom.quantity.ForceAmount;
-import si.uom.quantity.MassAmount;
+import si.uom.quantity.impl.AccelerationAmount;
+import si.uom.quantity.impl.ForceAmount;
+import si.uom.quantity.impl.MassAmount;
 import tec.units.ri.spi.SI;
 import tec.units.ri.spi.US;
 

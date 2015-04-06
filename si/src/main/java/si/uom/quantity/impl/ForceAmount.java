@@ -27,34 +27,25 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package si.uom.quantity;
+package si.uom.quantity.impl;
 
 import javax.measure.Unit;
-import javax.measure.quantity.Acceleration;
+import javax.measure.quantity.Force;
 
 import tec.units.ri.quantity.NumberQuantity;
 
 /**
- * Represents the rate of change of velocity with respect to time.
- * The metric system unit for this quantity is "m/s²" (metre per square second).
- *
- * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.6.3, $Date: 2014-12-14 $
+ * Represents a quantity that tends to produce an acceleration of a body in the
+ * direction of its application. The metric system unit for this quantity is "N"
+ * (Newton).
+ * 
+ * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 1.3, $Date: 2013-05-21 $
  */
-public final class AccelerationAmount extends NumberQuantity<Acceleration> 
-   implements Acceleration {
+public final class ForceAmount extends NumberQuantity<Force> implements Force {
 
-	/**
-	 * 
-	 */
-//	private static final long serialVersionUID = -3979825836742796484L;
-
-	public AccelerationAmount(Number number, Unit<Acceleration> unit) {
+	public ForceAmount(Number number, Unit<Force> unit) {
 		super(number, unit);
-	}
-	
-	public static final AccelerationAmount of(Number number, Unit<Acceleration> unit) {
-		return new AccelerationAmount(number, unit);
 	}
 }

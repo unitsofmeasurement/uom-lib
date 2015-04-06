@@ -27,40 +27,12 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package si.uom.quantity;
-
-import static org.junit.Assert.*;
-import static tec.units.ri.spi.SI.METRE;
-
-import javax.measure.quantity.Length;
-
-import org.junit.Before;
-import org.junit.Test;
-
-import si.uom.quantity.impl.LengthAmount;
-
-public class LengthTest {
-
-	private Length sut;
-	
-	@Before
-	public void init() {
-		sut = new LengthAmount(10, METRE);
-	}
-	
-	@Test
-	public void testUnit() {
-		assertEquals(METRE, sut.getUnit());
-	}
-	
-	@Test
-	public void testValue() {
-		assertEquals(Integer.valueOf(10), sut.getValue());
-	}
-	
-	@Test
-	public void testToString() {
-		assertEquals("10 m", sut.toString());
-	}
-
-}
+/**
+ * 
+ */
+/**
+ * SI Quantity Implementations
+ * @author Werner
+ *
+ */
+package si.uom.quantity.impl;
