@@ -27,31 +27,25 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package si.uom.quantity.impl;
+package si.uom.impl.quantity;
 
-import javax.measure.Unit;
-import javax.measure.quantity.Mass;
-
-import tec.units.ri.quantity.NumberQuantity;
+import si.uom.impl.quantity.AccelerationAmount;
+import si.uom.impl.quantity.ForceAmount;
+import si.uom.impl.quantity.MassAmount;
+import si.uom.impl.SI;
 
 /**
- * Represents the measure of the quantity of matter that a body or an object contains.
- * The mass of the body is not dependent on gravity and therefore is different from but
- * proportional to its weight.
- * The metric system unit for this quantity is "kg" (kilogram).
  *
- * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.7, $Date: 2013-12-26 $
+ * @author Chris Senior
+ * @author Werner Keil
+ *
  */
-public final class MassAmount extends NumberQuantity<Mass> implements Mass {
+class NewtonsSecondLaw {
 
-	/**
-	 * 
-	 */
-//	private static final long serialVersionUID = -3190275944382844647L;
+	public static final ForceAmount calculateForce(MassAmount m, AccelerationAmount a) {
+		double m_kg = m.doubleValue(SI.KILOGRAM);
+		double a_si = a.doubleValue(SI.METRES_PER_SQUARE_SECOND);
 
-	public MassAmount(Number number, Unit<Mass> unit) {
-		super(number, unit);
+		return new ForceAmount(m_kg * a_si, SI.NEWTON);
 	}
 }

@@ -27,34 +27,31 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package si.uom.quantity.impl;
+package si.uom.impl.quantity;
 
 import javax.measure.Unit;
-import javax.measure.quantity.Acceleration;
+import si.uom.quantity.Mass;
 
 import tec.units.ri.quantity.NumberQuantity;
 
 /**
- * Represents the rate of change of velocity with respect to time.
- * The metric system unit for this quantity is "m/s²" (metre per square second).
+ * Represents the measure of the quantity of matter that a body or an object contains.
+ * The mass of the body is not dependent on gravity and therefore is different from but
+ * proportional to its weight.
+ * The metric system unit for this quantity is "kg" (kilogram).
  *
  * @author  <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.6.3, $Date: 2014-12-14 $
+ * @version 0.8, $Date: 2015-04-06 $
  */
-public final class AccelerationAmount extends NumberQuantity<Acceleration> 
-   implements Acceleration {
+public final class MassAmount extends NumberQuantity<Mass> implements Mass {
 
 	/**
 	 * 
 	 */
-//	private static final long serialVersionUID = -3979825836742796484L;
+//	private static final long serialVersionUID = -3190275944382844647L;
 
-	public AccelerationAmount(Number number, Unit<Acceleration> unit) {
+	public MassAmount(Number number, Unit<Mass> unit) {
 		super(number, unit);
-	}
-	
-	public static final AccelerationAmount of(Number number, Unit<Acceleration> unit) {
-		return new AccelerationAmount(number, unit);
 	}
 }

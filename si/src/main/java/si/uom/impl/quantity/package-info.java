@@ -27,25 +27,12 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package si.uom.quantity.impl;
-
-import javax.measure.Unit;
-import javax.measure.quantity.Force;
-
-import tec.units.ri.quantity.NumberQuantity;
-
 /**
- * Represents a quantity that tends to produce an acceleration of a body in the
- * direction of its application. The metric system unit for this quantity is "N"
- * (Newton).
  * 
- * @author <a href="mailto:jean-marie@dautelle.com">Jean-Marie Dautelle</a>
- * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.3, $Date: 2013-05-21 $
  */
-public final class ForceAmount extends NumberQuantity<Force> implements Force {
-
-	public ForceAmount(Number number, Unit<Force> unit) {
-		super(number, unit);
-	}
-}
+/**
+ * SI Quantity Implementations
+ * @author Werner
+ *
+ */
+package si.uom.impl.quantity;

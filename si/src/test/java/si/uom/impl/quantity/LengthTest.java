@@ -27,25 +27,38 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package si.uom.quantity;
+package si.uom.impl.quantity;
 
-import si.uom.quantity.impl.AccelerationAmount;
-import si.uom.quantity.impl.ForceAmount;
-import si.uom.quantity.impl.MassAmount;
-import tec.units.ri.spi.SI;
+import static org.junit.Assert.*;
+import static si.uom.impl.SI.METRE;
+import si.uom.impl.quantity.LengthAmount;
+import si.uom.quantity.Length;
 
-/**
- *
- * @author Chris Senior
- * @author Werner Keil
- *
- */
-class NewtonsSecondLaw {
+import org.junit.Before;
+import org.junit.Test;
 
-	public static final ForceAmount calculateForce(MassAmount m, AccelerationAmount a) {
-		double m_kg = m.doubleValue(SI.KILOGRAM);
-		double a_si = a.doubleValue(SI.METRES_PER_SQUARE_SECOND);
+public class LengthTest {
 
-		return new ForceAmount(m_kg * a_si, SI.NEWTON);
+	private Length sut;
+	
+	@Before
+	public void init() {
+		sut = new LengthAmount(10, METRE);
 	}
+	
+	@Test
+	public void testUnit() {
+		assertEquals(METRE, sut.getUnit());
+	}
+	
+	@Test
+	public void testValue() {
+		assertEquals(Integer.valueOf(10), sut.getValue());
+	}
+	
+	@Test
+	public void testToString() {
+		assertEquals("10 m", sut.toString());
+	}
+
 }
