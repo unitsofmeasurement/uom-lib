@@ -40,7 +40,7 @@ import tec.uom.se.unit.ProductUnit;
 import tec.uom.se.AbstractSystemOfUnits;
 import tec.uom.se.AbstractUnit;
 import tec.uom.se.unit.BaseUnit;
-import tec.uom.se.spi.SI;
+import tec.uom.se.unit.SI;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>

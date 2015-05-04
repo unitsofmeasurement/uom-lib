@@ -43,7 +43,7 @@
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<jsr.version>0.8-RC1</jsr.version>
 		<ri.version>0.8-RC1</ri.version>
-		<se.version>0.7</se.version>
+		<se.version>0.8-SNAPSHOT</se.version>
 		<lib.version>${project.version}</lib.version>
 	</properties>
 
