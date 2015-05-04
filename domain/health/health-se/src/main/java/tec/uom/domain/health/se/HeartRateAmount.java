@@ -1,6 +1,6 @@
 /**
  *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2014, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -27,16 +27,35 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.lib.domain.health;
+package tec.uom.domain.health.se;
 
-import javax.measure.Quantity;
+import javax.measure.Unit;
+
+import tec.uom.domain.health.HeartRate;
+import tec.uom.se.quantity.NumberQuantity;
+import tec.uom.se.quantity.Quantities;
 
 /**
- * Heartbeat is a unit of heart beats.
- * 
- * @author <a href="mailto:uomo@catmedia.us">Werner Keil</a>
- * @version 1.0
+ * Represents the speed of heart beat. The standard unit for this quantity is
+ * "bpm" (Beats per Minute).
+ *
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 0.5, Date: 2015-05-04
  */
-public interface Heartbeat extends Quantity<Heartbeat> {
+public final class HeartRateAmount extends NumberQuantity<HeartRate> implements
+		HeartRate {
 
+	protected HeartRateAmount(Number number, Unit<HeartRate> unit) {
+		super(number, unit);
+	}
+
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -7105140153324121388L;
+	
+	// of() won't work here due to being defined in BaseQuantity ;-|
+	public static HeartRateAmount of(Number number, Unit<HeartRate> unit) {
+		return (HeartRateAmount) Quantities.getQuantity(number, unit);
+	}
 }

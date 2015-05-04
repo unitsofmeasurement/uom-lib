@@ -27,16 +27,8 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.lib.domain.health;
-
-import javax.measure.Quantity;
-
 /**
- * Step is a unit of steps.
- * 
- * @author <a href="mailto:uomo@catmedia.us">Werner Keil</a>
- * @version 1.0
+ * @author Werner Keil
+ *
  */
-public interface Step extends Quantity<Step> {
-
-}
+package tec.uom.domain.health.ri;
