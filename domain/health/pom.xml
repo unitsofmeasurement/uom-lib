@@ -11,8 +11,8 @@
 	<name>Units of Measurement Health Specific Modules</name>
 	<modules>
 		<module>health-api</module>
-		
-		<module>health-ri</module> <!-- 
+		 <!-- 
+		<module>health-ri</module>
 		<module>health-se</module>
 		 -->
 	</modules>
