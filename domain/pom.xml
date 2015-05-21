@@ -1,32 +1,31 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>tec.uom.lib</groupId>
-    <artifactId>uom-lib</artifactId>
-    <version>0.7-SNAPSHOT</version>
-  </parent>
-  <groupId>tec.uom.domain</groupId>
-  <artifactId>uom-domain</artifactId>
-  <packaging>pom</packaging>
-  <name>Units of Measurement Domain Specific Modules</name>
-  <modules>
-  	<module>health</module> <!--  
-  	<module>health-ri</module>
-  	<module>health-se</module> -->
-  </modules>
-  
-  <dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>tec.units</groupId>
-            <artifactId>unit-ri</artifactId>
-            <version>${ri.version}</version>
-        </dependency>
-        <dependency>
-        <groupId>tec.uom</groupId>
-            <artifactId>uom-se</artifactId>
-            <version>${se.version}</version>
-        </dependency>
-    </dependencies>
-  </dependencyManagement>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>tec.uom.lib</groupId>
+		<artifactId>uom-lib</artifactId>
+		<version>0.7-SNAPSHOT</version>
+	</parent>
+	<groupId>tec.uom.domain</groupId>
+	<artifactId>uom-domain</artifactId>
+	<packaging>pom</packaging>
+	<name>Units of Measurement Domain Specific Modules</name>
+	<modules>
+		<module>health</module> <!-- <module>health-ri</module> <module>health-se</module> -->
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>tec.units</groupId>
+				<artifactId>unit-ri</artifactId>
+				<version>${ri.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>tec.uom</groupId>
+				<artifactId>uom-se</artifactId>
+				<version>${se.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
