@@ -27,7 +27,7 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.domain.health.ri;
+package tec.uom.domain.health.ri.types;
 
 import javax.measure.Unit;
 
@@ -39,7 +39,7 @@ import tec.uom.domain.health.HeartRate;
  * "bpm" (Beats per Minute).
  *
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.4, Date: 2014-11-03
+ * @version 0.4.1, Date: 2015-05-23
  */
 public final class HeartRateAmount extends NumberQuantity<HeartRate> implements
 		HeartRate {
