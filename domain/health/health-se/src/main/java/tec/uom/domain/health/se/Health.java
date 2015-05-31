@@ -44,7 +44,7 @@ import tec.uom.se.unit.SI;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.7
+ * @version 0.7.1
  */
 public class Health extends AbstractSystemOfUnits {
 
@@ -72,12 +72,10 @@ public class Health extends AbstractSystemOfUnits {
 	}
 
 	/** Step */
-	@SuppressWarnings("unused")
-	private static final Unit<Step> STEP = addUnit(new BaseUnit<Step>("st"));
+	public static final Unit<Step> STEP = addUnit(new BaseUnit<Step>("st"));
 
 	/** Floor */
-	@SuppressWarnings("unused")
-	private static final Unit<Floor> FLOOR = addUnit(new BaseUnit<Floor>("flr"));
+	public static final Unit<Floor> FLOOR = addUnit(new BaseUnit<Floor>("flr"));
 
 	/**
 	 * Returns the singleton instance of this class.

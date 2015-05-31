@@ -42,7 +42,7 @@ import tec.units.ri.unit.BaseUnit;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.5.2
+ * @version 0.5.3
  */
 public class Health extends AbstractSystemOfUnits {
 
