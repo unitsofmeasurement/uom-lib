@@ -38,13 +38,12 @@ import tec.uom.domain.health.Heartbeat;
 import tec.uom.domain.health.Step;
 import tec.uom.se.unit.ProductUnit;
 import tec.uom.se.AbstractSystemOfUnits;
-import tec.uom.se.AbstractUnit;
 import tec.uom.se.unit.BaseUnit;
-import tec.uom.se.unit.SI;
+import tec.uom.se.unit.Units;
 
 /**
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.7.1
+ * @version 0.7.2
  */
 public class Health extends AbstractSystemOfUnits {
 
@@ -64,7 +63,7 @@ public class Health extends AbstractSystemOfUnits {
 
 	/** BPM */
 	public static final Unit<HeartRate> BPM = addUnit(new ProductUnit<HeartRate>(
-			BEAT.divide(SI.SECOND.multiply(60))));
+			BEAT.divide(Units.SECOND.multiply(60))));
 
 	@Override
 	public String getName() {
@@ -107,15 +106,15 @@ public class Health extends AbstractSystemOfUnits {
 	 *            the name of the unit.
 	 * @return <code>unit</code>.
 	 */
-	@SuppressWarnings({ "unchecked", "unused" })
-	private static <U extends Unit<?>> U addUnit(U unit, String name) {
-		if (name != null && unit instanceof AbstractUnit) {
-			AbstractUnit<?> aUnit = (AbstractUnit<?>) unit;
-			// aUnit.setName(name);
-			INSTANCE.units.add(aUnit);
-			return (U) aUnit;
-		}
-		INSTANCE.units.add(unit);
-		return unit;
-	}
+//	@SuppressWarnings({ "unchecked", "unused" })
+//	private static <U extends Unit<?>> U addUnit(U unit, String name) {
+//		if (name != null && unit instanceof AbstractUnit) {
+//			AbstractUnit<?> aUnit = (AbstractUnit<?>) unit;
+//			// aUnit.setName(name);
+//			INSTANCE.units.add(aUnit);
+//			return (U) aUnit;
+//		}
+//		INSTANCE.units.add(unit);
+//		return unit;
+//	}
 }
