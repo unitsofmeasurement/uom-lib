@@ -36,7 +36,7 @@ import static tec.uom.se.AbstractQuantity.NONE;
 import javax.measure.Quantity;
 
 import tec.uom.se.function.Nameable;
-import tec.uom.se.util.Range;
+import tec.uom.se.spi.Range;
 
 /**
  * @author Werner Keil
