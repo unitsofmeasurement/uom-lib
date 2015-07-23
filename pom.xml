@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>tec.uom</groupId>
 		<artifactId>uom-parent</artifactId>
-		<version>0.8-RC2</version>
+		<version>0.8-RC3</version>
 	</parent>
 	<modules>
 		<module>common</module>
@@ -41,8 +41,8 @@
 		<jdkVersion>1.7</jdkVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<jsr.version>0.8-RC1</jsr.version>
-		<ri.version>0.8-RC1</ri.version>
+		<jsr.version>0.8-RC3</jsr.version>
+		<ri.version>0.8-SNAPSHOT</ri.version>
 		<se.version>0.8-SNAPSHOT</se.version>
 		<lib.version>${project.version}</lib.version>
 	</properties>
