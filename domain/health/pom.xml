@@ -6,15 +6,15 @@
 		<artifactId>uom-domain</artifactId>
 		<version>0.8-SNAPSHOT</version>
 	</parent>
-	<artifactId>uom-health</artifactId>
+	<artifactId>uom-health-parent</artifactId>
 	<packaging>pom</packaging>
 	<name>Units of Measurement Health Specific Modules</name>
 	<modules>
 		<module>health-api</module>
-		 <!-- 
+		
 		<module>health-ri</module>
 		<module>health-se</module>
-		 -->
+		
 	</modules>
 
 	<dependencyManagement>

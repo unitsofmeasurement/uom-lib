@@ -2,11 +2,12 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
 		<groupId>tec.uom.domain</groupId>
-		<artifactId>uom-health</artifactId>
+		<artifactId>uom-health-parent</artifactId>
 		<version>0.8-SNAPSHOT</version>
 	</parent>
-  <artifactId>uom-health-ri</artifactId>
-  <name>Units of Measurement Health Module for RI</name>
+  <artifactId>uom-health</artifactId>
+  <name>Units of Measurement Health Module</name>
+  <description>Units of Measurement Health Module for RI</description>
   
     <!-- ======================================================= -->
     <!-- Build Settings -->
@@ -30,6 +31,7 @@
         <dependency>
             <groupId>tec.uom.domain</groupId>
             <artifactId>uom-health-api</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>

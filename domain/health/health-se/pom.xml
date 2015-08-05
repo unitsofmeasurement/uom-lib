@@ -2,11 +2,11 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
 		<groupId>tec.uom.domain</groupId>
-		<artifactId>uom-health</artifactId>
+		<artifactId>uom-health-parent</artifactId>
 		<version>0.8-SNAPSHOT</version>
 	</parent>
-  <artifactId>uom-health-se</artifactId>
-  <name>Units of Measurement Health Module for Java SE</name>
+  <artifactId>uom-health-java8</artifactId>
+  <name>Units of Measurement Health Module for Java SE 8</name>
   
     <!-- ======================================================= -->
     <!-- Build Settings -->
@@ -30,6 +30,7 @@
         <dependency>
             <groupId>tec.uom.domain</groupId>
             <artifactId>uom-health-api</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
