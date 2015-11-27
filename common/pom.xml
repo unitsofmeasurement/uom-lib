@@ -4,10 +4,14 @@
 	<parent>
 		<groupId>tec.uom.lib</groupId>
 		<artifactId>uom-lib</artifactId>
-		<version>0.8-SNAPSHOT</version>
+		<version>0.8</version>
 	</parent>
 	<artifactId>uom-lib-common</artifactId>
 	<name>Units of Measurement Common Library</name>
+	<properties>
+	   <project.build.javaVersion>1.6</project.build.javaVersion>
+       <jdkVersion>1.6</jdkVersion>
+	</properties>
 	<build>
 		<plugins>
 			<!-- ======================================================= -->

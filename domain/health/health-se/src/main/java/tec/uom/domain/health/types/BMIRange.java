@@ -28,9 +28,9 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.domain.health.se.util;
+package tec.uom.domain.health.types;
 
-import static tec.uom.domain.health.se.util.BMIRange.Category.*;
+import static tec.uom.domain.health.types.BMIRange.Category.*;
 import static tec.uom.se.AbstractQuantity.NONE;
 
 import javax.measure.Quantity;

@@ -31,4 +31,4 @@
  * @author Werner Keil
  *
  */
-package tec.uom.domain.health.se;
+package tec.uom.domain.health.unit;
