@@ -4,6 +4,8 @@ uom-lib
 Units of Measurement Libraries - extending and complementing JSR 363
 
 [![Circle CI](https://circleci.com/gh/unitsofmeasurement/uom-lib.svg?style=svg)](https://circleci.com/gh/unitsofmeasurement/uom-lib) 
+[![Issue Stats](http://issuestats.com/github/unitsofmeasurement/uom-lib/badge/pr?style=flat)](http://issuestats.com/github/unitsofmeasurement/uom-lib)
+[![Issue Stats](http://issuestats.com/github/unitsofmeasurement/uom-lib/badge/issue?style=flat)](http://issuestats.com/github/unitsofmeasurement/uom-lib)
 [![License](http://img.shields.io/badge/license-BSD3-blue.svg)](http://opensource.org/licenses/BSD-3-Clause)
 
 
