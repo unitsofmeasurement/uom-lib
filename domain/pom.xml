@@ -12,6 +12,7 @@
 	<name>Units of Measurement Domain Specific Modules</name>
 	<modules>
 		<module>health</module> <!-- <module>health-ri</module> <module>health-se</module> -->
+		<module>retail</module>
 	</modules>
 
 	<dependencyManagement>
