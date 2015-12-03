@@ -12,4 +12,5 @@
   <modules>
   	<module>retail-api</module>
   </modules>
+  <version>0.1-SNAPSHOT</version>
 </project>

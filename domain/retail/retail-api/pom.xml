@@ -3,7 +3,7 @@
   <parent>
     <groupId>tec.uom.domain</groupId>
     <artifactId>uom-retail</artifactId>
-    <version>0.8</version>
+    <version>0.1-SNAPSHOT</version>
   </parent>
   <artifactId>uom-retail-api</artifactId>
   
@@ -18,5 +18,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <version>0.1-SNAPSHOT</version>
 </project>
