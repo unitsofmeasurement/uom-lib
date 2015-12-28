@@ -37,10 +37,10 @@ package tec.uom.lib.common.function;
  * time the supplier is invoked, unless implementing classes enforce it.
  * 
  * <p>This is a <a href="http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html#package.description">functional interface</a>
- * whose functional method is {@link #getId()}.
+ * whose functional method is {@link #getVersion()}.
  * 
  * @author Werner KEIL
- * @version 0.1 $Date: 2015/08/29 $
+ * @version 0.2 $Date: 2015/12/28 $
  */
 public interface Versioned<T> {
     /**
