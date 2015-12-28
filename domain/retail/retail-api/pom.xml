@@ -18,4 +18,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <name>Units of Measurement Retail API</name>
 </project>
