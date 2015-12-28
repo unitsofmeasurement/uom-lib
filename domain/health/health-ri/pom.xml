@@ -32,7 +32,6 @@
             <groupId>tec.uom.domain</groupId>
             <artifactId>uom-health-api</artifactId>
             <scope>provided</scope>
-            <version>0.9-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
