@@ -35,12 +35,12 @@ import static tec.units.ri.AbstractQuantity.NONE;
 
 import javax.measure.Quantity;
 
-import tec.units.ri.function.Nameable;
 import tec.units.ri.spi.Range;
+import tec.uom.lib.common.function.Nameable;
 
 /**
  * @author Werner Keil
- * @version 0.4
+ * @version 0.5
  * @see <a href="http://en.wikipedia.org/wiki/Body_Mass_index"> Wikipedia:
  *      BMI</a>
  */
