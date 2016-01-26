@@ -1,6 +1,6 @@
 /**
  *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2014, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -30,7 +30,7 @@
 package tec.uom.lib.common.function;
 
 /**
- * Interface for objects with an long-valued Id.
+ * Interface for objects with an int-valued Id.
  * 
  * <p>There is no requirement that a distinct result be returned each
  * time the supplier is invoked, unless implementing classes enforce it.
@@ -39,7 +39,7 @@ package tec.uom.lib.common.function;
  * whose functional method is {@link #getId()}.
  * 
  * @author Werner KEIL
- * @version 1.0.4 $Date: 2014/09/17 $
+ * @version 1.0.5 $Date: 2016/01/04 $
  * @see {@link Identifiable}
  */
 public interface IntIdentifiable {
