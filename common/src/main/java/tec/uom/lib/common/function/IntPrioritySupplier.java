@@ -42,7 +42,7 @@ package tec.uom.lib.common.function;
  * @version 0.1, $Date: 2016-03-23 $
  */
 //@FunctionalInterface
-public interface IntPriorityProvider {
+public interface IntPrioritySupplier {
 	
     /**
      * Gets a priority value.
