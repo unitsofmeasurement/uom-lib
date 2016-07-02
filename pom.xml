@@ -10,7 +10,7 @@
 	</parent>
 	<modules>
 		<module>common</module>
-		<module>domain</module>
+		<!--  module>domain</module -->
 	</modules>
 	<packaging>pom</packaging>
 	<name>Units of Measurement Libraries</name>
