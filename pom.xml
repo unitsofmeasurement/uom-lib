@@ -10,7 +10,7 @@
 	</parent>
 	<modules>
 		<module>common</module>
-		<!-- module>domain</module -->
+		<module>domain</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>Units of Measurement Libraries</name>
@@ -134,11 +134,6 @@
 	<!-- Additional repositories -->
 	<!-- Helps to resolve Parent POM -->
 	<repositories>
-		<repository>
-			<id>geotoolkit</id>
-			<name>Geotoolkit.org project</name>
-			<url>http://maven.geotoolkit.org</url>
-		</repository>
 		<repository>
             <id>jcenter</id>
             <name>JCenter</name>

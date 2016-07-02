@@ -2,9 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>tec.uom.lib</groupId>
-		<artifactId>uom-lib</artifactId>
-		<version>0.9-SNAPSHOT</version>
+		<groupId>tec.uom</groupId>
+		<artifactId>uom-parent</artifactId>
+		<version>0.9</version>
 	</parent>
 	<groupId>tec.uom.domain</groupId>
 	<artifactId>uom-domain</artifactId>
@@ -14,6 +14,18 @@
 		<module>health</module> <!-- <module>health-ri</module> <module>health-se</module> -->
 		<module>retail</module>
 	</modules>
+	<!-- ======================================================= -->
+	<!-- Build Settings -->
+	<!-- ======================================================= -->
+	<properties>
+		<jdkVersion>1.7</jdkVersion>
+		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
+		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
+		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+		<ri.version>0.9</ri.version>
+		<se.version>0.9</se.version>
+		<lib.version>${project.version}</lib.version>
+	</properties>
 
 	<dependencyManagement>
 		<dependencies>
