@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>tec.uom</groupId>
 		<artifactId>uom-parent</artifactId>
-		<version>1.0-SNAPSHOT</version>
+		<version>1.0</version>
 	</parent>
 	<modules>
 		<module>common</module>
@@ -40,8 +40,8 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>0.9</ri.version>
-		<se.version>0.9</se.version>
+		<ri.version>1.0</ri.version>
+		<se.version>1.0</se.version>
 		<lib.version>${project.version}</lib.version>
 	</properties>
 
@@ -156,48 +156,4 @@
 			<url>http://oss.jfrog.org/artifactory/libs-snapshot</url>
 		</repository>
 	</repositories>
-
-	<profiles>
-		<profile>
-			<id>license</id>
-			<activation>
-				<property>
-					<name>license</name>
-					<value>true</value>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>com.google.code.maven-license-plugin</groupId>
-						<artifactId>maven-license-plugin</artifactId>
-						<configuration>
-							<basedir>${basedir}</basedir>
-							<header>src/etc/header.txt</header>
-							<quiet>false</quiet>
-							<failIfMissing>true</failIfMissing>
-							<aggregate>false</aggregate>
-							<encoding>UTF-8</encoding>
-							<excludes>
-								<exclude>target/**</exclude>
-								<exclude>nbproject/**</exclude>
-								<exclude>LICENSE*.txt</exclude>
-								<exclude>README.*</exclude>
-								<exclude>checkstyle*.*</exclude>
-								<exclude>*.css</exclude>
-							</excludes>
-						</configuration>
-						<executions>
-							<execution>
-								<phase>compile</phase>
-								<goals>
-									<goal>format</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
 </project>
