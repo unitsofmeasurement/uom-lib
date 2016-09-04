@@ -6,11 +6,10 @@
 	<parent>
 		<groupId>tec.uom</groupId>
 		<artifactId>uom-parent</artifactId>
-		<version>1.0</version>
+		<version>1.0.1-SNAPSHOT</version>
 	</parent>
 	<modules>
 		<module>common</module>
-		<!--  module>domain</module -->
 	</modules>
 	<packaging>pom</packaging>
 	<name>Units of Measurement Libraries</name>

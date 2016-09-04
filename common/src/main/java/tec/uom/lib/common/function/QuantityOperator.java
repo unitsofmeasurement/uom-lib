@@ -1,7 +1,7 @@
 
 /*
- * Units of Measurement Reference Implementation
- * Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+ * Units of Measurement Common Library
+ * Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -64,14 +64,14 @@ import javax.measure.Quantity;
  * 
  * @author Werner Keil
  * 
- * @version 0.1
+ * @version 0.2, September 4, 2016
  */
-public interface QuantityOperator {
+public interface QuantityOperator<Q extends Quantity<Q>> {
 
     /**
      * Applies the operator on the given quantity.
      * @param quantity the quantity to be operated on.
      * @return the applied quantity.
      */
-    Quantity apply(Quantity quantity);
+    Quantity<Q> apply(Quantity<Q> quantity);
 }
