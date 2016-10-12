@@ -1,6 +1,6 @@
 /*
- * Units of Measurement API
- * Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+ * Units of Measurement Library
+ * Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -38,7 +38,7 @@ package tec.uom.lib.common.function;
  * <p>This is a <a href="http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html#package.description">functional interface</a>
  * whose functional method is {@link #getName()}.
  * 
- * @version 0.5, 2014-06-28
+ * @version 1.0, 2016-10-13
  * @author Werner Keil
  */
 //equivalent to @FunctionalInterface

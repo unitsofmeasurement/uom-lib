@@ -1,6 +1,6 @@
 /*
- * Units of Measurement Implementation for Java SE
- * Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+ * Units of Measurement Library
+ * Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -40,7 +40,7 @@ import javax.measure.format.ParserException;
  * >functional interface</a> whose functional method is {@link #parse()}.
  * 
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.7, 2015-12-28
+ * @version 1.0, 2016-10-13
  * @param <I>
  *            the input
  * @param <O>
