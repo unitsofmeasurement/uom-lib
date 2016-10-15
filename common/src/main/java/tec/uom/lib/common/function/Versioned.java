@@ -1,6 +1,6 @@
 /*
  *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -40,7 +40,8 @@ package tec.uom.lib.common.function;
  * whose functional method is {@link #getVersion()}.
  * 
  * @author Werner KEIL
- * @version 0.2 $Date: 2015/12/28 $
+ * @version 0.3 $Date: 2016/10/15 $
+ * @since 0.5
  */
 public interface Versioned<T> {
     /**

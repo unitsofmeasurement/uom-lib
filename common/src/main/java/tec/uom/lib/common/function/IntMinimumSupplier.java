@@ -39,8 +39,9 @@ package tec.uom.lib.common.function;
  * whose functional method is {@link #getMinimum()}.
  * 
  * @author Werner Keil
- * @version 0.5, $Date: 2014-09-07 $
+ * @version 0.6, $Date: 2016-10-15 $
  * @param <T> the type of values supplied by this supplier
+ * @since 0.9
  */
 //@FunctionalInterface
 public interface IntMinimumSupplier<T> {

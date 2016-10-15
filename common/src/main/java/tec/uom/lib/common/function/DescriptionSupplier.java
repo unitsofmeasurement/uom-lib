@@ -1,6 +1,6 @@
 /**
- *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2014, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Units of Measurement Common Library for Java
+ *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -39,6 +39,7 @@ package tec.uom.lib.common.function;
  * whose functional method is {@link #getDescription()}.
  * 
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @since 0.5
  */
 //equivalent to @FunctionalInterface
 public interface DescriptionSupplier {

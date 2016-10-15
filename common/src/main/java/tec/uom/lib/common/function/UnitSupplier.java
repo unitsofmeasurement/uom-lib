@@ -1,6 +1,6 @@
 /*
- * Units of Measurement Reference Implementation
- * Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+ * Units of Measurement Common Library
+ * Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -42,7 +42,8 @@ import javax.measure.Unit;
  * whose functional method is {@link #getUnit()}.
  * 
  * @author Werner Keil
- * @version 0.8, $Date: 2015-04-19 $
+ * @version 0.9, $Date: 2016-10-15 $
+ * @since 0.5
  */
 //equivalent to @FunctionalInterface
 public interface UnitSupplier<Q extends Quantity<Q>> {

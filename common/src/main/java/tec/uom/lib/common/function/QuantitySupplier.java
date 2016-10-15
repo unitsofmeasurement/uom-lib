@@ -41,9 +41,10 @@ import javax.measure.Quantity;
  * whose functional method is {@link #getQuantity()}.
  * 
  * @author Werner Keil
- * @version 0.1, $Date: 2014-11-05 $
+ * @version 0.2, $Date: 2016-10-15 $
  * @param <Q> the type of quantities supplied by this supplier
  * @see {@link Quantity}
+ * @since 0.5
  */
 //@FunctionalInterface
 public interface QuantitySupplier<Q extends Quantity<Q>> {

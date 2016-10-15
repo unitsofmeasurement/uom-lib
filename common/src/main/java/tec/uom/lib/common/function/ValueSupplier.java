@@ -1,6 +1,6 @@
 /*
- * Units of Measurement Reference Implementation
- * Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+ * Units of Measurement Common Library
+ * Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -39,8 +39,9 @@ package tec.uom.lib.common.function;
  * whose functional method is {@link #getValue()}.
  * 
  * @author Werner Keil
- * @version 0.4, $Date: 2014-11-04 $
+ * @version 0.5, $Date: 2016-10-15 $
  * @param <T> the type of values supplied by this supplier
+ * @since 0.5
  */
 // equivalent to @FunctionalInterface
 public interface ValueSupplier<T> {

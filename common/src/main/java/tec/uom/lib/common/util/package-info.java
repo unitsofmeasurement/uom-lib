@@ -1,6 +1,6 @@
-/**
+/*
  *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -27,26 +27,10 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.lib.common.function;
 
 /**
- * Provides String label to implementations
+ * Utility classes
+ * @author Werner
  *
- * <p>There is no requirement that a distinct result be returned each
- * time the supplier is invoked, unless implementing classes enforce it.
- * 
- * <p>This is a <a href="http://download.java.net/jdk8/docs/api/java/util/function/package-summary.html">functional interface</a>
- * whose functional method is {@link #getLabel()}.
- * 
- * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.2
- * @since 0.9
  */
-//equivalent to @FunctionalInterface
-public interface LabelSupplier {
-	
-    /**
-     * @return a label
-     */
-    String getLabel();
-}
+package tec.uom.lib.common.util;

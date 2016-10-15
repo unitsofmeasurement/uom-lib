@@ -41,7 +41,8 @@ package tec.uom.lib.common.function;
  *
  * @see <a href="http://download.java.net/jdk8/docs/api/java/util/function/DoubleSupplier.html">DoubleSupplier</a>
  * @author Werner Keil
- * @version 0.4, $Date: 2015-09-27 $
+ * @version 0.5, $Date: 2016-10-15 $
+ * @since 0.9
  */
 //equivalent to @FunctionalInterface
 public interface DoubleFactorSupplier {

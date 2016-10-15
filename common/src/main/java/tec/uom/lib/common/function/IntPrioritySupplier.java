@@ -39,7 +39,8 @@ package tec.uom.lib.common.function;
  * whose functional method is {@link #getPriority()}.
  * 
  * @author Werner Keil
- * @version 0.1, $Date: 2016-03-23 $
+ * @version 0.2, $Date: 2016-10-15 $
+ * @since 0.9
  */
 //@FunctionalInterface
 public interface IntPrioritySupplier {

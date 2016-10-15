@@ -64,7 +64,8 @@ import javax.measure.Quantity;
  * 
  * @author Werner Keil
  * 
- * @version 0.2, September 4, 2016
+ * @version 0.3, October 15, 2016
+ * @since 0.9
  */
 public interface QuantityOperator<Q extends Quantity<Q>> {
 

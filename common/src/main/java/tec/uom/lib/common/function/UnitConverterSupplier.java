@@ -1,6 +1,6 @@
 /*
- * Units of Measurement Reference Implementation
- * Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+ * Units of Measurement Common Library
+ * Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -41,6 +41,7 @@ import javax.measure.UnitConverter;
  * whose functional method is {@link #getConverter()}.
  * 
  * @author Werner Keil
+ * @since 0.9
  */
 //equivalent to @FunctionalInterface
 public interface UnitConverterSupplier {

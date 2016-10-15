@@ -40,6 +40,7 @@ package tec.uom.lib.common.function;
  * 
  * @version 1.0, 2016-10-13
  * @author Werner Keil
+ * @since 0.5
  */
 //equivalent to @FunctionalInterface
 public interface Nameable {

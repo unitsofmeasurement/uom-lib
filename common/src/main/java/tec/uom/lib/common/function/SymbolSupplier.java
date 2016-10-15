@@ -39,6 +39,7 @@ package tec.uom.lib.common.function;
  * whose functional method is {@link #getSymbol()}.
  * 
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @since 0.5
  */
 //equivalent to @FunctionalInterface
 public interface SymbolSupplier {

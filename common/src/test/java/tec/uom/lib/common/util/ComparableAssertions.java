@@ -1,6 +1,6 @@
-/**
- *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+/*
+ * Units of Measurement Common Library for Java
+ *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -13,7 +13,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
  *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363, Unit-API nor the names of its contributors may be used to endorse or promote products
+ * 3. Neither the name of JSR-363, Units of Measurement nor the names of their contributors may be used to endorse or promote products
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -27,26 +27,13 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.lib.common.function;
+package tec.uom.lib.common.util;
 
-/**
- * Provides String label to implementations
- *
- * <p>There is no requirement that a distinct result be returned each
- * time the supplier is invoked, unless implementing classes enforce it.
- * 
- * <p>This is a <a href="http://download.java.net/jdk8/docs/api/java/util/function/package-summary.html">functional interface</a>
- * whose functional method is {@link #getLabel()}.
- * 
- * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.2
- * @since 0.9
- */
-//equivalent to @FunctionalInterface
-public interface LabelSupplier {
-	
-    /**
-     * @return a label
-     */
-    String getLabel();
+import static org.junit.Assert.assertEquals;
+
+class ComparableAssertions {
+	public static void assertComparable(Object a, Object b) {
+	    String msg = "Objects were not comparable: <" + a + ">, <" + b + ">";
+	    assertEquals(msg, 0, ((Comparable)a).compareTo(b));
+	}
 }

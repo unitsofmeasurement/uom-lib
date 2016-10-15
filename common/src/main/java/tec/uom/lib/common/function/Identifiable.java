@@ -40,7 +40,8 @@ package tec.uom.lib.common.function;
  * whose functional method is {@link #getId()}.
  * 
  * @author Werner KEIL
- * @version 1.1 $Date: 2014/09/07 $
+ * @version 1.2 $Date: 2016/10/15 $
+ * @since 0.5
  */
 public interface Identifiable<T> {
     /**

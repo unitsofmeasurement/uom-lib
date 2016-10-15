@@ -45,7 +45,8 @@ import javax.measure.format.ParserException;
  *            the input
  * @param <O>
  *            the output
- * @see ParserException
+ * @see ParserException 
+ * @since 0.5
  */
 //@FunctionalInterface
 public interface Parser<I, O> {
