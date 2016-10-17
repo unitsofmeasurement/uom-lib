@@ -12,9 +12,6 @@ Units of Measurement Libraries - extending and complementing JSR 363
 Currently the following libraries/modules are defined
 
 * [**Common**](common) a common library reusable across Java ME or SE complimenting the JSR 363 API.
-* [**Domain**](domain) provides domain specific modules:
-  * [**Health**](domain/health) Healthcare API (reusable across Java ME or SE)
-  * [**Retail**](domain/retail) Retail Support (reusable across Java ME or SE)
 
 Waffle.io
 ------------
