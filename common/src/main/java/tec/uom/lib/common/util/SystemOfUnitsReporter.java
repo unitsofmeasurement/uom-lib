@@ -48,7 +48,7 @@ public class SystemOfUnitsReporter {
 	}
 	
 	private static void printSoU(final SystemOfUnits sou) {
-		System.out.println("Testing " + sou.getName());
+		System.out.println("Reporting " + sou.getName());
 		for (Unit<?> u : sou.getUnits()) {
 			System.out.println(u.getName() + "; " + u.getSymbol() + "; " + u);
 		}
