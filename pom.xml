@@ -10,6 +10,7 @@
 	</parent>
 	<modules>
 		<module>common</module>
+		<module>assertj</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>Units of Measurement Libraries</name>
@@ -39,15 +40,15 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>1.0</ri.version>
-		<se.version>1.0</se.version>
+		<ri.version>1.0.1</ri.version>
+		<se.version>1.0.1</se.version>
 		<lib.version>${project.version}</lib.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>tec.uom</groupId>
+				<groupId>tec.units</groupId>
 				<artifactId>unit-ri</artifactId>
 				<version>${ri.version}</version>
 			</dependency>
