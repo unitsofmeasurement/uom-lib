@@ -29,4 +29,5 @@
             <scope>test</scope>
         </dependency>
 	</dependencies>
+	<name>Units of Measurement AssertJ Library</name>
 </project>
