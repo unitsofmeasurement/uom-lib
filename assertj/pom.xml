@@ -21,13 +21,85 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>tec.units</groupId>
+			<artifactId>unit-ri</artifactId>
 			<scope>test</scope>
 		</dependency>
-		      <dependency>
-            <groupId>tec.units</groupId>
-            <artifactId>unit-ri</artifactId>
-            <scope>test</scope>
-        </dependency>
 	</dependencies>
 	<name>Units of Measurement AssertJ Library</name>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.assertj</groupId>
+				<artifactId>assertj-assertions-generator-maven-plugin</artifactId>
+				<version>2.0.0</version>
+				<configuration>
+					<!-- <packages> <param>javax.measure</param> </packages> -->
+					<classes>
+						<param>javax.measure.Dimension</param>
+						<param>javax.measure.Quantity</param>
+						<param>javax.measure.Unit</param>
+					</classes>
+
+					<!-- where to generate assertions entry point classes -->
+					<entryPointClassPackage>tec.uom.lib.assertj</entryPointClassPackage>
+
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>java8</id>
+			<build>
+				<plugins>
+				<!-- 
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>test</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete
+											file="${project.build.outputDirectory}/environment.properties" />
+										<copy file="src/main/resources/environment.test.properties"
+											tofile="${project.build.outputDirectory}/environment.properties" />
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					 -->
+					<plugin>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+							<skip>true</skip>
+						</configuration>
+					</plugin>
+					<plugin>
+						<artifactId>maven-jar-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+								<configuration>
+									<classifier>java8</classifier>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
