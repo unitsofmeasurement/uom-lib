@@ -4,14 +4,18 @@ uom-lib
 Units of Measurement Libraries - extending and complementing JSR 363
 
 [![Circle CI](https://circleci.com/gh/unitsofmeasurement/uom-lib.svg?style=svg)](https://circleci.com/gh/unitsofmeasurement/uom-lib) 
-[![Issue Stats](http://issuestats.com/github/unitsofmeasurement/uom-lib/badge/pr?style=flat)](http://issuestats.com/github/unitsofmeasurement/uom-lib)
-[![Issue Stats](http://issuestats.com/github/unitsofmeasurement/uom-lib/badge/issue?style=flat)](http://issuestats.com/github/unitsofmeasurement/uom-lib)
 [![License](http://img.shields.io/badge/license-BSD3-blue.svg)](http://opensource.org/licenses/BSD-3-Clause)
 
 
-Currently the following libraries/modules are defined
+Currently the following libraries are defined
 
 * [**Common**](common) a common library reusable across Java ME or SE complimenting the JSR 363 API.
+* [**AssertJ**](assertj) Assertions adding JSR 363 support to test cases based on [AssertJ](http://joel-costigliola.github.io/assertj/)
+
+Planning
+------------
+[![Issue Stats](http://issuestats.com/github/unitsofmeasurement/uom-lib/badge/pr?style=flat)](http://issuestats.com/github/unitsofmeasurement/uom-lib)
+[![Issue Stats](http://issuestats.com/github/unitsofmeasurement/uom-lib/badge/issue?style=flat)](http://issuestats.com/github/unitsofmeasurement/uom-lib)
 
 Waffle.io
 ------------
