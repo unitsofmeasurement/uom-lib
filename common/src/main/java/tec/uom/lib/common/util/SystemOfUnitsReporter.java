@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Common Library for Java
- *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Copyright (c) 2005-2017, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -33,24 +33,34 @@ import javax.measure.Unit;
 import javax.measure.spi.SystemOfUnits;
 
 public class SystemOfUnitsReporter {
-	final SystemOfUnits sou;
-	
-	private SystemOfUnitsReporter(SystemOfUnits unitSystem) {
-		this.sou = unitSystem;
+    final SystemOfUnits sou;
+
+    private SystemOfUnitsReporter(SystemOfUnits unitSystem) {
+	this.sou = unitSystem;
+    }
+
+    public static SystemOfUnitsReporter of(SystemOfUnits unitSystem) {
+	return new SystemOfUnitsReporter(unitSystem);
+    }
+
+    public void report(boolean showIndex) {
+	printSoU(sou, showIndex);
+    }
+
+    public void report() {
+	report(false);
+    }
+
+    private static void printSoU(final SystemOfUnits sou, final boolean showIndex) {
+	int index = 0;
+	System.out.println("Reporting " + sou.getName());
+	for (Unit<?> u : sou.getUnits()) {
+	    index++;
+	    if (showIndex) {
+		System.out.println(index + "; " + u.getName() + "; " + u.getSymbol() + "; " + u);
+	    } else {
+		System.out.println(u.getName() + "; " + u.getSymbol() + "; " + u);
+	    }
 	}
-	
-	public static SystemOfUnitsReporter of(SystemOfUnits unitSystem) {
-		return new SystemOfUnitsReporter(unitSystem);
-	}
-	
-	public void report() {
-		printSoU(sou);
-	}
-	
-	private static void printSoU(final SystemOfUnits sou) {
-		System.out.println("Reporting " + sou.getName());
-		for (Unit<?> u : sou.getUnits()) {
-			System.out.println(u.getName() + "; " + u.getSymbol() + "; " + u);
-		}
-	}
+    }
 }
