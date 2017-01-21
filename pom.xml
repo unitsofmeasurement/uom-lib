@@ -126,7 +126,7 @@
 			<url>https://oss.jfrog.org/artifactory/oss-snapshot-local</url>
 		</snapshotRepository>
 		<site>
-			<id>www.unitsofmeasurement.org</id>
+			<id>unitsofmeasurement</id>
 			<url>scp://www.unitsofmeasurement.org/www/docs/lib/</url>
 		</site>
 	</distributionManagement>
