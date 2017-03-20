@@ -9,7 +9,7 @@ Units of Measurement Libraries - extending and complementing JSR 363
 
 Currently the following libraries are defined
 
-* [**Common**](common) a common library reusable across Java ME or SE complimenting the JSR 363 API.
+* [**Common**](common) a common library reusable across Java ME or SE complementing the JSR 363 API.
 * [**AssertJ**](assertj) Assertions adding JSR 363 support to test cases based on [AssertJ](http://joel-costigliola.github.io/assertj/)
 
 Planning
@@ -20,6 +20,5 @@ Planning
 Waffle.io
 ------------
 [![Stories in Ready](https://badge.waffle.io/unitsofmeasurement/uom-lib.png?label=ready&title=Ready)](https://waffle.io/unitsofmeasurement/uom-lib)
-[![Stories in Progress](https://badge.waffle.io/unitsofmeasurement/uom-lib.png?label=in%20progress&title=In Progress)](https://waffle.io/unitsofmeasurement/uom-lib)
 
 [![Throughput Graph](https://graphs.waffle.io/unitsofmeasurement/uom-lib/throughput.svg)](https://waffle.io/unitsofmeasurement/uom-lib/metrics)
