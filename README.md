@@ -14,8 +14,8 @@ Currently the following libraries are defined
 
 Planning
 ------------
-[![Issue Stats](http://issuestats.com/github/unitsofmeasurement/uom-lib/badge/pr?style=flat)](http://issuestats.com/github/unitsofmeasurement/uom-lib)
-[![Issue Stats](http://issuestats.com/github/unitsofmeasurement/uom-lib/badge/issue?style=flat)](http://issuestats.com/github/unitsofmeasurement/uom-lib)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/unitsofmeasurement/uom-lib.svg)](http://isitmaintained.com/project/unitsofmeasurement/uom-lib "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/unitsofmeasurement/uom-lib.svg)](http://isitmaintained.com/project/unitsofmeasurement/uom-lib "Percentage of issues still open")
 
 Waffle.io
 ------------
