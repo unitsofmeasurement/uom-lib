@@ -4,10 +4,10 @@
 	<parent>
 		<groupId>tec.uom.lib</groupId>
 		<artifactId>uom-lib</artifactId>
-		<version>1.0.2-SNAPSHOT</version>
+		<version>1.0.2</version>
 	</parent>
 	<artifactId>uom-lib-assertj</artifactId>
-	<version>0.1-SNAPSHOT</version>
+	<version>0.1</version>
 	<dependencies>
 		<dependency>
 			<groupId>org.assertj</groupId>

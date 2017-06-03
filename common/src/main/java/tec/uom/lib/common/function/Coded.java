@@ -30,22 +30,22 @@
 package tec.uom.lib.common.function;
 
 /**
- * Provides String description to implementations
- *
+ * Interface for objects with a <code>code</code>.
+ * the code is of type <code>T</code>.
+ * 
  * <p>There is no requirement that a distinct result be returned each
  * time the supplier is invoked, unless implementing classes enforce it.
  * 
- * <p>This is a <a href="http://download.java.net/jdk8/docs/api/java/util/function/package-summary.html">functional interface</a>
- * whose functional method is {@link #getDescription()}.
+ * <p>This is a <a href="http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html#package.description">functional interface</a>
+ * whose functional method is {@link #getCode()}.
  * 
- * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @since 0.5
+ * @author Werner KEIL
+ * @version 1.5 $Date: 2017/06/03 $
+ * @since 1.0.2
  */
-//equivalent to @FunctionalInterface
-public interface DescriptionSupplier {
-	
+public interface Coded<T> {
     /**
-     * @return a description
+     * @return a code
      */
-    String getDescription();
+    T getCode();
 }
