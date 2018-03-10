@@ -136,9 +136,9 @@
 	<!-- Helps to resolve Parent POM -->
 	<repositories>
 		<repository>
-            		<id>jcenter</id>
-            		<name>JCenter</name>
-            		<url>http://jcenter.bintray.com</url>
+	       		<id>jcenter</id>
+	       		<name>JCenter</name>
+	       		<url>http://jcenter.bintray.com</url>
         	</repository>
 		<repository>
 			<snapshots>
