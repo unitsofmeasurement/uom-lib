@@ -2,15 +2,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>tec.uom.lib</groupId>
+		<groupId>tech.uom.lib</groupId>
 		<artifactId>uom-lib</artifactId>
-		<version>1.0.3-SNAPSHOT</version>
+		<version>1.1</version>
 	</parent>
 	<artifactId>uom-lib-common</artifactId>
 	<name>Units of Measurement Common Library</name>
 	<packaging>bundle</packaging>
 	<properties>
-		<jdkVersion>1.7</jdkVersion>
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 	</properties>
 	<dependencies>
