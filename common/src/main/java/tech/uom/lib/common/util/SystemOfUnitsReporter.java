@@ -1,6 +1,6 @@
 /*
- * Units of Measurement Common Library for Java
- *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Units of Measurement Common Library for Java
+ *  Copyright (c) 2005-2017, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -13,7 +13,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
  *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363, Units of Measurement nor the names of their contributors may be used to endorse or promote products
+ * 3. Neither the name of JSR-363, Unit-API nor the names of its contributors may be used to endorse or promote products
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -27,33 +27,40 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.lib.common.util;
+package tech.uom.lib.common.util;
 
-import static org.junit.Assert.*;
+import javax.measure.Unit;
+import javax.measure.spi.SystemOfUnits;
 
-import org.junit.Test;
+public class SystemOfUnitsReporter {
+    final SystemOfUnits sou;
 
-import tech.uom.lib.common.util.NumberComparator;
+    private SystemOfUnitsReporter(SystemOfUnits unitSystem) {
+	this.sou = unitSystem;
+    }
 
-public class NumberComparatorTest {
+    public static SystemOfUnitsReporter of(SystemOfUnits unitSystem) {
+	return new SystemOfUnitsReporter(unitSystem);
+    }
 
-	@Test
-	public void testCompareEqual() {
-		assertEquals(0, NumberComparator.getInstance().compare(Double.valueOf(1), Double.valueOf(1)));
+    public void report(boolean showIndex) {
+	printSoU(sou, showIndex);
+    }
+
+    public void report() {
+	report(false);
+    }
+
+    private static void printSoU(final SystemOfUnits sou, final boolean showIndex) {
+	int index = 0;
+	System.out.println("Reporting " + sou.getName());
+	for (Unit<?> u : sou.getUnits()) {
+	    index++;
+	    if (showIndex) {
+		System.out.println(index + "; " + u.getName() + "; " + u.getSymbol() + "; " + u);
+	    } else {
+		System.out.println(u.getName() + "; " + u.getSymbol() + "; " + u);
+	    }
 	}
-
-	@Test
-	public void testCompareLeftBigger() {
-		assertEquals(1, NumberComparator.getInstance().compare(Double.valueOf(1), Double.valueOf(0)));
-	}
-	
-	@Test
-	public void testCompareRightBigger() {
-		assertEquals(-1, NumberComparator.getInstance().compare(Double.valueOf(0), Double.valueOf(1)));
-	}
-
-	@Test
-	public void testGetInstance() {
-		assertNotNull(NumberComparator.getInstance());
-	}
+    }
 }

@@ -1,6 +1,6 @@
 /*
- * Units of Measurement Common Library for Java
- *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ * Units of Measurement Library
+ * Copyright (c) 2005-2017, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -13,7 +13,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
  *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363, Units of Measurement nor the names of their contributors may be used to endorse or promote products
+ * 3. Neither the name of JSR-363 nor the names of its contributors may be used to endorse or promote products
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -27,33 +27,32 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.lib.common.util;
+package tech.uom.lib.common.function;
 
-import static org.junit.Assert.*;
+import javax.measure.Quantity;
+import javax.measure.Unit;
 
-import org.junit.Test;
+/**
+ *  Represents an operation to convert values.
+ * <p>
+ * This is a <a href=
+ * "http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html#package.description"
+ * >functional interface</a> whose functional method is {@link #to()}.
+ *
+*  @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 1.0, 2017-09-03
+ * @param <Q>
+ *            The type to convert to.
+ * @see <a href="http://en.wikipedia.org/wiki/Data_conversion">Wikipedia: Data Conversion</a>
+ * @since 1.0.3
+ */
+//equivalent to @FunctionalInterface
+public interface QuantityConverter<Q extends Quantity<Q>> {
 
-import tech.uom.lib.common.util.NumberComparator;
-
-public class NumberComparatorTest {
-
-	@Test
-	public void testCompareEqual() {
-		assertEquals(0, NumberComparator.getInstance().compare(Double.valueOf(1), Double.valueOf(1)));
-	}
-
-	@Test
-	public void testCompareLeftBigger() {
-		assertEquals(1, NumberComparator.getInstance().compare(Double.valueOf(1), Double.valueOf(0)));
-	}
-	
-	@Test
-	public void testCompareRightBigger() {
-		assertEquals(-1, NumberComparator.getInstance().compare(Double.valueOf(0), Double.valueOf(1)));
-	}
-
-	@Test
-	public void testGetInstance() {
-		assertNotNull(NumberComparator.getInstance());
-	}
+    /**
+     * Returns a quantity converted into another unit.
+     * @param type
+     * @return the converted result.
+     */
+    Quantity<Q> to(Unit<Q> type);
 }

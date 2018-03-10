@@ -1,6 +1,6 @@
 /*
- * Units of Measurement Common Library for Java
- *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Units of Measurement Common Library for Java
+ *  Copyright (c) 2005-2017, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -27,33 +27,10 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.lib.common.util;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
-
-import tech.uom.lib.common.util.NumberComparator;
-
-public class NumberComparatorTest {
-
-	@Test
-	public void testCompareEqual() {
-		assertEquals(0, NumberComparator.getInstance().compare(Double.valueOf(1), Double.valueOf(1)));
-	}
-
-	@Test
-	public void testCompareLeftBigger() {
-		assertEquals(1, NumberComparator.getInstance().compare(Double.valueOf(1), Double.valueOf(0)));
-	}
-	
-	@Test
-	public void testCompareRightBigger() {
-		assertEquals(-1, NumberComparator.getInstance().compare(Double.valueOf(0), Double.valueOf(1)));
-	}
-
-	@Test
-	public void testGetInstance() {
-		assertNotNull(NumberComparator.getInstance());
-	}
-}
+/**
+ * Functional Interfaces
+ * @author Werner Keil
+ *
+ */
+package tech.uom.lib.common.function;

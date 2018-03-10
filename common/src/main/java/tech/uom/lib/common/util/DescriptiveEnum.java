@@ -27,33 +27,18 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.lib.common.util;
+package tech.uom.lib.common.util;
 
-import static org.junit.Assert.*;
+import tech.uom.lib.common.function.DescriptionSupplier;
 
-import org.junit.Test;
-
-import tech.uom.lib.common.util.NumberComparator;
-
-public class NumberComparatorTest {
-
-	@Test
-	public void testCompareEqual() {
-		assertEquals(0, NumberComparator.getInstance().compare(Double.valueOf(1), Double.valueOf(1)));
-	}
-
-	@Test
-	public void testCompareLeftBigger() {
-		assertEquals(1, NumberComparator.getInstance().compare(Double.valueOf(1), Double.valueOf(0)));
-	}
-	
-	@Test
-	public void testCompareRightBigger() {
-		assertEquals(-1, NumberComparator.getInstance().compare(Double.valueOf(0), Double.valueOf(1)));
-	}
-
-	@Test
-	public void testGetInstance() {
-		assertNotNull(NumberComparator.getInstance());
-	}
+/**
+ * This interface is used to provide a <code>getDescription()</code> method to enums.
+ * @author Werner Keil
+ * @version 0.4
+ * @since 1.0.2
+ */
+public interface DescriptiveEnum<D extends DescriptiveEnum<D>> extends DescriptionSupplier {
+	String name(); // this is just a compatibility measure with the original enum
+	String getDescription();
+	DescriptiveEnum<D>[] dValues();
 }

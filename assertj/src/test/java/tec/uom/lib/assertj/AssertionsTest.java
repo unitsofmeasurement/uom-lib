@@ -1,7 +1,7 @@
 package tec.uom.lib.assertj;
 
 import static org.junit.Assert.*;
-import static tec.uom.lib.assertj.Assertions.*;
+import static tech.uom.lib.assertj.Assertions.*;
 
 import javax.measure.Unit;
 import javax.measure.quantity.Length;

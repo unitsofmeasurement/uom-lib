@@ -1,6 +1,6 @@
 /*
- * Units of Measurement Common Library for Java
- *  Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ * Units of Measurement Library
+ * Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
  *
  * All rights reserved.
  *
@@ -13,7 +13,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
  *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363, Units of Measurement nor the names of their contributors may be used to endorse or promote products
+ * 3. Neither the name of JSR-363 nor the names of its contributors may be used to endorse or promote products
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -27,33 +27,26 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.lib.common.util;
+package tech.uom.lib.common.function;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
-
-import tech.uom.lib.common.util.NumberComparator;
-
-public class NumberComparatorTest {
-
-	@Test
-	public void testCompareEqual() {
-		assertEquals(0, NumberComparator.getInstance().compare(Double.valueOf(1), Double.valueOf(1)));
-	}
-
-	@Test
-	public void testCompareLeftBigger() {
-		assertEquals(1, NumberComparator.getInstance().compare(Double.valueOf(1), Double.valueOf(0)));
-	}
+/**
+ * Provides String name to implementations
+ *
+ * <p>There is no requirement that a distinct result be returned each
+ * time the supplier is invoked, unless implementing classes enforce it.
+ * 
+ * <p>This is a <a href="http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html#package.description">functional interface</a>
+ * whose functional method is {@link #getName()}.
+ * 
+ * @version 1.0, 2016-10-13
+ * @author Werner Keil
+ * @since 0.5
+ */
+//equivalent to @FunctionalInterface
+public interface Nameable {
 	
-	@Test
-	public void testCompareRightBigger() {
-		assertEquals(-1, NumberComparator.getInstance().compare(Double.valueOf(0), Double.valueOf(1)));
-	}
-
-	@Test
-	public void testGetInstance() {
-		assertNotNull(NumberComparator.getInstance());
-	}
+    /**
+     * @return a name
+     */
+    String getName();
 }
