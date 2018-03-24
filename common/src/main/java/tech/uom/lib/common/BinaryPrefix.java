@@ -42,6 +42,7 @@ import javax.measure.Unit;
  * @see <a href="https://en.wikipedia.org/wiki/Binary_prefix">Wikipedia: Binary
  *      Prefix</a>
  * @since 0.9
+ * @deprecated Moved to RI
  */
 public final class BinaryPrefix {
 
