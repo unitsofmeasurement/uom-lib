@@ -183,9 +183,9 @@ public enum BinaryPrefix implements SymbolSupplier, FactorSupplier<Number> {
 	}
 
 	/**
-	 * Returns the corresponding unit converter.
+	 * Returns the corresponding conversion factor.
 	 *
-	 * @return the unit converter.
+	 * @return the conversion factor.
 	 */
 	public Number getFactor() {
 		return factor;
