@@ -32,30 +32,63 @@ package tech.uom.lib.common;
 import javax.measure.Quantity;
 import javax.measure.Unit;
 
+import tech.uom.lib.common.function.FactorSupplier;
+import tech.uom.lib.common.function.SymbolSupplier;
+
 /**
  * <p>
  * This class provides support for common binary prefixes to be used by units.
  * </p>
  *
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.0, October 13, 2016
+ * @version 1.1, April 16, 2018
  * @see <a href="https://en.wikipedia.org/wiki/Binary_prefix">Wikipedia: Binary
  *      Prefix</a>
  * @since 0.9
  * @deprecated Moved to RI
  */
-public final class BinaryPrefix {
+public enum BinaryPrefix implements SymbolSupplier, FactorSupplier<Number> {
+	 KIBI("Ki", 1024), //
+	  MEBI("Mi", Math.pow(1024, 2)), //
+	  GIBI("Gi", Math.pow(1024, 3)), //
+	  TEBI("Ti", Math.pow(1024, 4)), //
+	  PEBI("Pi", Math.pow(1024, 5)), //
+	  EXBI("Ei", Math.pow(1024, 6)), //
+	  ZEBI("Zi", Math.pow(1024, 7)), //
+	  YOBI("Yi", Math.pow(1024, 8));
 
 	/**
-	 * DefaultQuantityFactory constructor (private).
+	 * The symbol of this prefix, as returned by {@link #getSymbol}.
+	 *
+	 * @serial
+	 * @see #getSymbol()
 	 */
-	private BinaryPrefix() {
-		// Utility class no visible constructor.
+	private final String symbol;
+
+	/**
+	 * The <code>UnitConverter</code> of this prefix, as returned by
+	 * {@link #getConverter}.
+	 *
+	 * @serial
+	 */
+	private final Number factor;
+
+	/**
+	 * Creates a new prefix.
+	 *
+	 * @param symbol
+	 *            the symbol of this prefix.
+	 * @param factor
+	 *            the associated conversion factor
+	 */
+	private BinaryPrefix(String symbol, Number factor) {
+		this.symbol = symbol;
+		this.factor = factor;
 	}
 
 	/**
-	 * Returns the specified unit multiplied by the factor <code>1024</code>
-	 * (binary prefix).
+	 * Returns the specified unit multiplied by the factor <code>1024</code> (binary
+	 * prefix).
 	 * 
 	 * @param unit
 	 *            any unit.
@@ -122,7 +155,7 @@ public final class BinaryPrefix {
 	 * @return <code>unit.multiply(1152921504606846976L)</code>.
 	 */
 	public static <Q extends Quantity<Q>> Unit<Q> EXBI(Unit<Q> unit) {
-		return unit.multiply(1152921504606846976L);
+		return unit.multiply(EXBI.getFactor().doubleValue());
 	}
 
 	/**
@@ -147,5 +180,23 @@ public final class BinaryPrefix {
 	 */
 	public static <Q extends Quantity<Q>> Unit<Q> YOBI(Unit<Q> unit) {
 		return unit.multiply(1208925819614629174706176d);
+	}
+
+	/**
+	 * Returns the corresponding unit converter.
+	 *
+	 * @return the unit converter.
+	 */
+	public Number getFactor() {
+		return factor;
+	}
+
+	/**
+	 * Returns the symbol of this prefix.
+	 *
+	 * @return this prefix symbol, not {@code null}.
+	 */
+	public String getSymbol() {
+		return symbol;
 	}
 }
