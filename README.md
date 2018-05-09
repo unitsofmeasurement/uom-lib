@@ -3,7 +3,7 @@ uom-lib
 
 Units of Measurement Libraries - extending and complementing JSR 363
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/tec.uom.lib/uom-lib/badge.svg)](https://maven-badges.herokuapp.com/maven-central/tec.uom.lib/uom-lib)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/tech.uom.lib/uom-lib/badge.svg)](https://maven-badges.herokuapp.com/maven-central/tech.uom.lib/uom-lib)
 [![Circle CI](https://circleci.com/gh/unitsofmeasurement/uom-lib.svg?style=svg)](https://circleci.com/gh/unitsofmeasurement/uom-lib) 
 [![License](http://img.shields.io/badge/license-BSD3-blue.svg)](http://opensource.org/licenses/BSD-3-Clause)
 
