@@ -30,23 +30,25 @@
 package tech.uom.lib.common.function;
 
 /**
- * Interface for objects with a <code>code</code>.
- * the code is of type <code>T</code>.
- * 
- * <p>There is no requirement that a distinct result be returned each
- * time the supplier is invoked, unless implementing classes enforce it.
+ * Represents a supplier of int-valued base.
+ *
+ * <p>There is no requirement that a new or distinct result be returned each
+ * time the supplier is invoked.
  * 
  * <p>This is a <a href="http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html#package.description">functional interface</a>
- * whose functional method is {@link #getCode()}.
+ * whose functional method is {@link #getBase()}.
  * 
- * @author Werner KEIL
- * @version 2.1 $Date: 2018/05/10 $
- * @since 1.0.2
+ * @author Werner Keil
+ * @version 0.2, $Date: 2018-05-10 $
+ * @since 2.0
  */
 @FunctionalInterface
-public interface Coded<T> {
+public interface IntBaseSupplier {
+	
     /**
-     * @return a code
+     * Gets a base value.
+     *
+     * @return a base value
      */
-    T getCode();
+	int getBase();
 }

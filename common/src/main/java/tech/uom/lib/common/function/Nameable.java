@@ -1,6 +1,6 @@
 /*
- * Units of Measurement Library
- * Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Units of Measurement Common Library for Java
+ *  Copyright (c) 2005-2018, Jean-Marie Dautelle, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -13,7 +13,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
  *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363 nor the names of its contributors may be used to endorse or promote products
+ * 3. Neither the name of JSR-385, Units of Measurement nor the names of their contributors may be used to endorse or promote products
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -38,11 +38,11 @@ package tech.uom.lib.common.function;
  * <p>This is a <a href="http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html#package.description">functional interface</a>
  * whose functional method is {@link #getName()}.
  * 
- * @version 1.0, 2016-10-13
+ * @version 1.1, 2018-05-10
  * @author Werner Keil
  * @since 0.5
  */
-//equivalent to @FunctionalInterface
+@FunctionalInterface
 public interface Nameable {
 	
     /**

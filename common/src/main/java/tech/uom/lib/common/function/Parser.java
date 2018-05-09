@@ -1,6 +1,6 @@
 /*
- * Units of Measurement Library
- * Copyright (c) 2005-2016, Jean-Marie Dautelle, Werner Keil, V2COM.
+ *  Units of Measurement Common Library for Java
+ *  Copyright (c) 2005-2018, Jean-Marie Dautelle, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -13,7 +13,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
  *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363 nor the names of its contributors may be used to endorse or promote products
+ * 3. Neither the name of JSR-385, Units of Measurement nor the names of their contributors may be used to endorse or promote products
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -29,7 +29,7 @@
  */
 package tech.uom.lib.common.function;
 
-import javax.measure.format.ParserException;
+import javax.measure.format.MeasurementParseException;
 
 /**
  * Represents a function that parses an input value and produces an output.
@@ -40,7 +40,7 @@ import javax.measure.format.ParserException;
  * >functional interface</a> whose functional method is {@link #parse()}.
  * 
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 1.0, 2016-10-13
+ * @version 2.0, 2018-05-10
  * @param <I>
  *            the input
  * @param <O>
@@ -48,12 +48,12 @@ import javax.measure.format.ParserException;
  * @see ParserException 
  * @since 0.5
  */
-//@FunctionalInterface
+@FunctionalInterface
 public interface Parser<I, O> {
 	/**
 	 * Parses the specified {@code I} to produce a {@code O}.
 	 * @throws ParserException if any problem occurs while parsing the
      *         specified input (e.g. illegal syntax).
 	 */
-	O parse(I input) throws ParserException;
+	O parse(I input) throws MeasurementParseException;
 }
