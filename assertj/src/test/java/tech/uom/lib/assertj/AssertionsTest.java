@@ -1,4 +1,4 @@
-package tec.uom.lib.assertj;
+package tech.uom.lib.assertj;
 
 import static org.junit.Assert.*;
 import static tech.uom.lib.assertj.Assertions.*;

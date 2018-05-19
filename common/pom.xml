@@ -67,7 +67,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
-						<Export-Package>tec.uom.lib.*</Export-Package>
+						<Export-Package>tech.uom.lib.*</Export-Package>
 					</instructions>
 				</configuration>
 			</plugin>

@@ -11,7 +11,8 @@ Units of Measurement Libraries - extending and complementing JSR 385
 Currently the following libraries are defined
 
 * [**Common**](common) a common library reusable across Java ME or SE complementing the JSR 363 API.
-* [**AssertJ**](assertj) Assertions adding JSR 363 support to test cases based on [AssertJ](http://joel-costigliola.github.io/assertj/)
+* [**AssertJ**](assertj) Assertions adding JSR 385 support to test cases based on [AssertJ](http://joel-costigliola.github.io/assertj/)
+* [**Jackson**](jackson) Assertions adding JSR 385 support for the [Jackson](https://github.com/FasterXML/jackson) JSON project
 
 Planning
 ------------
