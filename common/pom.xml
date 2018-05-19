@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>tec.uom.lib</groupId>
 		<artifactId>uom-lib</artifactId>
-		<version>1.0.3-SNAPSHOT</version>
+		<version>1.0.3</version>
 	</parent>
 	<artifactId>uom-lib-common</artifactId>
 	<name>Units of Measurement Common Library</name>
@@ -21,7 +21,6 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
