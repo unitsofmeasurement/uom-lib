@@ -20,7 +20,6 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -71,21 +70,6 @@
 					</instructions>
 				</configuration>
 			</plugin>
-
 		</plugins>
 	</build>
-	<profiles>
-		<profile>
-			<id>jdk6</id>
-			<properties>
-				<jdkVersion>1.6</jdkVersion>
-			</properties>
-		</profile>
-		<profile>
-			<id>jdk7</id>
-			<properties>
-				<jdkVersion>1.7</jdkVersion>
-			</properties>
-		</profile>
-	</profiles>
 </project>

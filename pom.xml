@@ -41,7 +41,7 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>1.0.3</ri.version><!-- NOT for common -->
+		<ri.version>1.0</ri.version><!-- NOT for common -->
 		<se.version>1.0.9</se.version><!-- NOT for common -->
 		<lib.version>${project.version}</lib.version>
 	</properties>
@@ -50,7 +50,7 @@
 		<dependencies>
 			<dependency>
 				<groupId>tec.units</groupId>
-				<artifactId>unit-ri</artifactId>
+				<artifactId>indriya</artifactId>
 				<version>${ri.version}</version>
 			</dependency>
 		</dependencies>
