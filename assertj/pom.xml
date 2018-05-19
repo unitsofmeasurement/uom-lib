@@ -30,7 +30,56 @@
 		</dependency>
 	</dependencies>
 	<name>Units of Measurement AssertJ Library</name>
+	<build>
+		<plugins>
+			<!-- ======================================================= -->
+			<!-- Source Attachment -->
+			<!-- ======================================================= -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+			</plugin>
 
+			<!-- ======================================================= -->
+			<!-- JavaDoc Attachment -->
+			<!-- ======================================================= -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<detectLinks>true</detectLinks>
+					<keywords>true</keywords>
+					<linksource>true</linksource>
+					<failOnError>false</failOnError>
+					<source>${maven.compile.sourceLevel}</source>
+					<verbose>true</verbose>
+				</configuration>
+			</plugin>
+
+			<!-- ======================================================= -->
+			<!-- Packaging (OSGi bundle) -->
+			<!-- ======================================================= -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Export-Package>tec.uom.lib.*</Export-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
 	<profiles>
 		<profile>
 			<id>java8</id>
