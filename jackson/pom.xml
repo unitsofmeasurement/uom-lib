@@ -48,7 +48,7 @@
 		</dependency>
 		<dependency>
 			<groupId>systems.uom</groupId>
-			<artifactId>systems-ucum-java8</artifactId>
+			<artifactId>systems-ucum</artifactId>
 			<version>${ucum.version}</version>
 		</dependency>
 
