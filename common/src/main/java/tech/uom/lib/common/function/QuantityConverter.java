@@ -46,7 +46,7 @@ import javax.measure.Unit;
  * @see <a href="http://en.wikipedia.org/wiki/Data_conversion">Wikipedia: Data Conversion</a>
  * @since 1.0.3
  */
-//equivalent to @FunctionalInterface
+@FunctionalInterface
 public interface QuantityConverter<Q extends Quantity<Q>> {
 
     /**
