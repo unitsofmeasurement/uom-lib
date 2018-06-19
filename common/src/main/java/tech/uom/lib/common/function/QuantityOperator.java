@@ -66,6 +66,7 @@ import javax.measure.Quantity;
  * 
  * @version 0.3, October 15, 2016
  * @since 0.9
+ * @deprecated Use java.util.function.UnaryOperator<Q extends Quantity<Q>> instead
  */
 public interface QuantityOperator<Q extends Quantity<Q>> {
 
