@@ -13,7 +13,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
  *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-385, Units of Measurement nor the names of their contributors may be used to endorse or promote products
+ * 3. Neither the name of JSR-363 nor the names of its contributors may be used to endorse or promote products
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -27,29 +27,41 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.lib.common.function;
+package tech.uom.lib.common.util;
+
+import java.util.Comparator;
 
 import javax.measure.Quantity;
-import javax.measure.Unit;
 
 /**
- * Provides a {@link Unit} to implementations
- *
- * <p>There is no requirement that a distinct result be returned each
- * time the supplier is invoked, unless implementing classes enforce it.
+ * Comparator to sort quantities by natural order, looking both the unit and the value.
  * 
- * <p>This is a <a href="http://download.java.net/jdk8/docs/api/java/util/function/package-summary.html">functional interface</a>
- * whose functional method is {@link #getUnit()}.
- * 
- * @author Werner Keil
- * @version 1.0, $Date: 2018-06-19 $
- * @since 0.5
+ * @author <a href="mailto:werner@uom.technology">Werner Keil</a>
+ * @author <a href="mailto:otaviopolianasantana@gmail.com">Otavio Santana</a>
+ * @version 1.0.1
+ * @return <b>Given:</b>
+ *         <p>
+ *         Quantity<Time> day = timeFactory.create(1, Units.DAY);
+ *         </p>
+ *         <p>
+ *         Quantity<Time> hours = timeFactory.create(18, Units.HOUR);
+ *         </p>
+ *         <p>
+ *         Quantity<Time> minutes = timeFactory.create(15, Units.HOUR);
+ *         </p>
+ *         <p>
+ *         Quantity<Time> seconds = timeFactory.create(100, Units.HOUR);
+ *         </p>
+ *         will return: seconds, minutes, hours, day
+ * @since 2.0
  */
-@FunctionalInterface
-public interface UnitSupplier<Q extends Quantity<Q>> {
-	
-    /**
-     * @return a unit
-     */
-    Unit<Q> getUnit();
+public class NaturalQuantityComparator<T extends Quantity<T>> implements Comparator<Quantity<T>> {
+
+  @Override
+  public int compare(Quantity<T> q1, Quantity<T> q2) {
+    if (q1.getUnit().equals(q2.getUnit())) {
+      return Double.compare(q1.getValue().doubleValue(), q2.getValue().doubleValue());
+    }
+    return Double.compare(q1.getValue().doubleValue(), q2.to(q1.getUnit()).getValue().doubleValue());
+  }
 }

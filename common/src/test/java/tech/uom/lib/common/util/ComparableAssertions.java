@@ -27,33 +27,13 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tec.uom.lib.common.util;
+package tech.uom.lib.common.util;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-import org.junit.Test;
-
-import tech.uom.lib.common.util.NumberComparator;
-
-public class NumberComparatorTest {
-
-	@Test
-	public void testCompareEqual() {
-		assertEquals(0, NumberComparator.getInstance().compare(Double.valueOf(1), Double.valueOf(1)));
-	}
-
-	@Test
-	public void testCompareLeftBigger() {
-		assertEquals(1, NumberComparator.getInstance().compare(Double.valueOf(1), Double.valueOf(0)));
-	}
-	
-	@Test
-	public void testCompareRightBigger() {
-		assertEquals(-1, NumberComparator.getInstance().compare(Double.valueOf(0), Double.valueOf(1)));
-	}
-
-	@Test
-	public void testGetInstance() {
-		assertNotNull(NumberComparator.getInstance());
+class ComparableAssertions {
+	public static void assertComparable(Object a, Object b) {
+	    String msg = "Objects were not comparable: <" + a + ">, <" + b + ">";
+	    assertEquals(msg, 0, ((Comparable)a).compareTo(b));
 	}
 }
