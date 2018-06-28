@@ -42,6 +42,7 @@ package tech.uom.lib.common.function;
  * @author Werner KEIL
  * @version 2.1 $Date: 2018/05/10 $
  * @since 1.0.2
+ * @deprecated Seems unused
  */
 @FunctionalInterface
 public interface Coded<T> {

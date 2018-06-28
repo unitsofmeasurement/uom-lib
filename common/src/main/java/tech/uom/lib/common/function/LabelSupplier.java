@@ -41,6 +41,7 @@ package tech.uom.lib.common.function;
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 0.2
  * @since 0.9
+ * @deprecated Seems unused
  */
 //equivalent to @FunctionalInterface
 public interface LabelSupplier {
