@@ -23,7 +23,7 @@
 		<api.version>1.0</api.version>
 		<impl.version>1.0</impl.version>
 		<lib.version>1.0.2</lib.version> <!-- currently unused -->
-		<ucum.version>0.9-SNAPSHOT</ucum.version>
+		<ucum.version>0.9</ucum.version>
 		<jackson.version>2.9.5</jackson.version>
 	</properties>
 	<dependencies>
