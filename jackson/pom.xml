@@ -8,9 +8,34 @@
 		<version>1.1</version>
 	</parent>
 	<artifactId>uom-lib-jackson</artifactId>
-	<version>1.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<name>Units of Measurement Jackson Library</name>
 	<description>Contains custom serializers and deserializers for JSR 363</description>
+	<organization>
+		<name>Units of Measurement project</name>
+		<url>http://unitsofmeasurement.github.io</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>BSD</name>
+			<url>LICENSE</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<id>keilw</id>
+			<name>Werner Keil</name>
+			<email>werner@catmedia.us</email>
+			<organization>Creative Arts &amp; Technologies</organization>
+			<organizationUrl>http://www.catmedia.us</organizationUrl>
+			<roles>
+				<role>Architect</role>
+				<role>Java Developer</role>
+				<role>Spec Lead</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+	</developers>
 
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
@@ -34,7 +59,6 @@
 		<dependency>
 			<groupId>javax.measure</groupId>
 			<artifactId>unit-api</artifactId>
-			<version>${api.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>tec.units</groupId>
