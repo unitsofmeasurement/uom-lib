@@ -8,7 +8,33 @@
 		<version>1.1</version>
 	</parent>
 	<artifactId>uom-lib-assertj</artifactId>
-	<version>1.1-SNAPSHOT</version>
+	<name>Units of Measurement AssertJ Library</name>
+		<organization>
+		<name>Units of Measurement project</name>
+		<url>http://unitsofmeasurement.github.io</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>BSD</name>
+			<url>LICENSE</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<id>keilw</id>
+			<name>Werner Keil</name>
+			<email>werner@catmedia.us</email>
+			<organization>Creative Arts &amp; Technologies</organization>
+			<organizationUrl>http://www.catmedia.us</organizationUrl>
+			<roles>
+				<role>Architect</role>
+				<role>Java Developer</role>
+				<role>Spec Lead</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+	</developers>
+		
 	<!-- ======================================================= -->
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
@@ -37,7 +63,7 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<name>Units of Measurement AssertJ Library</name>
+
 	<build>
 		<plugins>
 			<!-- ======================================================= -->
