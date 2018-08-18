@@ -146,4 +146,5 @@
 			</build>
 		</profile>
 	</profiles>
+	<version>1.2-SNAPSHOT</version>
 </project>
