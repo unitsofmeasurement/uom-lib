@@ -40,10 +40,8 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
-import tech.uom.lib.jackson.UnitJacksonModule;
 import systems.uom.ucum.UCUM;
 import tec.units.indriya.unit.Units;
 
@@ -51,6 +49,7 @@ import javax.measure.Unit;
 
 import static tec.units.indriya.AbstractUnit.ONE;
 import static tec.units.indriya.unit.MetricPrefix.KILO;
+import static tec.units.indriya.unit.MetricPrefix.MEGA;
 import static tec.units.indriya.unit.MetricPrefix.MILLI;
 import static org.junit.Assert.*;
 
@@ -130,10 +129,16 @@ public class TestUnitJacksonModule {
 	}
 
 	@Test
-	@Ignore("solve km formatting") // TODO solve km parsing
 	public void testParseLengthKm() throws Exception {
 		final Unit<?> parsedUnit = parse("\"km\"", Unit.class);
 		assertEquals("The Unit<Length> in the parsed JSON doesn't match", KILO(Units.METRE), parsedUnit);
+	}
+
+	@Test
+	public void testRoundTripSerialization() throws Exception {
+		String serialized = serialize(MEGA(UCUM.METER));
+		Unit<?> parsedUnit = parse(serialized, Unit.class);
+		assertEquals("The Unit<Length> in the parsed JSON doesn't match", MEGA(UCUM.METER), parsedUnit);
 	}
 
 	protected String serialize(Object objectToSerialize) throws IOException {

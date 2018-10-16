@@ -108,7 +108,7 @@ public class UnitJacksonModule extends SimpleModule {
             JsonToken currentToken = jsonParser.getCurrentToken();
 
             if (currentToken == JsonToken.VALUE_STRING) {
-                return UCUMFormat.getInstance(Variant.CASE_INSENSITIVE).parse(jsonParser.getText(), new ParsePosition(0));
+                return UCUMFormat.getInstance(Variant.CASE_SENSITIVE).parse(jsonParser.getText(), new ParsePosition(0));
             }
             throw deserializationContext.wrongTokenException(jsonParser, String.class,
                     JsonToken.VALUE_STRING,
