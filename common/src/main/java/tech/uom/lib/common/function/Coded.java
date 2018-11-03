@@ -40,9 +40,8 @@ package tech.uom.lib.common.function;
  * whose functional method is {@link #getCode()}.
  * 
  * @author Werner KEIL
- * @version 2.1 $Date: 2018/05/10 $
+ * @version 2.2 $Date: 2018/11/03 $
  * @since 1.0.2
- * @deprecated Seems unused
  */
 @FunctionalInterface
 public interface Coded<T> {
