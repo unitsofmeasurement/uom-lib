@@ -46,10 +46,10 @@
 		<maven.compile.targetLevel>1.6</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<api.version>1.0</api.version>
-		<impl.version>1.0</impl.version>
+		<impl.version>1.2</impl.version>
 		<lib.version>1.0.2</lib.version> <!-- currently unused -->
 		<ucum.version>0.9</ucum.version>
-		<jackson.version>2.9.5</jackson.version>
+		<jackson.version>2.9.8</jackson.version>
 	</properties>
 	<dependencies>
 		<!-- =========================================================================================================== -->
@@ -61,7 +61,7 @@
 			<artifactId>unit-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>tec.units</groupId>
+			<groupId>tech.units</groupId>
 			<artifactId>indriya</artifactId>
 			<version>${impl.version}</version>
 		</dependency>
