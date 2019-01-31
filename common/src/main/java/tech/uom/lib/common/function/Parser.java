@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Common Library for Java
- *  Copyright (c) 2005-2018, Jean-Marie Dautelle, Werner Keil and others.
+ *  Copyright (c) 2005-2019, Jean-Marie Dautelle, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -40,12 +40,12 @@ import javax.measure.format.MeasurementParseException;
  * >functional interface</a> whose functional method is {@link #parse()}.
  * 
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 2.0, 2018-05-10
+ * @version 2.1, 2019-01-31
  * @param <I>
  *            the input
  * @param <O>
  *            the output
- * @see ParserException 
+ * @see MeasurementParseException 
  * @since 0.5
  */
 @FunctionalInterface
