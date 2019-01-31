@@ -36,7 +36,7 @@ import javax.measure.format.MeasurementParseException;
  * 
  * <p>
  * This is a <a href=
- * "http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html#package.description"
+ * "https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/FunctionalInterface.html"
  * >functional interface</a> whose functional method is {@link #parse()}.
  * 
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>

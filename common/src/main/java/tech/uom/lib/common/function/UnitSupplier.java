@@ -1,6 +1,6 @@
 /*
  * Units of Measurement Common Library
- * Copyright (c) 2005-2018, Jean-Marie Dautelle, Werner Keil and others.
+ * Copyright (c) 2005-2019, Jean-Marie Dautelle, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -38,11 +38,11 @@ import javax.measure.Unit;
  * <p>There is no requirement that a distinct result be returned each
  * time the supplier is invoked, unless implementing classes enforce it.
  * 
- * <p>This is a <a href="http://download.java.net/jdk8/docs/api/java/util/function/package-summary.html">functional interface</a>
+ * <p>This is a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/FunctionalInterface.html">functional interface</a>
  * whose functional method is {@link #getUnit()}.
  * 
  * @author Werner Keil
- * @version 1.0, $Date: 2018-06-19 $
+ * @version 1.1, $Date: 2019-01-31 $
  * @since 0.5
  */
 @FunctionalInterface

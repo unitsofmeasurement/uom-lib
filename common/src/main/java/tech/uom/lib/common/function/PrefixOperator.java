@@ -1,6 +1,6 @@
-/**
- *  Unit-API - Units of Measurement API for Java
- *  Copyright (c) 2005-2015, Jean-Marie Dautelle, Werner Keil, V2COM.
+/*
+ *  Units of Measurement Common Library for Java
+ *  Copyright (c) 2005-2019, Jean-Marie Dautelle, Werner Keil and others.
  *
  * All rights reserved.
  *
@@ -13,7 +13,7 @@
  * 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions
  *    and the following disclaimer in the documentation and/or other materials provided with the distribution.
  *
- * 3. Neither the name of JSR-363, Unit-API nor the names of its contributors may be used to endorse or promote products
+ * 3. Neither the name of JSR-385, Units of Measurement nor the names of their contributors may be used to endorse or promote products
  *    derived from this software without specific prior written permission.
  *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
@@ -29,25 +29,34 @@
  */
 package tech.uom.lib.common.function;
 
+import javax.measure.Prefix;
+import javax.measure.Quantity;
+import javax.measure.Unit;
+
 /**
- * Provides String label to implementations
- *
- * <p>There is no requirement that a distinct result be returned each
- * time the supplier is invoked, unless implementing classes enforce it.
+ * Represents a function that parses an input value and produces an output.
  * 
- * <p>This is a <a href="http://download.java.net/jdk8/docs/api/java/util/function/package-summary.html">functional interface</a>
- * whose functional method is {@link #getLabel()}.
+ * <p>
+ * This is a <a href=
+ * "https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/FunctionalInterface.html"
+ * >functional interface</a> whose functional method is {@link #prefix()}.
  * 
- * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
- * @version 0.2
- * @since 0.9
- * @deprecated Seems unused
+ * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
+ * @version 0.9, 2019-01-31
+ * @param <Q>
+ *            the quantity type
+ * @see Prefix 
+ * @see Unit 
+ * @since 2.0
  */
-//equivalent to @FunctionalInterface
-public interface LabelSupplier {
-	
+@FunctionalInterface
+public interface PrefixOperator<Q extends Quantity<Q>> {
     /**
-     * @return a label
+     * Returns a new unit equal to this unit prefixed by the specified {@code prefix}.
+     *
+     * @param prefix
+     *          the prefix to apply on this unit.
+     * @return the unit with the given prefix applied.
      */
-    String getLabel();
+    Unit<Q> prefix(Prefix prefix);
 }
