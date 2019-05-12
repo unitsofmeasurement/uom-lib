@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>tech.uom.lib</groupId>
 		<artifactId>uom-lib</artifactId>
-		<version>1.1</version>
+		<version>2.0-PRD</version>
 	</parent>
 	<artifactId>uom-lib-assertj</artifactId>
 	<name>Units of Measurement AssertJ Library</name>
@@ -146,5 +146,4 @@
 			</build>
 		</profile>
 	</profiles>
-	<version>1.2-SNAPSHOT</version>
 </project>
