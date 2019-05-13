@@ -156,4 +156,5 @@
 			<url>http://oss.jfrog.org/artifactory/libs-snapshot</url>
 		</repository>
 	</repositories>
+	<version>2.0-SNAPSHOT</version>
 </project>
