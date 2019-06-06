@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>tech.uom</groupId>
 		<artifactId>uom-parent</artifactId>
-		<version>2.0-PRD</version>
+		<version>1.2</version>
 	</parent>
 	<modules>
 		<module>common</module>
@@ -41,14 +41,14 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>1.0</ri.version><!-- NOT for common --><!-- NOT for common -->
+		<ri.version>1.2</ri.version><!-- NOT for common --><!-- NOT for common -->
 		<lib.version>${project.version}</lib.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>tec.units</groupId>
+				<groupId>tech.units</groupId>
 				<artifactId>indriya</artifactId>
 				<version>${ri.version}</version>
 			</dependency>
@@ -156,5 +156,4 @@
 			<url>http://oss.jfrog.org/artifactory/libs-snapshot</url>
 		</repository>
 	</repositories>
-	<version>2.0-SNAPSHOT</version>
 </project>

@@ -29,7 +29,7 @@
  */
 package tech.uom.lib.common.function;
 
-import javax.measure.format.MeasurementParseException;
+import javax.measure.format.ParserException;
 
 /**
  * Represents a function that parses an input value and produces an output.
@@ -55,5 +55,5 @@ public interface Parser<I, O> {
 	 * @throws ParserException if any problem occurs while parsing the
      *         specified input (e.g. illegal syntax).
 	 */
-	O parse(I input) throws MeasurementParseException;
+	O parse(I input) throws ParserException;
 }
