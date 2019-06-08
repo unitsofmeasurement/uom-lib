@@ -39,7 +39,7 @@
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
 	<properties>
-		<impl.version>1.0</impl.version>
+		<impl.version>2.0-PRD</impl.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -57,7 +57,7 @@
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
-			<groupId>tec.units</groupId>
+			<groupId>tech.units</groupId>
 			<artifactId>indriya</artifactId>
 			<version>${impl.version}</version>
 			<scope>test</scope>

@@ -43,14 +43,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 import systems.uom.ucum.UCUM;
-import tec.units.indriya.unit.Units;
+import tech.units.indriya.unit.Units;
 
 import javax.measure.Unit;
 
-import static tec.units.indriya.AbstractUnit.ONE;
-import static tec.units.indriya.unit.MetricPrefix.KILO;
-import static tec.units.indriya.unit.MetricPrefix.MEGA;
-import static tec.units.indriya.unit.MetricPrefix.MILLI;
+import static tech.units.indriya.AbstractUnit.ONE;
+import static javax.measure.MetricPrefix.KILO;
+import static javax.measure.MetricPrefix.MEGA;
+import static javax.measure.MetricPrefix.MILLI;
 import static org.junit.Assert.*;
 
 /**

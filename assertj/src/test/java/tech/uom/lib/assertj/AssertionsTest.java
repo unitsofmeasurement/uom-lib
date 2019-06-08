@@ -36,9 +36,9 @@ import javax.measure.quantity.Length;
 
 import org.junit.Test;
 
-import tec.units.indriya.quantity.QuantityDimension;
-import tec.units.indriya.unit.BaseUnit;
-import tec.units.indriya.unit.Units;
+import tech.units.indriya.quantity.QuantityDimension;
+import tech.units.indriya.unit.BaseUnit;
+import tech.units.indriya.unit.Units;
 
 public class AssertionsTest {
 

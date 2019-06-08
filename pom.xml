@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>uom-lib</artifactId>
@@ -6,7 +7,7 @@
 	<parent>
 		<groupId>tech.uom</groupId>
 		<artifactId>uom-parent</artifactId>
-		<version>2.0-PRD</version>
+		<version>2.0-SNAPSHOT</version>
 	</parent>
 	<modules>
 		<module>common</module>
@@ -41,14 +42,14 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>1.0</ri.version><!-- NOT for common --><!-- NOT for common -->
+		<ri.version>2.0-PRD</ri.version><!-- NOT for common --><!-- NOT for common -->
 		<lib.version>${project.version}</lib.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>tec.units</groupId>
+				<groupId>tech.units</groupId>
 				<artifactId>indriya</artifactId>
 				<version>${ri.version}</version>
 			</dependency>
@@ -135,10 +136,10 @@
 	<!-- Helps to resolve Parent POM -->
 	<repositories>
 		<repository>
-            		<id>jcenter</id>
-            		<name>JCenter</name>
-            		<url>http://jcenter.bintray.com</url>
-        	</repository>
+			<id>jcenter</id>
+			<name>JCenter</name>
+			<url>http://jcenter.bintray.com</url>
+		</repository>
 		<repository>
 			<snapshots>
 				<enabled>false</enabled>
@@ -156,5 +157,4 @@
 			<url>http://oss.jfrog.org/artifactory/libs-snapshot</url>
 		</repository>
 	</repositories>
-	<version>2.0-SNAPSHOT</version>
 </project>
