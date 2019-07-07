@@ -36,19 +36,19 @@ import javax.measure.Unit;
 import javax.measure.quantity.Length;
 
 import org.junit.Test;
-import tech.units.indriya.quantity.QuantityDimension;
+import tech.units.indriya.unit.UnitDimension;
 import tech.units.indriya.unit.BaseUnit;
 
 public class PredicateTest {
 	final Unit<Length> m;
 
 	public PredicateTest() {
-		m = new BaseUnit<Length>("m", QuantityDimension.LENGTH);
+		m = new BaseUnit<Length>("m", UnitDimension.LENGTH);
 	}
 	
 	@Test
 	public void testUnitPredicate() {
-		Predicate<Unit> unitPredicate = m -> m.getDimension() == QuantityDimension.LENGTH;		
+		Predicate<Unit> unitPredicate = m -> m.getDimension() == UnitDimension.LENGTH;		
 		assertThat(unitPredicate).accepts(m);
 	}
 }
