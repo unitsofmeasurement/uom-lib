@@ -102,7 +102,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
-						<Export-Package>tech.uom.lib.*</Export-Package>
+						<Export-Package>tech.uom.lib.common.*</Export-Package>
 					</instructions>
 				</configuration>
 			</plugin>
