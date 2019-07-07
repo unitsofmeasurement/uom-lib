@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>tech.uom.lib</groupId>
 		<artifactId>uom-lib</artifactId>
-		<version>2.0-SNAPSHOT</version>
+		<version>2.0</version>
 	</parent>
 	<artifactId>uom-lib-jackson</artifactId>
 	<name>Units of Measurement Jackson Library</name>
@@ -44,9 +44,9 @@
 		<jdkVersion>1.8</jdkVersion>
 		<maven.compile.targetLevel>1.6</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<api.version>2.0-PRD</api.version>
-		<impl.version>2.0-PRD</impl.version>
-		<lib.version>2.0-SNAPSHOT</lib.version> <!-- currently unused -->
+		<api.version>2.0</api.version>
+		<impl.version>2.0-SNAPSHOT</impl.version>
+		<lib.version>2.0</lib.version> <!-- currently unused -->
 		<ucum.version>2.0-SNAPSHOT</ucum.version>
 		<jackson.version>2.9.9</jackson.version>
 	</properties>
