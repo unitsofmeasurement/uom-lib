@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>tech.uom</groupId>
 		<artifactId>uom-parent</artifactId>
-		<version>2.0</version>
+		<version>2.0.1</version>
 	</parent>
 	<modules>
 		<module>common</module>
@@ -157,4 +157,5 @@
 			<url>http://oss.jfrog.org/artifactory/libs-snapshot</url>
 		</repository>
 	</repositories>
+	<version>2.0.1-SNAPSHOT</version>
 </project>

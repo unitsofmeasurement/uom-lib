@@ -12,11 +12,10 @@
 	<description>Unit Standard Library.</description>
 	<packaging>bundle</packaging>
 	<parent>
-		<groupId>tech.uom</groupId>
-		<artifactId>uom-parent</artifactId>
-		<version>2.0</version>
+		<groupId>tech.uom.lib</groupId>
+		<artifactId>uom-lib</artifactId>
+		<version>2.0.1-SNAPSHOT</version>
 	</parent>
-	<version>2.0.1-SNAPSHOT</version>
 	
 	<scm>
 		<url>https://github.com/unitsofmeasurement/uom-lib.git</url>

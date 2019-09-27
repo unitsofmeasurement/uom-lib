@@ -48,7 +48,7 @@
 		<impl.version>2.0-SNAPSHOT</impl.version>
 		<lib.version>2.0</lib.version> <!-- currently unused -->
 		<ucum.version>2.0-SNAPSHOT</ucum.version>
-		<jackson.version>2.9.9</jackson.version>
+		<jackson.version>2.9.10</jackson.version>
 	</properties>
 	<dependencies>
 		<!-- =========================================================================================================== -->
