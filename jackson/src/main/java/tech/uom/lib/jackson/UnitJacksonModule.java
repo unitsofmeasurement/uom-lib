@@ -31,7 +31,6 @@ package tech.uom.lib.jackson;
 
 import java.io.IOException;
 import java.text.ParsePosition;
-
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
@@ -41,11 +40,10 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.deser.std.StdScalarDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.ser.std.StdScalarSerializer;
-
+import javax.measure.Dimension;
+import javax.measure.Unit;
 import systems.uom.ucum.format.UCUMFormat;
 import systems.uom.ucum.format.UCUMFormat.Variant;
-
-import javax.measure.Unit;
 
 /**
  * Configures Jackson to (de)serialize JSR 363 Unit objects using their UCUM representation, since the actual objects don't
@@ -62,7 +60,9 @@ public class UnitJacksonModule extends SimpleModule {
                 UnitJacksonModule.class.getPackage().getName(), "uom-lib-jackson"));
 
         addSerializer(Unit.class, new UnitJsonSerializer());
+        addSerializer(Dimension.class, new DimensionJsonSerializer());
         addDeserializer(Unit.class, new UnitJsonDeserializer());
+        addDeserializer(Dimension.class, new DimensionJsonDeserializer());
     }
 
     @SuppressWarnings("rawtypes")
