@@ -32,46 +32,46 @@ package tech.uom.lib.assertj;
 /**
  * Entry point for BDD assertions of different data types.
  */
-@javax.annotation.Generated(value="assertj-assertions-generator")
+@javax.annotation.Generated(value = "assertj-assertions-generator")
 public class BddAssertions {
 
-  /**
-   * Creates a new instance of <code>{@link tech.uom.lib.assertj.assertions.DimensionAssert}</code>.
-   *
-   * @param actual the actual value.
-   * @return the created assertion object.
-   */
-  @org.assertj.core.util.CheckReturnValue
-  public static tech.uom.lib.assertj.assertions.DimensionAssert then(javax.measure.Dimension actual) {
-    return new tech.uom.lib.assertj.assertions.DimensionAssert(actual);
-  }
+    /**
+     * Creates a new instance of <code>{@link tech.uom.lib.assertj.assertions.DimensionAssert}</code>.
+     *
+     * @param actual the actual value.
+     * @return the created assertion object.
+     */
+    @org.assertj.core.util.CheckReturnValue
+    public static tech.uom.lib.assertj.assertions.DimensionAssert then(javax.measure.Dimension actual) {
+        return new tech.uom.lib.assertj.assertions.DimensionAssert(actual);
+    }
 
-  /**
-   * Creates a new instance of <code>{@link tech.uom.lib.assertj.assertions.QuantityAssert}</code>.
-   *
-   * @param actual the actual value.
-   * @return the created assertion object.
-   */
-  @org.assertj.core.util.CheckReturnValue
-  public static tech.uom.lib.assertj.assertions.QuantityAssert then(@SuppressWarnings("rawtypes") javax.measure.Quantity actual) {
-    return new tech.uom.lib.assertj.assertions.QuantityAssert(actual);
-  }
+    /**
+     * Creates a new instance of <code>{@link tech.uom.lib.assertj.assertions.QuantityAssert}</code>.
+     *
+     * @param actual the actual value.
+     * @return the created assertion object.
+     */
+    @org.assertj.core.util.CheckReturnValue
+    public static tech.uom.lib.assertj.assertions.QuantityAssert then(@SuppressWarnings("rawtypes") javax.measure.Quantity actual) {
+        return new tech.uom.lib.assertj.assertions.QuantityAssert(actual);
+    }
 
-  /**
-   * Creates a new instance of <code>{@link tech.uom.lib.assertj.assertions.UnitAssert}</code>.
-   *
-   * @param actual the actual value.
-   * @return the created assertion object.
-   */
-  @org.assertj.core.util.CheckReturnValue
-  public static tech.uom.lib.assertj.assertions.UnitAssert then(@SuppressWarnings("rawtypes") javax.measure.Unit actual) {
-    return new tech.uom.lib.assertj.assertions.UnitAssert(actual);
-  }
+    /**
+     * Creates a new instance of <code>{@link tech.uom.lib.assertj.assertions.UnitAssert}</code>.
+     *
+     * @param actual the actual value.
+     * @return the created assertion object.
+     */
+    @org.assertj.core.util.CheckReturnValue
+    public static tech.uom.lib.assertj.assertions.UnitAssert then(@SuppressWarnings("rawtypes") javax.measure.Unit actual) {
+        return new tech.uom.lib.assertj.assertions.UnitAssert(actual);
+    }
 
-  /**
-   * Creates a new <code>{@link BddAssertions}</code>.
-   */
-  protected BddAssertions() {
-    // empty
-  }
+    /**
+     * Creates a new <code>{@link BddAssertions}</code>.
+     */
+    protected BddAssertions() {
+        // empty
+    }
 }

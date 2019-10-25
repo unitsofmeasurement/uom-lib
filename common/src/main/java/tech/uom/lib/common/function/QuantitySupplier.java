@@ -36,22 +36,22 @@ import javax.measure.Quantity;
  *
  * <p>There is no requirement that a new or distinct result be returned each
  * time the supplier is invoked.
- * 
+ *
  * <p>This is a <a href="http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html#package.description">functional interface</a>
  * whose functional method is {@link #getQuantity()}.
- * 
+ *
  * @author Werner Keil
  * @version 0.3, $Date: 2018-06-29 $
  * @param <Q> the type of quantities supplied by this supplier
- * @see {@link Quantity}
+ * @see Quantity
  * @since 0.5
  */
 @FunctionalInterface
 public interface QuantitySupplier<Q extends Quantity<Q>> {
-	/**
-	 * Gets a quantity.
-	 *
-	 * @return a quantity
-	 */
-	Quantity<Q> getQuantity();
+    /**
+     * Gets a quantity.
+     *
+     * @return a quantity
+     */
+    Quantity<Q> getQuantity();
 }

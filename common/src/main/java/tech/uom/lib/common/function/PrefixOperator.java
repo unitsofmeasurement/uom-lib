@@ -35,18 +35,18 @@ import javax.measure.Unit;
 
 /**
  * Represents a function that parses an input value and produces an output.
- * 
+ *
  * <p>
  * This is a <a href=
  * "https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/FunctionalInterface.html"
  * >functional interface</a> whose functional method is {@link #prefix()}.
- * 
+ *
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 0.9, 2019-01-31
  * @param <Q>
  *            the quantity type
- * @see Prefix 
- * @see Unit 
+ * @see Prefix
+ * @see Unit
  * @since 2.0
  */
 @FunctionalInterface

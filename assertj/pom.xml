@@ -1,153 +1,153 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>tech.uom.lib</groupId>
-		<artifactId>uom-lib</artifactId>
-		<version>2.0.1-SNAPSHOT</version>
-	</parent>
-	<artifactId>uom-lib-assertj</artifactId>
-	<name>Units of Measurement AssertJ Library</name>
-	<organization>
-		<name>Units of Measurement project</name>
-		<url>http://unitsofmeasurement.github.io</url>
-	</organization>
-	<licenses>
-		<license>
-			<name>BSD</name>
-			<url>LICENSE</url>
-		</license>
-	</licenses>
-	<developers>
-		<developer>
-			<id>keilw</id>
-			<name>Werner Keil</name>
-			<email>werner@catmedia.us</email>
-			<organization>Creative Arts &amp; Technologies</organization>
-			<organizationUrl>http://www.catmedia.us</organizationUrl>
-			<roles>
-				<role>Architect</role>
-				<role>Java Developer</role>
-				<role>Spec Lead</role>
-			</roles>
-			<timezone>+1</timezone>
-		</developer>
-	</developers>
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>tech.uom.lib</groupId>
+        <artifactId>uom-lib</artifactId>
+        <version>2.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>uom-lib-assertj</artifactId>
+    <name>Units of Measurement AssertJ Library</name>
+    <organization>
+        <name>Units of Measurement project</name>
+        <url>http://unitsofmeasurement.github.io</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>BSD</name>
+            <url>LICENSE</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>keilw</id>
+            <name>Werner Keil</name>
+            <email>werner@catmedia.us</email>
+            <organization>Creative Arts &amp; Technologies</organization>
+            <organizationUrl>http://www.catmedia.us</organizationUrl>
+            <roles>
+                <role>Architect</role>
+                <role>Java Developer</role>
+                <role>Spec Lead</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.assertj</groupId>
-			<artifactId>assertj-core</artifactId>
-			<version>3.12.2</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.measure</groupId>
-			<artifactId>unit-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>tech.uom.lib</groupId>
-			<artifactId>uom-lib-common</artifactId>
-			<version>${lib.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>tech.units</groupId>
-			<artifactId>indriya</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>jakarta.annotation</groupId>
-			<artifactId>jakarta.annotation-api</artifactId>
-			<version>1.3.5</version>
-			<scope>compile</scope>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.12.2</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.measure</groupId>
+            <artifactId>unit-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>tech.uom.lib</groupId>
+            <artifactId>uom-lib-common</artifactId>
+            <version>${lib.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>tech.units</groupId>
+            <artifactId>indriya</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <version>1.3.5</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<plugins>
-			<!-- ======================================================= -->
-			<!-- Source Attachment -->
-			<!-- ======================================================= -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-			</plugin>
+    <build>
+        <plugins>
+            <!-- ======================================================= -->
+            <!-- Source Attachment -->
+            <!-- ======================================================= -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
 
-			<!-- ======================================================= -->
-			<!-- JavaDoc Attachment -->
-			<!-- ======================================================= -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>attach-javadocs</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<detectLinks>true</detectLinks>
-					<keywords>true</keywords>
-					<linksource>true</linksource>
-					<failOnError>false</failOnError>
-					<source>${maven.compile.sourceLevel}</source>
-					<verbose>true</verbose>
-				</configuration>
-			</plugin>
+            <!-- ======================================================= -->
+            <!-- JavaDoc Attachment -->
+            <!-- ======================================================= -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <detectLinks>true</detectLinks>
+                    <keywords>true</keywords>
+                    <linksource>true</linksource>
+                    <failOnError>false</failOnError>
+                    <source>${maven.compile.sourceLevel}</source>
+                    <verbose>true</verbose>
+                </configuration>
+            </plugin>
 
-			<!-- ======================================================= -->
-			<!-- Packaging (OSGi bundle) -->
-			<!-- ======================================================= -->
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<extensions>true</extensions>
-				<configuration>
-					<instructions>
-						<Export-Package>tech.uom.lib.*</Export-Package>
-					</instructions>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+            <!-- ======================================================= -->
+            <!-- Packaging (OSGi bundle) -->
+            <!-- ======================================================= -->
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Export-Package>tech.uom.lib.*</Export-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
-	<profiles>
-		<profile>
-			<id>gen</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.assertj</groupId>
-						<artifactId>assertj-assertions-generator-maven-plugin</artifactId>
-						<version>2.1.0</version>
-						<configuration>
-							<!-- <packages> <param>javax.measure</param> </packages> -->
-							<classes>
-								<param>javax.measure.Dimension</param>
-								<param>javax.measure.Quantity</param>
-								<param>javax.measure.Unit</param>
-							</classes>
+    <profiles>
+        <profile>
+            <id>gen</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.assertj</groupId>
+                        <artifactId>assertj-assertions-generator-maven-plugin</artifactId>
+                        <version>2.1.0</version>
+                        <configuration>
+                            <!-- <packages> <param>javax.measure</param> </packages> -->
+                            <classes>
+                                <param>javax.measure.Dimension</param>
+                                <param>javax.measure.Quantity</param>
+                                <param>javax.measure.Unit</param>
+                            </classes>
 
-							<!-- where to generate assertions entry point classes -->
-							<entryPointClassPackage>tech.uom.lib.assertj</entryPointClassPackage>
+                            <!-- where to generate assertions entry point classes -->
+                            <entryPointClassPackage>tech.uom.lib.assertj</entryPointClassPackage>
 
-							<!-- Set the package where assertion classes are generated, combine 
-								it with targetDir to get the path to assertions classes. Ex: com.nba.Player 
-								-> src/test/generated-assertions/my/assertions/PlayerAssert If not set, each 
-								assertion class is generated in the package of the class to assert. Ex: com.nba.Player 
-								-> src/test/generated-assertions/com/nba/PlayerAssert -->
-							<generateAssertionsInPackage>tech.uom.lib.assertj.assertions</generateAssertionsInPackage>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+                            <!-- Set the package where assertion classes are generated, combine
+                                it with targetDir to get the path to assertions classes. Ex: com.nba.Player
+                                -> src/test/generated-assertions/my/assertions/PlayerAssert If not set, each
+                                assertion class is generated in the package of the class to assert. Ex: com.nba.Player
+                                -> src/test/generated-assertions/com/nba/PlayerAssert -->
+                            <generateAssertionsInPackage>tech.uom.lib.assertj.assertions</generateAssertionsInPackage>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

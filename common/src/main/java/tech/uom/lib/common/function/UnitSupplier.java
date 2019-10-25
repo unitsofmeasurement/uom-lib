@@ -37,17 +37,18 @@ import javax.measure.Unit;
  *
  * <p>There is no requirement that a distinct result be returned each
  * time the supplier is invoked, unless implementing classes enforce it.
- * 
+ *
  * <p>This is a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/FunctionalInterface.html">functional interface</a>
  * whose functional method is {@link #getUnit()}.
- * 
+ *
  * @author Werner Keil
+ * @param <Q> the type of quantity
  * @version 1.1, $Date: 2019-01-31 $
  * @since 0.5
  */
 @FunctionalInterface
 public interface UnitSupplier<Q extends Quantity<Q>> {
-	
+
     /**
      * @return a unit
      */

@@ -40,10 +40,12 @@ package tech.uom.lib.common.function;
  * whose functional method is {@link #getFactor()}.
  *
  * @author Werner Keil
+ * @param <T> the type of factor
  * @version 0.3, $Date: 2018-05-10 $
  * @since 0.9
  */
 @FunctionalInterface
 public interface FactorSupplier<T> {
+
     T getFactor();
 }

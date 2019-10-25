@@ -34,10 +34,10 @@ package tech.uom.lib.common.function;
  *
  * <p>There is no requirement that a new or distinct result be returned each
  * time the supplier is invoked.
- * 
+ *
  * <p>This is a <a href="http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html#package.description">functional interface</a>
  * whose functional method is {@link #getMinimum()}.
- * 
+ *
  * @author Werner Keil
  * @version 0.7, $Date: 2018-05-10 $
  * @param <T> the type of values supplied by this supplier
@@ -45,11 +45,11 @@ package tech.uom.lib.common.function;
  */
 @FunctionalInterface
 public interface IntMinimumSupplier<T> {
-	
+
     /**
      * Gets a minimum value.
      *
      * @return a minimum value
      */
-	T getMinimum();
+    T getMinimum();
 }

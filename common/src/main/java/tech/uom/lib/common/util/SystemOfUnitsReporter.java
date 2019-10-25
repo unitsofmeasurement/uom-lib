@@ -36,31 +36,31 @@ public class SystemOfUnitsReporter {
     final SystemOfUnits sou;
 
     private SystemOfUnitsReporter(SystemOfUnits unitSystem) {
-	this.sou = unitSystem;
+        this.sou = unitSystem;
     }
 
     public static SystemOfUnitsReporter of(SystemOfUnits unitSystem) {
-	return new SystemOfUnitsReporter(unitSystem);
+        return new SystemOfUnitsReporter(unitSystem);
     }
 
     public void report(boolean showIndex) {
-	printSoU(sou, showIndex);
+        printSoU(sou, showIndex);
     }
 
     public void report() {
-	report(false);
+        report(false);
     }
 
     private static void printSoU(final SystemOfUnits sou, final boolean showIndex) {
-	int index = 0;
-	System.out.println("Reporting " + sou.getName());
-	for (Unit<?> u : sou.getUnits()) {
-	    index++;
-	    if (showIndex) {
-		System.out.println(index + "; " + u.getName() + "; " + u.getSymbol() + "; " + u);
-	    } else {
-		System.out.println(u.getName() + "; " + u.getSymbol() + "; " + u);
-	    }
-	}
+        int index = 0;
+        System.out.println("Reporting " + sou.getName());
+        for (Unit<?> u : sou.getUnits()) {
+            index++;
+            if (showIndex) {
+                System.out.println(index + "; " + u.getName() + "; " + u.getSymbol() + "; " + u);
+            } else {
+                System.out.println(u.getName() + "; " + u.getSymbol() + "; " + u);
+            }
+        }
     }
 }

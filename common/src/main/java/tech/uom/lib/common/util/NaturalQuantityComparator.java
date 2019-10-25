@@ -30,38 +30,38 @@
 package tech.uom.lib.common.util;
 
 import java.util.Comparator;
-
 import javax.measure.Quantity;
 
 /**
  * Comparator to sort quantities by natural order, looking both the unit and the value.
- * 
+ *
  * @author <a href="mailto:werner@uom.technology">Werner Keil</a>
  * @author <a href="mailto:otaviopolianasantana@gmail.com">Otavio Santana</a>
  * @version 1.0.1
+ * @param <T> the type of quantity
  * @return <b>Given:</b>
  *         <p>
- *         Quantity<Time> day = timeFactory.create(1, Units.DAY);
+ *         Quantity&lt;Time&gt; day = timeFactory.create(1, Units.DAY);
  *         </p>
  *         <p>
- *         Quantity<Time> hours = timeFactory.create(18, Units.HOUR);
+ *         Quantity&lt;Time&gt; hours = timeFactory.create(18, Units.HOUR);
  *         </p>
  *         <p>
- *         Quantity<Time> minutes = timeFactory.create(15, Units.HOUR);
+ *         Quantity&lt;Time&gt; minutes = timeFactory.create(15, Units.HOUR);
  *         </p>
  *         <p>
- *         Quantity<Time> seconds = timeFactory.create(100, Units.HOUR);
+ *         Quantity&lt;Time&gt; seconds = timeFactory.create(100, Units.HOUR);
  *         </p>
  *         will return: seconds, minutes, hours, day
  * @since 2.0
  */
 public class NaturalQuantityComparator<T extends Quantity<T>> implements Comparator<Quantity<T>> {
 
-  @Override
-  public int compare(Quantity<T> q1, Quantity<T> q2) {
-    if (q1.getUnit().equals(q2.getUnit())) {
-      return Double.compare(q1.getValue().doubleValue(), q2.getValue().doubleValue());
+    @Override
+    public int compare(Quantity<T> q1, Quantity<T> q2) {
+        if (q1.getUnit().equals(q2.getUnit())) {
+            return Double.compare(q1.getValue().doubleValue(), q2.getValue().doubleValue());
+        }
+        return Double.compare(q1.getValue().doubleValue(), q2.to(q1.getUnit()).getValue().doubleValue());
     }
-    return Double.compare(q1.getValue().doubleValue(), q2.to(q1.getUnit()).getValue().doubleValue());
-  }
 }

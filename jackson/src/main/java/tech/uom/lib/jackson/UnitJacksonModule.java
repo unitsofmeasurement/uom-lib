@@ -53,26 +53,26 @@ import javax.measure.Unit;
  */
 public class UnitJacksonModule extends SimpleModule {
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = 7601584599518016604L;
+     *
+     */
+    private static final long serialVersionUID = 7601584599518016604L;
 
-	public UnitJacksonModule() {
+    public UnitJacksonModule() {
         super("UnitJsonSerializationModule", new Version(1, 3, 3, null, 
-        		UnitJacksonModule.class.getPackage().getName(), "uom-lib-jackson"));
+                UnitJacksonModule.class.getPackage().getName(), "uom-lib-jackson"));
 
         addSerializer(Unit.class, new UnitJsonSerializer());
         addDeserializer(Unit.class, new UnitJsonDeserializer());
     }
 
-	@SuppressWarnings("rawtypes")
-	private class UnitJsonSerializer extends StdScalarSerializer<Unit> {
+    @SuppressWarnings("rawtypes")
+    private class UnitJsonSerializer extends StdScalarSerializer<Unit> {
         /**
-		 * 
-		 */
-		private static final long serialVersionUID = 2500234678114311932L;
+         *
+         */
+        private static final long serialVersionUID = 2500234678114311932L;
 
-		protected UnitJsonSerializer() {
+        protected UnitJsonSerializer() {
             super(Unit.class);
         }
 
@@ -93,13 +93,13 @@ public class UnitJacksonModule extends SimpleModule {
     }
 
     @SuppressWarnings("rawtypes")
-	private class UnitJsonDeserializer extends StdScalarDeserializer<Unit> {
+    private class UnitJsonDeserializer extends StdScalarDeserializer<Unit> {
         /**
-		 * 
-		 */
-		private static final long serialVersionUID = -6327531740958676293L;
+         *
+         */
+        private static final long serialVersionUID = -6327531740958676293L;
 
-		protected UnitJsonDeserializer() {
+        protected UnitJsonDeserializer() {
             super(Unit.class);
         }
 

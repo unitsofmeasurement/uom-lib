@@ -29,23 +29,20 @@
  */
 package tech.uom.lib.assertj;
 
-import static tech.uom.lib.assertj.Assertions.*;
-
 import javax.measure.Unit;
 import javax.measure.quantity.Length;
-
 import org.junit.Test;
-
 import tech.units.indriya.quantity.QuantityDimension;
 import tech.units.indriya.unit.BaseUnit;
 import tech.units.indriya.unit.Units;
+import static tech.uom.lib.assertj.Assertions.*;
 
 public class AssertionsTest {
 
-	@Test
-	public void testUnit() {
-		Unit<Length> m = new BaseUnit<Length>("m", QuantityDimension.LENGTH);
-		assertThat(m).isEqualTo(Units.METRE);
-	}
+    @Test
+    public void testUnit() {
+        Unit<Length> m = new BaseUnit<Length>("m", QuantityDimension.LENGTH);
+        assertThat(m).isEqualTo(Units.METRE);
+    }
 
 }

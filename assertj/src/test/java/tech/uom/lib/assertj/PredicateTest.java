@@ -28,27 +28,25 @@
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 package tech.uom.lib.assertj;
-import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.function.Predicate;
-
 import javax.measure.Unit;
 import javax.measure.quantity.Length;
-
+import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.Test;
-import tech.units.indriya.unit.UnitDimension;
 import tech.units.indriya.unit.BaseUnit;
+import tech.units.indriya.unit.UnitDimension;
 
 public class PredicateTest {
-	final Unit<Length> m;
+    final Unit<Length> m;
 
-	public PredicateTest() {
-		m = new BaseUnit<Length>("m", UnitDimension.LENGTH);
-	}
-	
-	@Test
-	public void testUnitPredicate() {
-		Predicate<Unit> unitPredicate = m -> m.getDimension() == UnitDimension.LENGTH;		
-		assertThat(unitPredicate).accepts(m);
-	}
+    public PredicateTest() {
+        m = new BaseUnit<Length>("m", UnitDimension.LENGTH);
+    }
+
+    @Test
+    public void testUnitPredicate() {
+        Predicate<Unit> unitPredicate = m -> m.getDimension() == UnitDimension.LENGTH;
+        assertThat(unitPredicate).accepts(m);
+    }
 }
