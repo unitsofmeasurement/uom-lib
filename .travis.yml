@@ -1,3 +1,8 @@
 language: java
 jdk:
-- oraclejdk9
+- openjdk11
+- openjdk12
+- openjdk13
+
+before_install:
+- cd code-analysis && mvn install && cd ..

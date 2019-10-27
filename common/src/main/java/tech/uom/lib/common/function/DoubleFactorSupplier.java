@@ -39,9 +39,9 @@ package tech.uom.lib.common.function;
  * <p>This is a <a href="http://download.java.net/jdk8/docs/api/java/util/function/package-summary.html">functional interface</a>
  * whose functional method is {@link #getFactor()}.
  *
- * @see <a href="http://download.java.net/jdk8/docs/api/java/util/function/DoubleSupplier.html">DoubleSupplier</a>
  * @author Werner Keil
  * @version 0.5, $Date: 2016-10-15 $
+ * @see <a href="http://download.java.net/jdk8/docs/api/java/util/function/DoubleSupplier.html">DoubleSupplier</a>
  * @since 0.9
  */
 //equivalent to @FunctionalInterface

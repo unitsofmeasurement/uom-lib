@@ -32,40 +32,40 @@ package tech.uom.lib.assertj;
 /**
  * Entry point for soft assertions of different data types.
  */
-@javax.annotation.Generated(value="assertj-assertions-generator")
+@javax.annotation.Generated(value = "assertj-assertions-generator")
 public class SoftAssertions extends org.assertj.core.api.SoftAssertions {
 
-  /**
-   * Creates a new "soft" instance of <code>{@link tech.uom.lib.assertj.assertions.DimensionAssert}</code>.
-   *
-   * @param actual the actual value.
-   * @return the created "soft" assertion object.
-   */
-  @org.assertj.core.util.CheckReturnValue
-  public tech.uom.lib.assertj.assertions.DimensionAssert assertThat(javax.measure.Dimension actual) {
-    return proxy(tech.uom.lib.assertj.assertions.DimensionAssert.class, javax.measure.Dimension.class, actual);
-  }
+    /**
+     * Creates a new "soft" instance of <code>{@link tech.uom.lib.assertj.assertions.DimensionAssert}</code>.
+     *
+     * @param actual the actual value.
+     * @return the created "soft" assertion object.
+     */
+    @org.assertj.core.util.CheckReturnValue
+    public tech.uom.lib.assertj.assertions.DimensionAssert assertThat(javax.measure.Dimension actual) {
+        return proxy(tech.uom.lib.assertj.assertions.DimensionAssert.class, javax.measure.Dimension.class, actual);
+    }
 
-  /**
-   * Creates a new "soft" instance of <code>{@link tech.uom.lib.assertj.assertions.QuantityAssert}</code>.
-   *
-   * @param actual the actual value.
-   * @return the created "soft" assertion object.
-   */
-  @org.assertj.core.util.CheckReturnValue
-  public tech.uom.lib.assertj.assertions.QuantityAssert assertThat(@SuppressWarnings("rawtypes") javax.measure.Quantity actual) {
-    return proxy(tech.uom.lib.assertj.assertions.QuantityAssert.class, javax.measure.Quantity.class, actual);
-  }
+    /**
+     * Creates a new "soft" instance of <code>{@link tech.uom.lib.assertj.assertions.QuantityAssert}</code>.
+     *
+     * @param actual the actual value.
+     * @return the created "soft" assertion object.
+     */
+    @org.assertj.core.util.CheckReturnValue
+    public tech.uom.lib.assertj.assertions.QuantityAssert assertThat(@SuppressWarnings("rawtypes") javax.measure.Quantity actual) {
+        return proxy(tech.uom.lib.assertj.assertions.QuantityAssert.class, javax.measure.Quantity.class, actual);
+    }
 
-  /**
-   * Creates a new "soft" instance of <code>{@link tech.uom.lib.assertj.assertions.UnitAssert}</code>.
-   *
-   * @param actual the actual value.
-   * @return the created "soft" assertion object.
-   */
-  @org.assertj.core.util.CheckReturnValue
-  public tech.uom.lib.assertj.assertions.UnitAssert assertThat(@SuppressWarnings("rawtypes") javax.measure.Unit actual) {
-    return proxy(tech.uom.lib.assertj.assertions.UnitAssert.class, javax.measure.Unit.class, actual);
-  }
+    /**
+     * Creates a new "soft" instance of <code>{@link tech.uom.lib.assertj.assertions.UnitAssert}</code>.
+     *
+     * @param actual the actual value.
+     * @return the created "soft" assertion object.
+     */
+    @org.assertj.core.util.CheckReturnValue
+    public tech.uom.lib.assertj.assertions.UnitAssert assertThat(@SuppressWarnings("rawtypes") javax.measure.Unit actual) {
+        return proxy(tech.uom.lib.assertj.assertions.UnitAssert.class, javax.measure.Unit.class, actual);
+    }
 
 }

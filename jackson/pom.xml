@@ -1,195 +1,195 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>tech.uom.lib</groupId>
-		<artifactId>uom-lib</artifactId>
-		<version>2.0</version>
-	</parent>
-	<artifactId>uom-lib-jackson</artifactId>
-	<name>Units of Measurement Jackson Library</name>
-	<description>Contains custom serializers and deserializers for JSR 385</description>
-	<organization>
-		<name>Units of Measurement project</name>
-		<url>http://unitsofmeasurement.github.io</url>
-	</organization>
-	<licenses>
-		<license>
-			<name>BSD</name>
-			<url>LICENSE</url>
-		</license>
-	</licenses>
-	<developers>
-		<developer>
-			<id>keilw</id>
-			<name>Werner Keil</name>
-			<email>werner@catmedia.us</email>
-			<organization>Creative Arts &amp; Technologies</organization>
-			<organizationUrl>http://www.catmedia.us</organizationUrl>
-			<roles>
-				<role>Architect</role>
-				<role>Java Developer</role>
-				<role>Spec Lead</role>
-			</roles>
-			<timezone>+1</timezone>
-		</developer>
-	</developers>
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>tech.uom.lib</groupId>
+        <artifactId>uom-lib</artifactId>
+        <version>2.0</version>
+    </parent>
+    <artifactId>uom-lib-jackson</artifactId>
+    <name>Units of Measurement Jackson Library</name>
+    <description>Contains custom serializers and deserializers for JSR 385</description>
+    <organization>
+        <name>Units of Measurement project</name>
+        <url>http://unitsofmeasurement.github.io</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>BSD</name>
+            <url>LICENSE</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>keilw</id>
+            <name>Werner Keil</name>
+            <email>werner@catmedia.us</email>
+            <organization>Creative Arts &amp; Technologies</organization>
+            <organizationUrl>http://www.catmedia.us</organizationUrl>
+            <roles>
+                <role>Architect</role>
+                <role>Java Developer</role>
+                <role>Spec Lead</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
 
-	<!-- ======================================================= -->
-	<!-- Build Settings -->
-	<!-- ======================================================= -->
-	<properties>
-		<project.build.javaVersion>1.8</project.build.javaVersion>
-		<jdkVersion>1.8</jdkVersion>
-		<maven.compile.targetLevel>1.6</maven.compile.targetLevel>
-		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<api.version>2.0</api.version>
-		<impl.version>2.0-SNAPSHOT</impl.version>
-		<lib.version>2.0</lib.version> <!-- currently unused -->
-		<ucum.version>2.0-SNAPSHOT</ucum.version>
-		<jackson.version>2.9.10</jackson.version>
-	</properties>
-	<dependencies>
-		<!-- =========================================================================================================== -->
-		<!-- The units of measurement interface is in the javax.measure package. -->
-		<!-- The implementation is provided by JSR 363 -->
-		<!-- =========================================================================================================== -->
-		<dependency>
-			<groupId>javax.measure</groupId>
-			<artifactId>unit-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>tech.units</groupId>
-			<artifactId>indriya</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>tech.uom.lib</groupId>
-			<artifactId>uom-lib-common</artifactId>
-			<version>${lib.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>systems.uom</groupId>
-			<artifactId>systems-quantity</artifactId>
-			<version>${ucum.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>systems.uom</groupId>
-			<artifactId>systems-ucum</artifactId>
-			<version>${ucum.version}</version>
-		</dependency>
+    <!-- ======================================================= -->
+    <!-- Build Settings -->
+    <!-- ======================================================= -->
+    <properties>
+        <project.build.javaVersion>1.8</project.build.javaVersion>
+        <jdkVersion>1.8</jdkVersion>
+        <maven.compile.targetLevel>1.6</maven.compile.targetLevel>
+        <maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+        <api.version>2.0</api.version>
+        <impl.version>2.0-SNAPSHOT</impl.version>
+        <lib.version>2.0</lib.version> <!-- currently unused -->
+        <ucum.version>2.0-SNAPSHOT</ucum.version>
+        <jackson.version>2.9.10</jackson.version>
+    </properties>
+    <dependencies>
+        <!-- =========================================================================================================== -->
+        <!-- The units of measurement interface is in the javax.measure package. -->
+        <!-- The implementation is provided by JSR 363 -->
+        <!-- =========================================================================================================== -->
+        <dependency>
+            <groupId>javax.measure</groupId>
+            <artifactId>unit-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>tech.units</groupId>
+            <artifactId>indriya</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>tech.uom.lib</groupId>
+            <artifactId>uom-lib-common</artifactId>
+            <version>${lib.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>systems.uom</groupId>
+            <artifactId>systems-quantity</artifactId>
+            <version>${ucum.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>systems.uom</groupId>
+            <artifactId>systems-ucum</artifactId>
+            <version>${ucum.version}</version>
+        </dependency>
 
-		<!-- =========================================================================================================== -->
-		<!-- Jackson library for JSON-parsing -->
-		<!-- =========================================================================================================== -->
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-core</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
+        <!-- =========================================================================================================== -->
+        <!-- Jackson library for JSON-parsing -->
+        <!-- =========================================================================================================== -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
 
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>${jdkVersion}</source>
-					<target>${jdkVersion}</target>
-				</configuration>
-			</plugin>
-			<!-- ======================================================= -->
-			<!-- Source Attachment -->
-			<!-- ======================================================= -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-			</plugin>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${jdkVersion}</source>
+                    <target>${jdkVersion}</target>
+                </configuration>
+            </plugin>
+            <!-- ======================================================= -->
+            <!-- Source Attachment -->
+            <!-- ======================================================= -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
 
-			<!-- ======================================================= -->
-			<!-- JavaDoc Attachment -->
-			<!-- ======================================================= -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>attach-javadocs</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<detectLinks>true</detectLinks>
-					<keywords>true</keywords>
-					<linksource>true</linksource>
-					<failOnError>false</failOnError>
-					<source>${maven.compile.sourceLevel}</source>
-					<verbose>true</verbose>
-				</configuration>
-			</plugin>
+            <!-- ======================================================= -->
+            <!-- JavaDoc Attachment -->
+            <!-- ======================================================= -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <detectLinks>true</detectLinks>
+                    <keywords>true</keywords>
+                    <linksource>true</linksource>
+                    <failOnError>false</failOnError>
+                    <source>${maven.compile.sourceLevel}</source>
+                    <verbose>true</verbose>
+                </configuration>
+            </plugin>
 
-			<!-- ======================================================= -->
-			<!-- Packaging (OSGi bundle) -->
-			<!-- ======================================================= -->
-			<plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<extensions>true</extensions>
-				<configuration>
-					<instructions>
-						<Export-Package>tech.uom.lib.*</Export-Package>
-					</instructions>
-				</configuration>
-			</plugin>
-		</plugins>
-		<pluginManagement>
-			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. -->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>org.jacoco</groupId>
-										<artifactId>
-											jacoco-maven-plugin
-										</artifactId>
-										<versionRange>
-											[0.7.0.201403182114,)
-										</versionRange>
-										<goals>
-											<goal>prepare-agent</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore></ignore>
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
-	<version>2.0-SNAPSHOT</version>
+            <!-- ======================================================= -->
+            <!-- Packaging (OSGi bundle) -->
+            <!-- ======================================================= -->
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Export-Package>tech.uom.lib.*</Export-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <!--This plugin's configuration is used to store Eclipse m2e settings
+                    only. It has no influence on the Maven build itself. -->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.jacoco</groupId>
+                                        <artifactId>
+                                            jacoco-maven-plugin
+                                        </artifactId>
+                                        <versionRange>
+                                            [0.7.0.201403182114,)
+                                        </versionRange>
+                                        <goals>
+                                            <goal>prepare-agent</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore></ignore>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+    <version>2.0-SNAPSHOT</version>
 </project>

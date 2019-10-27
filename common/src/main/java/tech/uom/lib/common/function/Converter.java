@@ -33,23 +33,23 @@ package tech.uom.lib.common.function;
  * Represents an operation to convert values.
  * <p>
  * This is a <a href= "http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html#package.description" >functional interface</a>
- * whose functional method is {@link #convert()}.
+ * whose functional method is {@link #convert(F)}.
  *
+ * @param <T> the type to convert to
+ * @param <F> the type to convert from
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.1, 2018-04-19
- * @since 2.0
- * @param <Q>
- *          The type to convert to.
  * @see <a href="http://en.wikipedia.org/wiki/Data_conversion">Wikipedia: Data Conversion</a>
+ * @since 2.0
  */
 @FunctionalInterface
 public interface Converter<F, T> {
 
-  /**
-   * Returns a F converted into a T.
-   * 
-   * @param from
-   * @return the converted result.
-   */
-  T convert(F from);
+    /**
+     * Returns a F converted into a T.
+     *
+     * @param from the value to convert
+     * @return the converted result.
+     */
+    T convert(F from);
 }

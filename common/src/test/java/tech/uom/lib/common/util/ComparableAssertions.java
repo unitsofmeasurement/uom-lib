@@ -32,8 +32,9 @@ package tech.uom.lib.common.util;
 import static org.junit.Assert.assertEquals;
 
 class ComparableAssertions {
-	public static void assertComparable(Object a, Object b) {
-	    String msg = "Objects were not comparable: <" + a + ">, <" + b + ">";
-	    assertEquals(msg, 0, ((Comparable)a).compareTo(b));
-	}
+
+    public static void assertComparable(Object a, Object b) {
+        String msg = "Objects were not comparable: <" + a + ">, <" + b + ">";
+        assertEquals(msg, 0, ((Comparable)a).compareTo(b));
+    }
 }

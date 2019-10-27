@@ -30,30 +30,27 @@
 package tech.uom.lib.common.util;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-
-import tech.uom.lib.common.util.NumberComparator;
 
 public class NumberComparatorTest {
 
-	@Test
-	public void testCompareEqual() {
-		assertEquals(0, NumberComparator.getInstance().compare(Double.valueOf(1), Double.valueOf(1)));
-	}
+    @Test
+    public void testCompareEqual() {
+        assertEquals(0, NumberComparator.getInstance().compare(Double.valueOf(1), Double.valueOf(1)));
+    }
 
-	@Test
-	public void testCompareLeftBigger() {
-		assertEquals(1, NumberComparator.getInstance().compare(Double.valueOf(1), Double.valueOf(0)));
-	}
-	
-	@Test
-	public void testCompareRightBigger() {
-		assertEquals(-1, NumberComparator.getInstance().compare(Double.valueOf(0), Double.valueOf(1)));
-	}
+    @Test
+    public void testCompareLeftBigger() {
+        assertEquals(1, NumberComparator.getInstance().compare(Double.valueOf(1), Double.valueOf(0)));
+    }
 
-	@Test
-	public void testGetInstance() {
-		assertNotNull(NumberComparator.getInstance());
-	}
+    @Test
+    public void testCompareRightBigger() {
+        assertEquals(-1, NumberComparator.getInstance().compare(Double.valueOf(0), Double.valueOf(1)));
+    }
+
+    @Test
+    public void testGetInstance() {
+        assertNotNull(NumberComparator.getInstance());
+    }
 }

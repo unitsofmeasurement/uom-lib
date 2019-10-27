@@ -31,7 +31,6 @@ package tech.uom.lib.jackson;
 
 import java.io.IOException;
 import java.text.ParsePosition;
-
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
@@ -41,11 +40,10 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.deser.std.StdScalarDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.ser.std.StdScalarSerializer;
-
+import javax.measure.Dimension;
+import javax.measure.Unit;
 import systems.uom.ucum.format.UCUMFormat;
 import systems.uom.ucum.format.UCUMFormat.Variant;
-
-import javax.measure.Unit;
 
 /**
  * Configures Jackson to (de)serialize JSR 363 Unit objects using their UCUM representation, since the actual objects don't
@@ -53,26 +51,28 @@ import javax.measure.Unit;
  */
 public class UnitJacksonModule extends SimpleModule {
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = 7601584599518016604L;
+     *
+     */
+    private static final long serialVersionUID = 7601584599518016604L;
 
-	public UnitJacksonModule() {
+    public UnitJacksonModule() {
         super("UnitJsonSerializationModule", new Version(1, 3, 3, null, 
-        		UnitJacksonModule.class.getPackage().getName(), "uom-lib-jackson"));
+                UnitJacksonModule.class.getPackage().getName(), "uom-lib-jackson"));
 
         addSerializer(Unit.class, new UnitJsonSerializer());
+        addSerializer(Dimension.class, new DimensionJsonSerializer());
         addDeserializer(Unit.class, new UnitJsonDeserializer());
+        addDeserializer(Dimension.class, new DimensionJsonDeserializer());
     }
 
-	@SuppressWarnings("rawtypes")
-	private class UnitJsonSerializer extends StdScalarSerializer<Unit> {
+    @SuppressWarnings("rawtypes")
+    private class UnitJsonSerializer extends StdScalarSerializer<Unit> {
         /**
-		 * 
-		 */
-		private static final long serialVersionUID = 2500234678114311932L;
+         *
+         */
+        private static final long serialVersionUID = 2500234678114311932L;
 
-		protected UnitJsonSerializer() {
+        protected UnitJsonSerializer() {
             super(Unit.class);
         }
 
@@ -93,13 +93,13 @@ public class UnitJacksonModule extends SimpleModule {
     }
 
     @SuppressWarnings("rawtypes")
-	private class UnitJsonDeserializer extends StdScalarDeserializer<Unit> {
+    private class UnitJsonDeserializer extends StdScalarDeserializer<Unit> {
         /**
-		 * 
-		 */
-		private static final long serialVersionUID = -6327531740958676293L;
+         *
+         */
+        private static final long serialVersionUID = -6327531740958676293L;
 
-		protected UnitJsonDeserializer() {
+        protected UnitJsonDeserializer() {
             super(Unit.class);
         }
 

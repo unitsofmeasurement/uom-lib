@@ -33,27 +33,30 @@ import javax.measure.format.MeasurementParseException;
 
 /**
  * Represents a function that parses an input value and produces an output.
- * 
+ *
  * <p>
  * This is a <a href=
  * "https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/FunctionalInterface.html"
- * >functional interface</a> whose functional method is {@link #parse()}.
- * 
+ * >functional interface</a> whose functional method is {@link #parse(I)}.
+ *
  * @author <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 2.1, 2019-01-31
  * @param <I>
  *            the input
  * @param <O>
  *            the output
- * @see MeasurementParseException 
+ * @see MeasurementParseException
  * @since 0.5
  */
 @FunctionalInterface
 public interface Parser<I, O> {
-	/**
-	 * Parses the specified {@code I} to produce a {@code O}.
-	 * @throws ParserException if any problem occurs while parsing the
+    /**
+     * Parses the specified {@code I} to produce a {@code O}.
+     *
+     * @param input the input to parse
+     * @return the parse result
+     * @throws MeasurementParseException if any problem occurs while parsing the
      *         specified input (e.g. illegal syntax).
-	 */
-	O parse(I input) throws MeasurementParseException;
+     */
+    O parse(I input) throws MeasurementParseException;
 }

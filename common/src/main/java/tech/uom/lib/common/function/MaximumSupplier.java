@@ -34,21 +34,21 @@ package tech.uom.lib.common.function;
  *
  * <p>There is no requirement that a new or distinct result be returned each
  * time the supplier is invoked.
- * 
+ *
  * <p>This is a <a href="http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html#package.description">functional interface</a>
  * whose functional method is {@link #getMaximum()}.
- * 
+ *
  * @author Werner Keil
  * @version 1.0, $Date: 2018-03-10 $
  * @param <T> the type of values supplied by this supplier
  */
 @FunctionalInterface
 public interface MaximumSupplier<T> {
-	
+
     /**
      * Gets a maximum value.
      *
      * @return a maximum value
      */
-	T getMaximum();
+    T getMaximum();
 }

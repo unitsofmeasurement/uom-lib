@@ -34,17 +34,17 @@ package tech.uom.lib.common.function;
  *
  * <p>There is no requirement that a distinct result be returned each
  * time the supplier is invoked, unless implementing classes enforce it.
- * 
+ *
  * <p>This is a <a href="http://download.java.net/jdk8/docs/api/java/util/function/package-summary.html">functional interface</a>
  * whose functional method is {@link #getSymbol()}.
- * 
+ *
  * @author  <a href="mailto:units@catmedia.us">Werner Keil</a>
  * @version 1.0
  * @since 0.5
  */
 @FunctionalInterface
 public interface SymbolSupplier {
-	
+
     /**
      * @return a symbol
      */

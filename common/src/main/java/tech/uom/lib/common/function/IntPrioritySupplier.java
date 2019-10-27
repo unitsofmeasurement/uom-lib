@@ -34,21 +34,21 @@ package tech.uom.lib.common.function;
  *
  * <p>There is no requirement that a new or distinct result be returned each
  * time the supplier is invoked.
- * 
+ *
  * <p>This is a <a href="http://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html#package.description">functional interface</a>
  * whose functional method is {@link #getPriority()}.
- * 
+ *
  * @author Werner Keil
  * @version 1.0, $Date: 2018-05-10 $
  * @since 0.9
  */
 @FunctionalInterface
 public interface IntPrioritySupplier {
-	
+
     /**
      * Gets a priority value.
      *
      * @return a priority value
      */
-	int getPriority();
+    int getPriority();
 }
