@@ -5,5 +5,5 @@ jdk:
 - openjdk12
 - openjdk13
 
-: before_install:
-: - cd code-analysis && mvn install && cd ..
+# before_install:
+# - cd code-analysis && mvn install && cd ..
