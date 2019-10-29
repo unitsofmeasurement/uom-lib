@@ -10,6 +10,7 @@
     <artifactId>uom-lib-jackson</artifactId>
     <name>Units of Measurement Jackson Library</name>
     <description>Contains custom serializers and deserializers for JSR 385</description>
+    <version>2.0-SNAPSHOT</version>
     <organization>
         <name>Units of Measurement project</name>
         <url>http://unitsofmeasurement.github.io</url>
@@ -191,5 +192,4 @@
             </plugins>
         </pluginManagement>
     </build>
-    <version>2.0-SNAPSHOT</version>
 </project>
