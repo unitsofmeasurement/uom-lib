@@ -1,121 +1,120 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>tech.uom.lib</groupId>
-    <artifactId>uom-lib-common</artifactId>
-    <url>https://unitsofmeasurement.github.io/uom-lib</url>
-    <organization>
-        <name>Units of Measurement project</name>
-        <url>http://unitsofmeasurement.github.io</url>
-    </organization>
-    <description>Unit Standard Library.</description>
-    <name>Units of Measurement Common Library for Java</name>
-    <parent>
-        <groupId>tech.uom.lib</groupId>
-        <artifactId>uom-lib</artifactId>
-        <version>2.0.1-SNAPSHOT</version>
-    </parent>
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>uom-lib-common</artifactId>
+	<url>https://unitsofmeasurement.github.io/uom-lib</url>
+	<organization>
+		<name>Units of Measurement project</name>
+		<url>http://unitsofmeasurement.github.io</url>
+	</organization>
+	<description>Unit Standard Library.</description>
+	<name>Units of Measurement Common Library for Java</name>
+	<parent>
+		<groupId>tech.uom.lib</groupId>
+		<artifactId>uom-lib</artifactId>
+		<version>2.0.1-SNAPSHOT</version>
+	</parent>
 
-    <scm>
-        <url>https://github.com/unitsofmeasurement/uom-lib.git</url>
-    </scm>
-    <issueManagement>
-        <system>GitHub</system>
-        <url>https://github.com/unitsofmeasurement/uom-lib/issues</url>
-    </issueManagement>
-    <licenses>
-        <license>
-            <name>BSD</name>
-            <url>LICENSE</url>
-        </license>
-    </licenses>
+	<scm>
+		<url>https://github.com/unitsofmeasurement/uom-lib.git</url>
+	</scm>
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/unitsofmeasurement/uom-lib/issues</url>
+	</issueManagement>
+	<licenses>
+		<license>
+			<name>BSD</name>
+			<url>LICENSE</url>
+		</license>
+	</licenses>
 
-    <!-- ======================================================= -->
-    <!-- Build Settings -->
-    <!-- ======================================================= -->
-    <properties>
-        <jsr.version>2.0</jsr.version>
-        <lib.version>2.0</lib.version>
-        <sourceEncoding>UTF-8</sourceEncoding>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>${sourceEncoding}</project.reporting.outputEncoding>
-        <jdkVersion>1.8</jdkVersion>
-        <project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
-        <maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
-        <maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-        <additionalparam>-Xdoclint:none</additionalparam>
-        <hamcrest.version>2.0.0.0</hamcrest.version>
-        <junit.platform.version>1.1.0</junit.platform.version>
-        <jacoco.version>0.8.3</jacoco.version>
-        <compile.exclude.files>module-info.java</compile.exclude.files>
-        <thisYear>2019</thisYear>
-        <!-- Plugins -->
-        <felix.version>3.4.0</felix.version>
-        <maven.jar.version>3.1.0</maven.jar.version>
-        <maven.source.version>3.1.0</maven.source.version>
-    </properties>
+	<!-- ======================================================= -->
+	<!-- Build Settings -->
+	<!-- ======================================================= -->
+	<properties>
+		<jsr.version>2.0</jsr.version>
+		<lib.version>2.0</lib.version>
+		<sourceEncoding>UTF-8</sourceEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>${sourceEncoding}</project.reporting.outputEncoding>
+		<jdkVersion>1.8</jdkVersion>
+		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
+		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
+		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+		<additionalparam>-Xdoclint:none</additionalparam>
+		<hamcrest.version>2.0.0.0</hamcrest.version>
+		<junit.platform.version>1.1.0</junit.platform.version>
+		<jacoco.version>0.8.3</jacoco.version>
+		<compile.exclude.files>module-info.java</compile.exclude.files>
+		<thisYear>2019</thisYear>
+		<!-- Plugins -->
+		<felix.version>3.4.0</felix.version>
+		<maven.jar.version>3.1.0</maven.jar.version>
+		<maven.source.version>3.1.0</maven.source.version>
+	</properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>javax.measure</groupId>
-            <artifactId>unit-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>javax.inject</groupId>
-            <artifactId>javax.inject</artifactId>
-            <version>1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-junit</artifactId>
-            <version>${hamcrest.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit.jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <version>${junit.jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-launcher</artifactId>
-            <version>${junit.platform.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-runner</artifactId>
-            <version>${junit.platform.version}</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>javax.measure</groupId>
+			<artifactId>unit-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-junit</artifactId>
+			<version>${hamcrest.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-launcher</artifactId>
+			<version>${junit.platform.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-runner</artifactId>
+			<version>${junit.platform.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.hamcrest</groupId>
-                <artifactId>hamcrest-all</artifactId>
-                <version>${hamcrest.version}</version>
-                <scope>test</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-    
-    	<build>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.hamcrest</groupId>
+				<artifactId>hamcrest-all</artifactId>
+				<version>${hamcrest.version}</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -168,88 +167,88 @@
 		</plugins>
 	</build>
 
-    <!-- Additional repositories -->
-    <!-- Helps to resolve Parent POM and Snapshot artifacts -->
-    <repositories>
-        <repository>
-            <id>jcenter</id>
-            <name>JCenter</name>
-            <url>http://jcenter.bintray.com</url>
-        </repository>
-        <repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>bintray-release</id>
-            <name>libs-release</name>
-            <url>http://oss.jfrog.org/artifactory/libs-release</url>
-        </repository>
-        <repository>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <id>bintray-snapshot</id>
-            <name>libs-snapshot</name>
-            <url>http://oss.jfrog.org/artifactory/libs-snapshot</url>
-        </repository>
-    </repositories>
+	<!-- Additional repositories -->
+	<!-- Helps to resolve Parent POM and Snapshot artifacts -->
+	<repositories>
+		<repository>
+			<id>jcenter</id>
+			<name>JCenter</name>
+			<url>http://jcenter.bintray.com</url>
+		</repository>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>bintray-release</id>
+			<name>libs-release</name>
+			<url>http://oss.jfrog.org/artifactory/libs-release</url>
+		</repository>
+		<repository>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<id>bintray-snapshot</id>
+			<name>libs-snapshot</name>
+			<url>http://oss.jfrog.org/artifactory/libs-snapshot</url>
+		</repository>
+	</repositories>
 
-    <distributionManagement>
-        <repository>
-            <id>bintray-release</id>
-            <name>oss-jfrog-artifactory-release</name>
-            <url>https://oss.jfrog.org/artifactory/oss-release-local</url>
-        </repository>
-        <snapshotRepository>
-            <id>bintray-snapshot</id>
-            <name>oss-jfrog-artifactory-snapshot</name>
-            <url>https://oss.jfrog.org/artifactory/oss-snapshot-local</url>
-        </snapshotRepository>
-    </distributionManagement>
-    <ciManagement>
-        <system>CircleCI</system>
-        <url>https://circleci.com/gh/unitsofmeasurement/uom-lib</url>
-    </ciManagement>
+	<distributionManagement>
+		<repository>
+			<id>bintray-release</id>
+			<name>oss-jfrog-artifactory-release</name>
+			<url>https://oss.jfrog.org/artifactory/oss-release-local</url>
+		</repository>
+		<snapshotRepository>
+			<id>bintray-snapshot</id>
+			<name>oss-jfrog-artifactory-snapshot</name>
+			<url>https://oss.jfrog.org/artifactory/oss-snapshot-local</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<ciManagement>
+		<system>CircleCI</system>
+		<url>https://circleci.com/gh/unitsofmeasurement/uom-lib</url>
+	</ciManagement>
 
-    <profiles>
-        <profile>
-            <id>p2</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.reficio</groupId>
-                        <artifactId>p2-maven-plugin</artifactId>
-                        <version>1.3.0</version>
-                        <executions>
-                            <execution>
-                                <id>default-cli</id>
-                                <configuration>
-                                    <artifacts>
-                                        <!-- specify your depencies here -->
-                                        <!-- <id>groupId:artifactId:version</id> -->
-                                        <artifact>
-                                            <id>javax.measure:unit-api:${jsr.version}</id>
-                                        </artifact>
-                                        <artifact>
-                                            <id>tech.uom.lib:uom-lib-common:${lib.version}</id>
-                                        </artifact>
-                                        <artifact>
-                                            <id>tech.units:indriya:${project.version}</id>
-                                        </artifact>
-                                    </artifacts>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
+	<profiles>
+		<profile>
+			<id>p2</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.reficio</groupId>
+						<artifactId>p2-maven-plugin</artifactId>
+						<version>1.3.0</version>
+						<executions>
+							<execution>
+								<id>default-cli</id>
+								<configuration>
+									<artifacts>
+										<!-- specify your depencies here -->
+										<!-- <id>groupId:artifactId:version</id> -->
+										<artifact>
+											<id>javax.measure:unit-api:${jsr.version}</id>
+										</artifact>
+										<artifact>
+											<id>tech.uom.lib:uom-lib-common:${lib.version}</id>
+										</artifact>
+										<artifact>
+											<id>tech.units:indriya:${project.version}</id>
+										</artifact>
+									</artifacts>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
 
-            <pluginRepositories>
-                <pluginRepository>
-                    <id>reficio</id>
-                    <url>http://repo.reficio.org/maven/</url>
-                </pluginRepository>
-            </pluginRepositories>
-        </profile>
-    </profiles>
+			<pluginRepositories>
+				<pluginRepository>
+					<id>reficio</id>
+					<url>http://repo.reficio.org/maven/</url>
+				</pluginRepository>
+			</pluginRepositories>
+		</profile>
+	</profiles>
 </project>
