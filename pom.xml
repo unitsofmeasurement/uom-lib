@@ -58,62 +58,127 @@
     </dependencyManagement>
 
     <build>
-        <pluginManagement>
-            <plugins>
-                <!-- ======================================================= -->
-                <!-- Compilation -->
-                <!-- ======================================================= -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <configuration>
-                        <source>${project.build.javaVersion}</source>
-                        <target>${project.build.javaVersion}</target>
-                        <encoding>${project.build.sourceEncoding}</encoding>
-                    </configuration>
-                </plugin>
+ 		<pluginManagement>
+			<plugins>
+				<!-- ======================================================= -->
+				<!-- Compilation -->
+				<!-- ======================================================= -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>${project.build.javaVersion}</source>
+						<target>${project.build.javaVersion}</target>
+						<encoding>${project.build.sourceEncoding}</encoding>
+					</configuration>
+				</plugin>
 
-                <!-- ======================================================= -->
-                <!-- JAR packaging -->
-                <!-- ======================================================= -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <configuration>
-                        <archive>
-                            <manifest>
-                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-                            </manifest>
-                            <manifestEntries>
-                                <Specification-Title>Units of Measurement Demos</Specification-Title>
-                                <Specification-Version>${project.version}</Specification-Version>
-                                <Specification-Vendor>${project.organization.name}</Specification-Vendor>
-                                <Implementation-Vendor>Unit-API contributors</Implementation-Vendor>
-                                <Implementation-URL>${project.organization.url}</Implementation-URL>
-                            </manifestEntries>
-                        </archive>
-                    </configuration>
-                </plugin>
+				<!-- ======================================================= -->
+				<!-- OSGi bundles with BND -->
+				<!-- ======================================================= -->
+				<plugin>
+					<groupId>biz.aQute.bnd</groupId>
+					<artifactId>bnd-maven-plugin</artifactId>
+					<version>4.2.0</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>bnd-process</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
 
-                <!-- ======================================================= -->
-                <!-- Source attachment -->
-                <!-- ======================================================= -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <version>3.0.1</version>
-                    <executions>
-                        <execution>
-                            <id>attach-sources</id>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>jar-no-fork</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>build-helper-maven-plugin</artifactId>
+					<version>3.0.0</version>
+				</plugin>
+
+				<!-- ======================================================= -->
+				<!-- JAR packaging -->
+				<!-- ======================================================= -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<configuration>
+						<archive>
+							<manifest>
+								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							</manifest>
+							<manifestEntries>
+								<Specification-Title>International System of Units</Specification-Title>
+								<Specification-Version>${project.version}</Specification-Version>
+								<Specification-Vendor>${project.organization.name}</Specification-Vendor>
+								<Implementation-Vendor>Units of Measurement contributors</Implementation-Vendor>
+								<Implementation-URL>${project.organization.url}</Implementation-URL>
+							</manifestEntries>
+						</archive>
+					</configuration>
+				</plugin>
+
+				<!-- ======================================================= -->
+				<!-- JavaDoc Attachment -->
+				<!-- ======================================================= -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>3.1.1</version>
+					<executions>
+						<execution>
+							<id>attach-javadocs</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<detectLinks>true</detectLinks>
+						<keywords>true</keywords>
+						<linksource>true</linksource>
+						<failOnError>false</failOnError>
+						<source>${maven.compile.sourceLevel}</source>
+						<verbose>true</verbose>
+					</configuration>
+				</plugin>
+
+				<!-- ======================================================= -->
+				<!-- Maven License Plugin -->
+				<!-- ======================================================= -->
+				<plugin>
+					<groupId>com.mycila</groupId>
+					<artifactId>license-maven-plugin</artifactId>
+					<configuration>
+						<header>src/main/config/header.txt</header>
+						<properties>
+							<owner>Werner Keil and others</owner>
+							<currentYear>2020</currentYear>
+						</properties>
+						<excludes>
+							<exclude>**/README</exclude>
+							<exclude>**/pom.xml</exclude>
+							<exclude>**/settings.xml</exclude>
+							<exclude>src/test/resources/**</exclude>
+							<exclude>src/main/resources/**</exclude>
+							<exclude>src/main/config/**</exclude>
+							<exclude>src/etc/**</exclude>
+							<exclude>*.css</exclude>
+							<exclude>*.editorconfig</exclude>
+							<exclude>*.jpg</exclude>
+							<exclude>*.png</exclude>
+							<exclude>*.yml</exclude>
+						</excludes>
+						<headerDefinitions>
+							<headerDefinition>src/main/config/headers.xml</headerDefinition>
+						</headerDefinitions>
+						<mapping>
+							<java>JAVA_STYLE</java>
+						</mapping>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		
         <plugins>
          <!-- 
             <plugin>
@@ -195,5 +260,68 @@
             <name>libs-snapshot</name>
             <url>http://oss.jfrog.org/artifactory/libs-snapshot</url>
         </repository>
-    </repositories>
+    </repositories>	
+    
+    <profiles>
+		<profile>
+			<id>jdk9-setup</id>
+			<activation>
+				<jdk>[9,)</jdk>
+			</activation>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-compiler-plugin</artifactId>
+							<configuration>
+								<release>8</release>
+							</configuration>
+							<executions>
+								<execution>
+									<id>default-compile</id>
+									<configuration>
+										<release>9</release>
+										<source>9</source>
+										<target>9</target>
+									</configuration>
+								</execution>
+								<execution>
+									<id>base-compile</id>
+									<goals>
+										<goal>compile</goal>
+									</goals>
+									<configuration>
+										<excludes>
+											<exclude>module-info.java</exclude>
+										</excludes>
+									</configuration>
+								</execution>
+							</executions>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>build-helper-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>add-jdk9-source</id>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>add-source</goal>
+								</goals>
+								<configuration>
+									<sources>
+										<source>src/main/jdk9</source>
+									</sources>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
