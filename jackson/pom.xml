@@ -45,10 +45,9 @@
         <maven.compile.targetLevel>1.6</maven.compile.targetLevel>
         <maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
         <api.version>2.0</api.version>
-        <impl.version>2.0.1</impl.version>
-        <lib.version>2.0</lib.version> <!-- currently unused -->
-        <ucum.version>2.0</ucum.version>
-        <jackson.version>2.10.0</jackson.version>
+        <impl.version>2.0.2</impl.version>
+        <ucum.version>2.0.1</ucum.version>
+        <jackson.version>2.10.2</jackson.version>
     </properties>
     <dependencies>
         <!-- =========================================================================================================== -->
@@ -62,11 +61,6 @@
         <dependency>
             <groupId>tech.units</groupId>
             <artifactId>indriya</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>tech.uom.lib</groupId>
-            <artifactId>uom-lib-common</artifactId>
-            <version>${lib.version}</version>
         </dependency>
         <dependency>
             <groupId>systems.uom</groupId>
