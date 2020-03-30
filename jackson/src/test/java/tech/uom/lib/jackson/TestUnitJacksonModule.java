@@ -46,8 +46,6 @@ import systems.uom.ucum.UCUM;
 import tech.units.indriya.unit.Units;
 
 import javax.measure.Unit;
-import javax.measure.spi.ServiceProvider;
-
 import static tech.units.indriya.AbstractUnit.ONE;
 import static javax.measure.MetricPrefix.KILO;
 import static javax.measure.MetricPrefix.MEGA;
@@ -60,6 +58,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  */
 public class TestUnitJacksonModule {
 	private static final String ERRORMSG_LEN = "Expected JSON with a UCUM representation of the length unit";
+	private static final String ERRORMSG_AREA = "Expected JSON with a UCUM representation of the area unit";
+	private static final String ERRORMSG_TEMP = "Expected JSON with a UCUM representation of the temperature unit";
+	private static final String ERRMSG_PARSE_LEN = "The Unit<Length> in the parsed JSON doesn't match";
 
 	// can't directly unit test the Jackson Module classes; need to go through
 	// JsonFactory
@@ -74,16 +75,13 @@ public class TestUnitJacksonModule {
 
 	@Test
 	public void testSerializeArea() throws Exception {
-		assertEquals("\"m2\"",
-				serialize(Units.SQUARE_METRE), "Expected JSON with a UCUM representation of the area unit");
+		assertEquals("\"m2\"", serialize(Units.SQUARE_METRE), ERRORMSG_AREA);
 	}
 
 	@Test
 	public void testSerializeTemperature() throws Exception {
-		assertEquals("\"[degF]\"", serialize(UCUM.FAHRENHEIT),
-				"Expected JSON with a UCUM representation of the temperature unit");
-		assertEquals( "\"Cel\"",
-				serialize(Units.CELSIUS), "Expected JSON with a UCUM representation of the temperature unit");
+		assertEquals("\"[degF]\"", serialize(UCUM.FAHRENHEIT), ERRORMSG_TEMP);
+		assertEquals("\"Cel\"", serialize(Units.CELSIUS), ERRORMSG_TEMP);
 	}
 
 	@Test
@@ -121,7 +119,7 @@ public class TestUnitJacksonModule {
 	@Test
 	public void testParseLength() throws Exception {
 		Unit<?> parsedUnit = parse("\"m\"", Unit.class);
-		assertEquals(Units.METRE, parsedUnit, "The Unit<Length> in the parsed JSON doesn't match");
+		assertEquals(Units.METRE, parsedUnit, ERRMSG_PARSE_LEN);
 	}
 
 	@Test
@@ -134,14 +132,14 @@ public class TestUnitJacksonModule {
 	@Test
 	public void testParseLengthKm() throws Exception {
 		final Unit<?> parsedUnit = parse("\"km\"", Unit.class);
-		assertEquals(KILO(Units.METRE), parsedUnit, "The Unit<Length> in the parsed JSON doesn't match");
+		assertEquals(KILO(Units.METRE), parsedUnit, ERRMSG_PARSE_LEN);
 	}
 
 	@Test
 	public void testRoundTripSerialization() throws Exception {
 		String serialized = serialize(MEGA(UCUM.METER));
 		Unit<?> parsedUnit = parse(serialized, Unit.class);
-		assertEquals(MEGA(UCUM.METER), parsedUnit, "The Unit<Length> in the parsed JSON doesn't match");
+		assertEquals(MEGA(UCUM.METER), parsedUnit, ERRMSG_PARSE_LEN);
 	}
 
 	protected String serialize(Object objectToSerialize) throws IOException {
