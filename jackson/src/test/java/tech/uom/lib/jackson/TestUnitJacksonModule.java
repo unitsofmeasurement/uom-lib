@@ -39,122 +39,125 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 import systems.uom.ucum.UCUM;
 import tech.units.indriya.unit.Units;
 
 import javax.measure.Unit;
+import javax.measure.spi.ServiceProvider;
 
 import static tech.units.indriya.AbstractUnit.ONE;
 import static javax.measure.MetricPrefix.KILO;
 import static javax.measure.MetricPrefix.MEGA;
 import static javax.measure.MetricPrefix.MILLI;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Unit tests for UnitJacksonModule
  */
 public class TestUnitJacksonModule {
-    // can't directly unit test the Jackson Module classes; need to go through
-    // JsonFactory
-    private JsonFactory jsonFactory;
+	private static final String ERRORMSG_LEN = "Expected JSON with a UCUM representation of the length unit";
 
-    @Before
-    public void setUp() throws Exception {
-        final ObjectMapper mapper = new ObjectMapper();
-        mapper.registerModule(new UnitJacksonModule());
-        this.jsonFactory = new JsonFactory(mapper);
-    }
+	// can't directly unit test the Jackson Module classes; need to go through
+	// JsonFactory
+	private JsonFactory jsonFactory;
 
-    @Test
-    public void testSerializeArea() throws Exception {
-        assertEquals("Expected JSON with a UCUM representation of the area unit", "\"m2\"",
-                serialize(Units.SQUARE_METRE));
-    }
+	@BeforeEach
+	public void setUp() throws Exception {
+		final ObjectMapper mapper = new ObjectMapper();
+		mapper.registerModule(new UnitJacksonModule());
+		this.jsonFactory = new JsonFactory(mapper);
+	}
 
-    @Test
-    public void testSerializeTemperature() throws Exception {
-        assertEquals("Expected JSON with a UCUM representation of the temperature unit", "\"[degF]\"",
-                serialize(UCUM.FAHRENHEIT));
-        assertEquals("Expected JSON with a UCUM representation of the temperature unit", "\"Cel\"",
-                serialize(Units.CELSIUS));
-    }
+	@Test
+	public void testSerializeArea() throws Exception {
+		assertEquals("\"m2\"",
+				serialize(Units.SQUARE_METRE), "Expected JSON with a UCUM representation of the area unit");
+	}
 
-    @Test
-    public void testSerializeLength() throws Exception {
-        assertEquals("Expected JSON with a UCUM representation of the length unit", "\"[mi_i]\"",
-                serialize(UCUM.MILE_INTERNATIONAL));
-        assertEquals("Expected JSON with a UCUM representation of the length unit", "\"m\"", serialize(Units.METRE));
-        assertEquals("Expected JSON with a UCUM representation of the length unit", "\"km\"",
-                serialize(KILO(UCUM.METER)));
-        assertEquals("Expected JSON with a UCUM representation of the length unit", "\"mm\"",
-                serialize(MILLI(UCUM.METER)));
-    }
+	@Test
+	public void testSerializeTemperature() throws Exception {
+		assertEquals("\"[degF]\"", serialize(UCUM.FAHRENHEIT),
+				"Expected JSON with a UCUM representation of the temperature unit");
+		assertEquals( "\"Cel\"",
+				serialize(Units.CELSIUS), "Expected JSON with a UCUM representation of the temperature unit");
+	}
 
-    @Test
-    public void testSerializeSpeed() throws Exception {
-        assertEquals("Expected JSON with a UCUM representation of the speed unit", "\"[kph]\"",
-                serialize(Units.KILOMETRE_PER_HOUR));
-    }
+	@Test
+	public void testSerializeLength() throws Exception {
+		assertEquals("\"[mi_i]\"", serialize(UCUM.MILE_INTERNATIONAL), ERRORMSG_LEN);
+		assertEquals("\"m\"", serialize(Units.METRE), ERRORMSG_LEN);
+		assertEquals("\"km\"", serialize(KILO(UCUM.METER)), ERRORMSG_LEN);
+		assertEquals("\"mm\"", serialize(MILLI(UCUM.METER)), ERRORMSG_LEN);
+	}
 
-    @Test
-    public void testParseArea() throws Exception {
-        final Unit<?> parsedUnit = parse("\"[sft_i]\"", Unit.class);
-        assertEquals("The Unit<Area> in the parsed JSON doesn't match", UCUM.SQUARE_FOOT_INTERNATIONAL, parsedUnit);
-    }
+	@Test
+	public void testSerializeSpeed() throws Exception {
+		assertEquals("\"[kph]\"", serialize(Units.KILOMETRE_PER_HOUR),
+				"Expected JSON with a UCUM representation of the speed unit");
+	}
 
-    @Test
-    public void testParseTemperature() throws Exception {
-        final Unit<?> parsedUnit = parse("\"Cel\"", Unit.class);
-        assertEquals("The Unit<Temperature> in the parsed JSON doesn't match", Units.CELSIUS, parsedUnit);
-    }
+	@Test
+	public void testParseArea() throws Exception {
+		final Unit<?> parsedUnit = parse("\"[sft_i]\"", Unit.class);
+		assertEquals(UCUM.SQUARE_FOOT_INTERNATIONAL, parsedUnit, "The Unit<Area> in the parsed JSON doesn't match");
+	}
 
-    @Test
-    public void testParseTemperatureInverse() throws Exception {
-        final Unit<?> parsedUnit = parse("\"1/K\"", Unit.class);
-        assertEquals("The Unit<Temperature> in the parsed JSON doesn't match", ONE.divide(Units.KELVIN), parsedUnit);
-    }
+	@Test
+	public void testParseTemperature() throws Exception {
+		final Unit<?> parsedUnit = parse("\"Cel\"", Unit.class);
+		assertEquals(Units.CELSIUS, parsedUnit, "The Unit<Temperature> in the parsed JSON doesn't match");
+	}
 
-    @Test
-    public void testParseLength() throws Exception {
-        Unit<?> parsedUnit = parse("\"m\"", Unit.class);
-        assertEquals("The Unit<Length> in the parsed JSON doesn't match", Units.METRE, parsedUnit);
-    }
+	@Test
+	public void testParseTemperatureInverse() throws Exception {
+		final Unit<?> parsedUnit = parse("\"1/K\"", Unit.class);
+		assertEquals(ONE.divide(Units.KELVIN), parsedUnit, "The Unit<Temperature> in the parsed JSON doesn't match");
+	}
 
-    @Test(expected = JsonParseException.class)
-    public void testParseWithUnrecognizedField() throws Exception {
-        parse("foobar", Unit.class);
-    }
+	@Test
+	public void testParseLength() throws Exception {
+		Unit<?> parsedUnit = parse("\"m\"", Unit.class);
+		assertEquals(Units.METRE, parsedUnit, "The Unit<Length> in the parsed JSON doesn't match");
+	}
 
-    @Test
-    public void testParseLengthKm() throws Exception {
-        final Unit<?> parsedUnit = parse("\"km\"", Unit.class);
-        assertEquals("The Unit<Length> in the parsed JSON doesn't match", KILO(Units.METRE), parsedUnit);
-    }
+	@Test
+	public void testParseWithUnrecognizedField() throws Exception {
+		assertThrows(JsonParseException.class, () -> {
+			parse("foobar", Unit.class);
+		});
+	}
 
-    @Test
-    public void testRoundTripSerialization() throws Exception {
-        String serialized = serialize(MEGA(UCUM.METER));
-        Unit<?> parsedUnit = parse(serialized, Unit.class);
-        assertEquals("The Unit<Length> in the parsed JSON doesn't match", MEGA(UCUM.METER), parsedUnit);
-    }
+	@Test
+	public void testParseLengthKm() throws Exception {
+		final Unit<?> parsedUnit = parse("\"km\"", Unit.class);
+		assertEquals(KILO(Units.METRE), parsedUnit, "The Unit<Length> in the parsed JSON doesn't match");
+	}
 
-    protected String serialize(Object objectToSerialize) throws IOException {
-        final Writer writer = new StringWriter();
-        final JsonGenerator generator = this.jsonFactory.createJsonGenerator(writer);
+	@Test
+	public void testRoundTripSerialization() throws Exception {
+		String serialized = serialize(MEGA(UCUM.METER));
+		Unit<?> parsedUnit = parse(serialized, Unit.class);
+		assertEquals(MEGA(UCUM.METER), parsedUnit, "The Unit<Length> in the parsed JSON doesn't match");
+	}
 
-        generator.writeObject(objectToSerialize);
-        generator.close();
-        return writer.toString();
-    }
+	protected String serialize(Object objectToSerialize) throws IOException {
+		final Writer writer = new StringWriter();
+		final JsonGenerator generator = this.jsonFactory.createJsonGenerator(writer);
 
-    protected <T> T parse(String json, Class<T> aClass) throws IOException {
-        final JsonParser parser = this.jsonFactory.createJsonParser(json);
-        T object = parser.readValueAs(aClass);
+		generator.writeObject(objectToSerialize);
+		generator.close();
+		return writer.toString();
+	}
 
-        parser.close();
-        return object;
-    }
+	protected <T> T parse(String json, Class<T> aClass) throws IOException {
+		final JsonParser parser = this.jsonFactory.createJsonParser(json);
+		T object = parser.readValueAs(aClass);
+
+		parser.close();
+		return object;
+	}
 }

@@ -29,6 +29,8 @@
  */
 package tech.uom.lib.jackson;
 
+import static org.junit.Assert.assertEquals;
+
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -37,8 +39,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import javax.measure.Dimension;
-import static org.junit.Assert.assertEquals;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import tech.units.indriya.unit.UnitDimension;
 
 /**

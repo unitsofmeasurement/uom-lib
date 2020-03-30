@@ -33,7 +33,7 @@ import java.util.function.Predicate;
 import javax.measure.Unit;
 import javax.measure.quantity.Length;
 import static org.assertj.core.api.Assertions.assertThat;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import tech.units.indriya.unit.BaseUnit;
 import tech.units.indriya.unit.UnitDimension;
 

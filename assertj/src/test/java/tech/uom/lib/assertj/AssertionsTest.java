@@ -31,8 +31,8 @@ package tech.uom.lib.assertj;
 
 import javax.measure.Unit;
 import javax.measure.quantity.Length;
-import org.junit.Test;
-import tech.units.indriya.quantity.QuantityDimension;
+import org.junit.jupiter.api.Test;
+import tech.units.indriya.unit.UnitDimension;
 import tech.units.indriya.unit.BaseUnit;
 import tech.units.indriya.unit.Units;
 import static tech.uom.lib.assertj.Assertions.*;
@@ -41,7 +41,7 @@ public class AssertionsTest {
 
     @Test
     public void testUnit() {
-        Unit<Length> m = new BaseUnit<Length>("m", QuantityDimension.LENGTH);
+        Unit<Length> m = new BaseUnit<Length>("m", UnitDimension.LENGTH);
         assertThat(m).isEqualTo(Units.METRE);
     }
 
