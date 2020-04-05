@@ -6,7 +6,7 @@
 	<url>https://unitsofmeasurement.github.io/uom-lib</url>
 	<organization>
 		<name>Units of Measurement project</name>
-		<url>http://unitsofmeasurement.github.io</url>
+		<url>https://unitsofmeasurement.github.io</url>
 	</organization>
 	<description>Unit Standard Library.</description>
 	<name>Units of Measurement Common Library for Java</name>
@@ -153,7 +153,7 @@
 		<repository>
 			<id>jcenter</id>
 			<name>JCenter</name>
-			<url>http://jcenter.bintray.com</url>
+			<url>https://jcenter.bintray.com</url>
 		</repository>
 		<repository>
 			<snapshots>
@@ -161,7 +161,7 @@
 			</snapshots>
 			<id>bintray-release</id>
 			<name>libs-release</name>
-			<url>http://oss.jfrog.org/artifactory/libs-release</url>
+			<url>https://oss.jfrog.org/artifactory/libs-release</url>
 		</repository>
 		<repository>
 			<snapshots>
@@ -169,7 +169,7 @@
 			</snapshots>
 			<id>bintray-snapshot</id>
 			<name>libs-snapshot</name>
-			<url>http://oss.jfrog.org/artifactory/libs-snapshot</url>
+			<url>https://oss.jfrog.org/artifactory/libs-snapshot</url>
 		</repository>
 	</repositories>
 
@@ -226,7 +226,7 @@
 			<pluginRepositories>
 				<pluginRepository>
 					<id>reficio</id>
-					<url>http://repo.reficio.org/maven/</url>
+					<url>https://repo.reficio.org/maven/</url>
 				</pluginRepository>
 			</pluginRepositories>
 		</profile>

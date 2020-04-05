@@ -12,7 +12,7 @@
     <description>Contains custom serializers and deserializers for JSR 385</description>
     <organization>
         <name>Units of Measurement project</name>
-        <url>http://unitsofmeasurement.github.io</url>
+        <url>https://unitsofmeasurement.github.io</url>
     </organization>
     <licenses>
         <license>
