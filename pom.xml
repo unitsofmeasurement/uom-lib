@@ -17,10 +17,10 @@
 	</modules>
 	<packaging>pom</packaging>
 	<name>Units of Measurement Libraries</name>
-	<url>http://github.com/unitsofmeasurement/uom-lib</url>
+	<url>https://github.com/unitsofmeasurement/uom-lib</url>
 	<organization>
 		<name>Units of Measurement project</name>
-		<url>http://unitsofmeasurement.github.io</url>
+		<url>https://unitsofmeasurement.github.io</url>
 	</organization>
 	<description>Units of Measurement Libraries - extending and complementing JSR 385</description>
 	<licenses>
@@ -256,7 +256,7 @@
 		<repository>
 			<id>jcenter</id>
 			<name>JCenter</name>
-			<url>http://jcenter.bintray.com</url>
+			<url>https://jcenter.bintray.com</url>
 		</repository>
 		<repository>
 			<snapshots>
@@ -264,7 +264,7 @@
 			</snapshots>
 			<id>bintray-release</id>
 			<name>libs-release</name>
-			<url>http://oss.jfrog.org/artifactory/libs-release</url>
+			<url>https://oss.jfrog.org/artifactory/libs-release</url>
 		</repository>
 		<repository>
 			<snapshots>
@@ -272,7 +272,7 @@
 			</snapshots>
 			<id>bintray-snapshot</id>
 			<name>libs-snapshot</name>
-			<url>http://oss.jfrog.org/artifactory/libs-snapshot</url>
+			<url>https://oss.jfrog.org/artifactory/libs-snapshot</url>
 		</repository>
 	</repositories>
 
