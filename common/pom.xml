@@ -226,7 +226,7 @@
 			<pluginRepositories>
 				<pluginRepository>
 					<id>reficio</id>
-					<url>https://repo.reficio.org/maven/</url>
+					<url>http://repo.reficio.org/maven/</url>
 				</pluginRepository>
 			</pluginRepositories>
 		</profile>
