@@ -9,3 +9,7 @@ jdk:
 - openjdk14
 - openjdk-ea
 
+script:
+- mvn --batch-mode install
+- cd common && mvn --batch-mode -Pp2 p2:site && cd ..
+- cd assertj && mvn --batch-mode -Pgen assertj:generate-assertions && cd ..
