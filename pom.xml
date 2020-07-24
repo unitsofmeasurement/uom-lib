@@ -9,7 +9,7 @@
 		<artifactId>uom-parent</artifactId>
 		<version>2.0.3</version>
 	</parent>
-	<version>2.0.1</version>
+	<version>2.0.2-SNAPSHOT</version>
 	<modules>
 		<module>common</module>
 		<module>assertj</module>
@@ -43,7 +43,7 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>2.0.2</ri.version><!-- NOT for common --><!-- NOT for common -->
+		<ri.version>2.0.3</ri.version><!-- NOT for common --><!-- NOT for common -->
 		<lib.version>${project.version}</lib.version>
 		
 		<hamcrest.version>2.0.0.0</hamcrest.version>
