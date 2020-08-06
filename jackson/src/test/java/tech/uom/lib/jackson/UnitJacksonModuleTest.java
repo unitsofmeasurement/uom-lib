@@ -144,7 +144,7 @@ public class UnitJacksonModuleTest {
 
 	protected String serialize(Object objectToSerialize) throws IOException {
 		final Writer writer = new StringWriter();
-		final JsonGenerator generator = this.jsonFactory.createJsonGenerator(writer);
+		final JsonGenerator generator = this.jsonFactory.createGenerator(writer);
 
 		generator.writeObject(objectToSerialize);
 		generator.close();
@@ -152,7 +152,7 @@ public class UnitJacksonModuleTest {
 	}
 
 	protected <T> T parse(String json, Class<T> aClass) throws IOException {
-		final JsonParser parser = this.jsonFactory.createJsonParser(json);
+		final JsonParser parser = this.jsonFactory.createParser(json);
 		T object = parser.readValueAs(aClass);
 
 		parser.close();
