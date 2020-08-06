@@ -52,7 +52,7 @@
     <dependencies>
         <!-- =========================================================================================================== -->
         <!-- The units of measurement interface is in the javax.measure package. -->
-        <!-- The implementation is provided by JSR 363 -->
+        <!-- The implementation is provided by the JSR 385 RI -->
         <!-- =========================================================================================================== -->
         <dependency>
             <groupId>javax.measure</groupId>

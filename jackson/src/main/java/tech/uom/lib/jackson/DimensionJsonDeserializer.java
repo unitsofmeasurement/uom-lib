@@ -44,7 +44,7 @@ import tech.units.indriya.unit.UnitDimension;
  * @author richter
  * @author keilw
  */
-public class DimensionJsonDeserializer extends StdScalarDeserializer<Dimension> {
+class DimensionJsonDeserializer extends StdScalarDeserializer<Dimension> {
 
     /**
      *

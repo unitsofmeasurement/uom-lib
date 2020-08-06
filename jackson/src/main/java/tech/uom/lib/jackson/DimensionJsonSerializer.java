@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Jackson Library for JSON support
- *  Copyright (c) 2012-2019, Werner Keil and others
+ *  Copyright (c) 2012-2020, Werner Keil and others
  *
  * All rights reserved.
  *
@@ -39,8 +39,9 @@ import javax.measure.Dimension;
 /**
  *
  * @author richter
+ * @author keilw
  */
-public class DimensionJsonSerializer extends StdScalarSerializer<Dimension> {
+class DimensionJsonSerializer extends StdScalarSerializer<Dimension> {
 
     /**
 	 * 

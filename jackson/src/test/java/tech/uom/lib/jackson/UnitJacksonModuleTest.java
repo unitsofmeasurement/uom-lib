@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Jackson Library for JSON support
- *  Copyright (c) 2012-2019, Werner Keil and others
+ *  Copyright (c) 2012-2020, Werner Keil and others
  *
  * All rights reserved.
  *
@@ -56,7 +56,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 /**
  * Unit tests for UnitJacksonModule
  */
-public class TestUnitJacksonModule {
+public class UnitJacksonModuleTest {
 	private static final String ERRORMSG_LEN = "Expected JSON with a UCUM representation of the length unit";
 	private static final String ERRORMSG_AREA = "Expected JSON with a UCUM representation of the area unit";
 	private static final String ERRORMSG_TEMP = "Expected JSON with a UCUM representation of the temperature unit";
