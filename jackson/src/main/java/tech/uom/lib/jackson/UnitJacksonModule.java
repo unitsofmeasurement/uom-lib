@@ -29,6 +29,8 @@
  */
 package tech.uom.lib.jackson;
 
+import static tech.uom.lib.jackson.UnitJacksonModule.Mode.UCUM;
+
 import java.io.IOException;
 import java.text.ParsePosition;
 import com.fasterxml.jackson.core.JsonGenerator;
@@ -42,6 +44,8 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.ser.std.StdScalarSerializer;
 import javax.measure.Dimension;
 import javax.measure.Unit;
+import tech.units.indriya.format.EBNFUnitFormat;
+import tech.units.indriya.format.SimpleUnitFormat;
 import systems.uom.ucum.format.UCUMFormat;
 import systems.uom.ucum.format.UCUMFormat.Variant;
 
@@ -55,15 +59,47 @@ public class UnitJacksonModule extends SimpleModule {
      *
      */
     private static final long serialVersionUID = 7601584599518016604L;
-
-    public UnitJacksonModule() {
+    
+    /**
+     * @since 2.0.2
+     */
+    public enum Mode {
+        /**
+         * Serialization-mode using {@link SimpleUnitFormat}.
+         */
+        SIMPLE,
+        /**
+         * Serialization-mode using {@link EBNFUnitFormat}.
+         */
+        EBNF,
+        /**
+         * Serialization-mode using {@link UCUMFormat}. This is the <strong>default</strong> mode if none is explicitly selected.
+         */
+        UCUM
+    };
+    
+    /**
+     * @since 2.0.2
+     */
+    final Mode mode;
+    
+    /**
+     * 
+     * @param mode the serialization-mode
+     * @since 2.0.2
+     */
+    public UnitJacksonModule(Mode mode) {
         super("UnitJsonSerializationModule", new Version(1, 3, 3, null, 
                 UnitJacksonModule.class.getPackage().getName(), "uom-lib-jackson"));
-
+        this.mode = mode;
         addSerializer(Unit.class, new UnitJsonSerializer());
         addSerializer(Dimension.class, new DimensionJsonSerializer());
         addDeserializer(Unit.class, new UnitJsonDeserializer());
         addDeserializer(Dimension.class, new DimensionJsonDeserializer());
+    }
+    
+    public UnitJacksonModule() {
+    	this(UCUM);
     }
 
     @SuppressWarnings("rawtypes")
@@ -83,12 +119,16 @@ public class UnitJacksonModule extends SimpleModule {
                 jgen.writeNull();
             }
             else {
-                // Format the unit using the UCUM representation.
-                // The string produced for a given unit is always the same; it is not affected by the locale.
-                // It can be used as a canonical string representation for exchanging units.
-                String ucumFormattedUnit = UCUMFormat.getInstance(Variant.CASE_SENSITIVE).format(unit, new StringBuilder()).toString();
-
-                jgen.writeString(ucumFormattedUnit);
+            	switch (mode) {            	
+	            	// currently we use only UCUM
+	            	default:
+	            	// Format the unit using the UCUM representation.
+	                // The string produced for a given unit is always the same; it is not affected by the locale.
+	                // It can be used as a canonical string representation for exchanging units.
+	                String ucumFormattedUnit = UCUMFormat.getInstance(Variant.CASE_SENSITIVE).format(unit, new StringBuilder()).toString();                
+	                jgen.writeString(ucumFormattedUnit);
+	                break;
+            	}
             }
         }
     }
@@ -107,9 +147,13 @@ public class UnitJacksonModule extends SimpleModule {
         @Override
         public Unit deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
             JsonToken currentToken = jsonParser.getCurrentToken();
-
+            
             if (currentToken == JsonToken.VALUE_STRING) {
-                return UCUMFormat.getInstance(Variant.CASE_SENSITIVE).parse(jsonParser.getText(), new ParsePosition(0));
+            	switch(mode) {
+            	// currently we use only UCUM	
+            	default:
+            		return UCUMFormat.getInstance(Variant.CASE_SENSITIVE).parse(jsonParser.getText(), new ParsePosition(0));
+            	}
             }
             throw deserializationContext.wrongTokenException(jsonParser, String.class,
                     JsonToken.VALUE_STRING,

@@ -38,6 +38,7 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
@@ -68,8 +69,9 @@ public class UnitJacksonModuleTest {
 
 	@BeforeEach
 	public void setUp() throws Exception {
-		final ObjectMapper mapper = new ObjectMapper();
-		mapper.registerModule(new UnitJacksonModule());
+		final ObjectMapper mapper = JsonMapper.builder()
+			    .addModule(new UnitJacksonModule())
+			    .build();						
 		this.jsonFactory = new JsonFactory(mapper);
 	}
 
