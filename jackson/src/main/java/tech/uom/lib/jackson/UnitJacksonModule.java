@@ -1,6 +1,6 @@
 /*
  *  Units of Measurement Jackson Library for JSON support
- *  Copyright (c) 2012-2019, Werner Keil and others
+ *  Copyright (c) 2012-2020, Werner Keil and others
  *
  * All rights reserved.
  *
@@ -46,7 +46,7 @@ import systems.uom.ucum.format.UCUMFormat;
 import systems.uom.ucum.format.UCUMFormat.Variant;
 
 /**
- * Configures Jackson to (de)serialize JSR 363 Unit objects using their UCUM representation, since the actual objects don't
+ * Configures Jackson to (de)serialize JSR 385 Unit objects using their UCUM representation, since the actual objects don't
  * translate well into JSON.
  * @version 2.0
  */
