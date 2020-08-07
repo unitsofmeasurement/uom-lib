@@ -52,7 +52,7 @@ import systems.uom.ucum.format.UCUMFormat.Variant;
 /**
  * Configures Jackson to (de)serialize JSR 385 Unit objects using their UCUM representation, since the actual objects don't
  * translate well into JSON.
- * @version 2.0
+ * @version 2.1
  */
 public class UnitJacksonModule extends SimpleModule {
     /**
