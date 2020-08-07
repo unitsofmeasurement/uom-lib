@@ -10,5 +10,5 @@ jdk:
 
 script:
 - mvn --batch-mode package
+- cd common && mvn --batch-mode -Pp2 p2:site && cd ..
 - cd assertj && mvn --batch-mode -Pgen assertj:generate-assertions && cd ..
-# - cd common && mvn --batch-mode -Pp2 p2:site && cd ..

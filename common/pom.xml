@@ -222,13 +222,14 @@
 					</plugin>
 				</plugins>
 			</build>
-
+<!-- reficio.org seems down, but the plugin should be on MavenCentral
 			<pluginRepositories>
 				<pluginRepository>
 					<id>reficio</id>
 					<url>http://repo.reficio.org/maven/</url>
 				</pluginRepository>
 			</pluginRepositories>
+ -->			
 		</profile>
 	</profiles>
 </project>
