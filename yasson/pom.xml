@@ -7,8 +7,8 @@
         <artifactId>uom-lib</artifactId>
         <version>2.0.2-SNAPSHOT</version>
     </parent>
-    <artifactId>uom-lib-jackson</artifactId>
-    <name>Units of Measurement Jackson Library</name>
+    <artifactId>uom-lib-yasson</artifactId>
+    <name>Units of Measurement Jakarta JSON-B Library</name>
     <description>Contains custom serializers and deserializers for JSR 385</description>
     <organization>
         <name>Units of Measurement project</name>
@@ -16,7 +16,7 @@
     </organization>
     <licenses>
         <license>
-            <name>BSD</name>
+            <name>BSD-3Clause</name>
             <url>LICENSE</url>
         </license>
     </licenses>
@@ -47,7 +47,7 @@
         <api.version>2.0</api.version>
         <impl.version>2.0.4</impl.version>
         <ucum.version>2.0.2</ucum.version>
-        <jackson.version>2.11.2</jackson.version>
+        <yasson.version>1.0.7</yasson.version>
     </properties>
     <dependencies>
         <!-- =========================================================================================================== -->
@@ -74,18 +74,13 @@
         </dependency>
 
         <!-- =========================================================================================================== -->
-        <!-- Jackson library for JSON-parsing -->
+        <!-- Jakarta JSON-Binding -->
         <!-- =========================================================================================================== -->
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
+            <groupId>org.eclipse</groupId>
+            <artifactId>yasson</artifactId>
+            <version>${yasson.version}</version>
+        </dependency>        
 
 		<dependency>
 			<groupId>org.hamcrest</groupId>
