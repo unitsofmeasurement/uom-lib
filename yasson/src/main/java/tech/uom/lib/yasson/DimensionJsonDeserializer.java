@@ -38,16 +38,17 @@ import java.util.stream.Collectors;
 import javax.json.JsonObject;
 import javax.json.bind.serializer.DeserializationContext;
 import javax.json.bind.serializer.JsonbDeserializer;
-import javax.json.bind.serializer.JsonbSerializer;
 import javax.json.stream.JsonParser;
 import javax.measure.Dimension;
 import tech.units.indriya.unit.UnitDimension;
 
 /**
- * @author keilw
+ * @author Werner Keil
+ * @version 0.8
  */
 public class DimensionJsonDeserializer implements JsonbDeserializer<Dimension> {
 
+	// TODO make this available package-local
     private static Dimension parseBaseDimension(String symbol) {
         switch (symbol) {
             case "[N]":
@@ -97,8 +98,5 @@ public class DimensionJsonDeserializer implements JsonbDeserializer<Dimension> {
             retValue = retValue.multiply(baseDimension.pow(exp));
         }
         return retValue;
-
-		//Class<? extends Dimension> dimensionClass = UnitDimension.class.asSubclass(Dimension.class);
-		//return deserializationContext.deserialize(dimensionClass, parser);
 	}
 }

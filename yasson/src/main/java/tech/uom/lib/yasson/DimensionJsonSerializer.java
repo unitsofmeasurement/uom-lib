@@ -35,8 +35,8 @@ import javax.json.stream.JsonGenerator;
 import javax.measure.Dimension;
 
 /**
- *
- * @author keilw
+ * @author Werner Keil
+ * @version 0.8
  */
 public class DimensionJsonSerializer implements JsonbSerializer<Dimension> {
 
