@@ -29,47 +29,30 @@
  */
 package tech.uom.lib.yasson;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.io.IOException;
-import javax.json.bind.Jsonb;
-import javax.json.bind.JsonbBuilder;
-import javax.json.bind.JsonbConfig;
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonObjectBuilder;
+import javax.json.bind.adapter.JsonbAdapter;
 import javax.measure.Dimension;
 
-import org.junit.jupiter.api.Test;
 import tech.units.indriya.unit.UnitDimension;
 
 /**
- * @author keilw 
+ * @author Werner Keil 
  */
-public class DimensionJsonSerializerTest {
-
-    /**
-     * Test of serialize method, of class DimensionJsonSerializer.Inspired by
-     * https://stackoverflow.com/questions/21787128/how-to-unit-test-jackson-jsonserializer-and-jsondeserializer
-     *
-     * @throws IOException if an I/O error occurs
-     */
-    @Test
-    //@Disabled
-    public void testSerialize() throws IOException {
-        Dimension value = UnitDimension.LENGTH.multiply(UnitDimension.TIME.pow(2));
-    	// Create JSONB engine with pretty output and custom serializer/deserializer
-//    	JsonbConfig config = new JsonbConfig()
-//    	        .withFormatting(true)
-//    	        .withSerializers(new DimensionJsonSerializer())
-//    	        .withDeserializers(new DimensionJsonDeserializer());
-        JsonbConfig config = new JsonbConfig()  	        
-    	        .withSerializers(new DimensionJsonSerializer());
-        Jsonb jsonb = JsonbBuilder.create(config);
-    	
-    	// Serialize
-    	String result = jsonb.toJson(value);
-    	//System.out.println(result);
-    	
-        String expResult = "{\"[L]\":1,\"[T]\":2}";
-        //String result = writer.toString();
-        assertEquals(expResult, result);
+public class DimensionAdapter implements JsonbAdapter<Dimension, JsonObject> {
+ 
+    @Override
+    public JsonObject adaptToJson(Dimension dimension) throws Exception {
+        final JsonObjectBuilder builder = Json.createObjectBuilder();		
+        for (Dimension baseDim : dimension.getBaseDimensions().keySet()) {
+            builder.add(baseDim.toString(), dimension.getBaseDimensions().get(baseDim));    
+        }
+        return builder.build();
+    }
+ 
+    @Override
+    public Dimension adaptFromJson(JsonObject jsonObject) throws Exception {
+    	return UnitDimension.NONE;
     }
 }

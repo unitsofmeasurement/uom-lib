@@ -29,8 +29,6 @@
  */
 package tech.uom.lib.yasson;
 
-import java.io.IOException;
-
 import javax.json.bind.serializer.JsonbSerializer;
 import javax.json.bind.serializer.SerializationContext;
 import javax.json.stream.JsonGenerator;
@@ -40,12 +38,7 @@ import javax.measure.Dimension;
  *
  * @author keilw
  */
-class DimensionJsonSerializer implements JsonbSerializer<Dimension> {
-
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class DimensionJsonSerializer implements JsonbSerializer<Dimension> {
 
     /**
      * Serializes a dimension by serializing it's base dimension map.
@@ -54,17 +47,20 @@ class DimensionJsonSerializer implements JsonbSerializer<Dimension> {
      * https://stackoverflow.com/questions/48509189/jsr-275-dimension-string-serialization-and-deserialization
      * which might contain better alternatives meanwhile.
      *
-     * @param value       the dimension to serialize
-     * @param generator   the generator as provided by {@link JsonbSerializer}
-     * @param ctx the SerializationContext as provided by {@link JsonbSerializer}
-     * @throws IOException if an I/O exception occurs
+     * @param value     the dimension to serialize
+     * @param generator the generator as provided by {@link JsonbSerializer}
+     * @param ctx 		the SerializationContext as provided by {@link JsonbSerializer}
      */
 	@Override
 	public void serialize(Dimension value, JsonGenerator generator, SerializationContext ctx) {
-	       generator.writeStartObject();
-	       ctx.serialize(value.getClass().getName(), value, generator);
-	       generator.writeEnd();
-		//gen.write(value.getBaseDimensions());		
+       generator.writeStartObject();
+       //ctx.serialize(value.getClass().getName(), value, generator);
+       //ctx.serialize(value.getBaseDimensions(), generator);
+       //generator.w
+       for (Dimension baseDim : value.getBaseDimensions().keySet()) {
+    	   generator.write(baseDim.toString(), value.getBaseDimensions().get(baseDim));
+       }
+       generator.writeEnd();		
 	}
 
 }

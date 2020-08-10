@@ -38,6 +38,7 @@ import java.util.stream.Collectors;
 import javax.json.JsonObject;
 import javax.json.bind.serializer.DeserializationContext;
 import javax.json.bind.serializer.JsonbDeserializer;
+import javax.json.bind.serializer.JsonbSerializer;
 import javax.json.stream.JsonParser;
 import javax.measure.Dimension;
 import tech.units.indriya.unit.UnitDimension;
@@ -45,7 +46,7 @@ import tech.units.indriya.unit.UnitDimension;
 /**
  * @author keilw
  */
-class DimensionJsonDeserializer implements JsonbDeserializer<Dimension> {
+public class DimensionJsonDeserializer implements JsonbDeserializer<Dimension> {
 
     private static Dimension parseBaseDimension(String symbol) {
         switch (symbol) {
@@ -69,8 +70,15 @@ class DimensionJsonDeserializer implements JsonbDeserializer<Dimension> {
         }
     }
 
+    /**
+     * Deserializes a dimension by decomposing it's base dimension map.
+     *
+     * @param parser    	the JSON parser
+     * @param ctx 			the DeserializationContext as provided by {@link JsonbDeserializer}
+     * @param runtimeType 	the type of the returned object
+     */
 	@Override
-	public Dimension deserialize(JsonParser parser, DeserializationContext deserializationContext, Type runtimeType) {
+	public Dimension deserialize(JsonParser parser, DeserializationContext ctx, Type runtimeType) {
 		//JsonArray array = parser.getArray(); //.getArrayStream().collect(Collectors.toMap(p -> p.getId(), p -> p));
 		JsonObject obj = parser.getObject();
 		Set<String> keys = obj.keySet();		
