@@ -38,7 +38,8 @@ import javax.measure.Dimension;
 import tech.units.indriya.unit.UnitDimension;
 
 /**
- * @author Werner Keil 
+ * @author Werner Keil
+ * @version 0.5
  */
 public class DimensionAdapter implements JsonbAdapter<Dimension, JsonObject> {
  
