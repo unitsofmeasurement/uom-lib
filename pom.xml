@@ -43,7 +43,7 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>2.0.4</ri.version><!-- NOT for common -->
+		<ri.version>2.1-SNAPSHOT</ri.version><!-- NOT for common -->
 		<lib.version>${project.version}</lib.version>
 		
 		<hamcrest.version>2.0.0.0</hamcrest.version>

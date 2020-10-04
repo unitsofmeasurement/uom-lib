@@ -16,7 +16,7 @@
     </organization>
     <licenses>
         <license>
-            <name>BSD-3Clause</name>
+            <name>BSD-3-Clause</name>
             <url>LICENSE</url>
         </license>
     </licenses>
@@ -44,9 +44,7 @@
         <jdkVersion>1.8</jdkVersion>
         <maven.compile.targetLevel>1.8</maven.compile.targetLevel>
         <maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-        <api.version>2.0</api.version>
-        <impl.version>2.0.4</impl.version>
-        <ucum.version>2.0.2</ucum.version>
+        <ucum.version>2.1-SNAPSHOT</ucum.version>
         <yasson.version>1.0.7</yasson.version>
     </properties>
     <dependencies>
@@ -160,13 +158,22 @@
             <!-- Packaging (OSGi bundle) -->
             <!-- ======================================================= -->
             <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <extensions>true</extensions>
+                <groupId>biz.aQute.bnd</groupId>
+                <artifactId>bnd-maven-plugin</artifactId>
                 <configuration>
-                    <instructions>
-                        <Export-Package>tech.uom.lib.*</Export-Package>
-                    </instructions>
+                    <bnd>-exportcontents: tech.uom.lib.yasson.*</bnd>
+                </configuration>
+            </plugin>
+            
+            <!-- ======================================================= -->
+            <!-- JAR -->
+            <!-- ======================================================= -->
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+                    </archive>
                 </configuration>
             </plugin>
         </plugins>

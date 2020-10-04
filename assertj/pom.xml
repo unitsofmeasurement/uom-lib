@@ -132,15 +132,24 @@
             <!-- Packaging (OSGi bundle) -->
             <!-- ======================================================= -->
             <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <extensions>true</extensions>
+                <groupId>biz.aQute.bnd</groupId>
+                <artifactId>bnd-maven-plugin</artifactId>
                 <configuration>
-                    <instructions>
-                        <Export-Package>tech.uom.lib.*</Export-Package>
-                    </instructions>
+                    <bnd>-exportcontents: tech.uom.lib.assertj.*</bnd>
                 </configuration>
             </plugin>
+            
+            <!-- ======================================================= -->
+            <!-- JAR -->
+            <!-- ======================================================= -->
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+                    </archive>
+                </configuration>
+            </plugin>            
         </plugins>
     </build>
 
