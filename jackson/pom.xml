@@ -45,6 +45,7 @@
         <jdkVersion>1.8</jdkVersion>
         <maven.compile.targetLevel>1.8</maven.compile.targetLevel>
         <maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
+        <ri.version>2.1.2-SNAPSHOT</ri.version>
         <ucum.version>2.1-SNAPSHOT</ucum.version>
         <jackson.version>2.11.2</jackson.version>
         <compile.exclude.files>module-info.java</compile.exclude.files>

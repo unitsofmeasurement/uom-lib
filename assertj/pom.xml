@@ -21,6 +21,7 @@
     </licenses>
     <properties>
         <jsr.version>2.1.1</jsr.version>
+        <ri.version>2.1.1</ri.version>
         <maven.surefire.version>3.0.0-M5</maven.surefire.version>
     </properties>
     <developers>
