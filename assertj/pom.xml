@@ -15,7 +15,7 @@
     </organization>
     <licenses>
         <license>
-            <name>BSD</name>
+            <name>BSD-3-Clause</name>
             <url>LICENSE</url>
         </license>
     </licenses>

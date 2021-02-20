@@ -9,6 +9,7 @@
     </parent>
     <artifactId>uom-lib-jackson</artifactId>
     <name>Units of Measurement Jackson Library</name>
+    <version>2.1-SNAPSHOT</version>
     <description>Contains custom serializers and deserializers for JSR 385</description>
     <organization>
         <name>Units of Measurement project</name>
@@ -219,5 +220,30 @@
             </plugins>
         </pluginManagement>
     </build>
-    <version>2.1-SNAPSHOT</version>
+    
+    <!-- TODO could be removed later after switch to 2.1.1 -->
+    <!-- Additional repositories -->
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>ossrh-snapshot</id>
+            <name>OSSRH Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>ossrh</id>
+            <name>OSSRH</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <snapshotRepository>
+           <id>ossrh</id>
+           <name>OSSRH Snapshot</name>
+           <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>       
 </project>
