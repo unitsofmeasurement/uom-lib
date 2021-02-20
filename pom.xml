@@ -44,11 +44,12 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>2.1</ri.version><!-- NOT for common -->
+		<jsr.version>2.1.1</jsr.version>
+		<ri.version>2.1.1</ri.version><!-- NOT for common -->
 		<lib.version>${project.version}</lib.version>
 		
 		<hamcrest.version>2.0.0.0</hamcrest.version>
-		<junit.platform.version>1.1.0</junit.platform.version>
+		<junit.platform.version>1.7.0</junit.platform.version>
 	</properties>
 
 	<dependencyManagement>
@@ -121,7 +122,7 @@
 				<plugin>
 					<groupId>biz.aQute.bnd</groupId>
 					<artifactId>bnd-maven-plugin</artifactId>
-					<version>4.2.0</version>
+					<version>5.2.0</version>
 					<executions>
 						<execution>
 							<goals>
@@ -149,7 +150,7 @@
 								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 							</manifest>
 							<manifestEntries>
-								<Specification-Title>International System of Units</Specification-Title>
+								<Specification-Title>Units of Measurement</Specification-Title>
 								<Specification-Version>${project.version}</Specification-Version>
 								<Specification-Vendor>${project.organization.name}</Specification-Vendor>
 								<Implementation-Vendor>Units of Measurement contributors</Implementation-Vendor>
@@ -194,7 +195,7 @@
 						<header>src/main/config/header.txt</header>
 						<properties>
 							<owner>Werner Keil and others</owner>
-							<currentYear>2020</currentYear>
+							<currentYear>2021</currentYear>
 						</properties>
 						<excludes>
 							<exclude>**/README</exclude>
@@ -220,62 +221,32 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-
-		<plugins>
-			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-checkstyle-plugin</artifactId> 
-				<version>3.1.0</version> <executions> <execution> <id>check_style</id> <goals> 
-				<goal>check</goal> </goals> <phase>validate</phase> <configuration> <configLocation>/check_style.xml</configLocation> 
-				</configuration> </execution> </executions> <configuration> <includeTestSourceDirectory>true</includeTestSourceDirectory> 
-				<excludes>**/module-info.java</excludes> </configuration> <dependencies> 
-				<dependency> <groupId>tech.uom.lib</groupId> <artifactId>uom-code-analysis</artifactId> 
-				<version>1.0</version> </dependency> <dependency> <groupId>com.puppycrawl.tools</groupId> 
-				<artifactId>checkstyle</artifactId> <version>8.25</version> </dependency> 
-				</dependencies> </plugin> -->
-		</plugins>
 	</build>
 
-	<distributionManagement>
-		<repository>
-			<id>bintray-release</id>
-			<name>oss-jfrog-artifactory-release</name>
-			<url>https://oss.jfrog.org/artifactory/oss-release-local</url>
-		</repository>
-		<snapshotRepository>
-			<id>bintray-snapshot</id>
-			<name>oss-jfrog-artifactory-snapshot</name>
-			<url>https://oss.jfrog.org/artifactory/oss-snapshot-local</url>
-		</snapshotRepository>
-		<site>
-			<id>unitsofmeasurement</id>
-			<url>scp://www.unitsofmeasurement.org/www/docs/lib/</url>
-		</site>
+    <!-- Deployment to public servers -->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
 	</distributionManagement>
 
 	<!-- Additional repositories -->
 	<!-- Helps to resolve Parent POM -->
-	<repositories>
-		<repository>
-			<id>jcenter</id>
-			<name>JCenter</name>
-			<url>https://jcenter.bintray.com</url>
-		</repository>
-		<repository>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<id>bintray-release</id>
-			<name>libs-release</name>
-			<url>https://oss.jfrog.org/artifactory/libs-release</url>
-		</repository>
-		<repository>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<id>bintray-snapshot</id>
-			<name>libs-snapshot</name>
-			<url>https://oss.jfrog.org/artifactory/libs-snapshot</url>
-		</repository>
-	</repositories>
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>ossrh-snapshot</id>
+            <name>OSSRH Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
 
 	<profiles>
 		<profile>

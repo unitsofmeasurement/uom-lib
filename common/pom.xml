@@ -8,12 +8,13 @@
 		<name>Units of Measurement project</name>
 		<url>https://unitsofmeasurement.github.io</url>
 	</organization>
-	<description>Unit Standard Library.</description>
+	<description>Units Common Library</description>
 	<name>Units of Measurement Common Library for Java</name>
+	<version>2.1.1-SNAPSHOT</version>
 	<parent>
 		<groupId>tech.uom.lib</groupId>
 		<artifactId>uom-lib</artifactId>
-		<version>2.1-SNAPSHOT</version>
+		<version>2.1</version>
 	</parent>
 
 	<scm>
@@ -34,7 +35,8 @@
 	<!-- Build Settings -->
 	<!-- ======================================================= -->
 	<properties>
-		<jsr.version>2.1.1</jsr.version>
+		<jsr.version>2.1.2</jsr.version>
+		<jpms.name>tech.uom.lib.common</jpms.name>
 		<lib.version>2.1</lib.version>
 		<sourceEncoding>UTF-8</sourceEncoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -45,9 +47,8 @@
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<additionalparam>-Xdoclint:none</additionalparam>
 		<compile.exclude.files>module-info.java</compile.exclude.files>
-		<thisYear>2020</thisYear>
-		<!-- Plugins -->
-		<felix.version>3.4.0</felix.version>
+		<thisYear>2021</thisYear>
+		<!-- Plugins TODO revisit which are still needed here -->
 		<maven.jar.version>3.1.0</maven.jar.version>
 		<maven.source.version>3.1.0</maven.source.version>
 	</properties>
@@ -116,7 +117,7 @@
 				<groupId>biz.aQute.bnd</groupId>
 				<artifactId>bnd-maven-plugin</artifactId>
  				<configuration>
- 					<bnd>-exportcontents: tech.uom.lib.common.*</bnd>
+ 					<bnd>-exportcontents: ${jpms.name}.*</bnd>
  				</configuration>
 			</plugin>
 
@@ -144,40 +145,27 @@
 
 	<!-- Additional repositories -->
 	<!-- Helps to resolve Parent POM and Snapshot artifacts -->
-	<repositories>
-		<repository>
-			<id>jcenter</id>
-			<name>JCenter</name>
-			<url>https://jcenter.bintray.com</url>
-		</repository>
-		<repository>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<id>bintray-release</id>
-			<name>libs-release</name>
-			<url>https://oss.jfrog.org/artifactory/libs-release</url>
-		</repository>
-		<repository>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<id>bintray-snapshot</id>
-			<name>libs-snapshot</name>
-			<url>https://oss.jfrog.org/artifactory/libs-snapshot</url>
-		</repository>
-	</repositories>
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <id>ossrh-snapshot</id>
+            <name>OSSRH Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
 
 	<distributionManagement>
 		<repository>
-			<id>bintray-release</id>
-			<name>oss-jfrog-artifactory-release</name>
-			<url>https://oss.jfrog.org/artifactory/oss-release-local</url>
+            <id>ossrh</id>
+            <name>OSSRH</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
 		<snapshotRepository>
-			<id>bintray-snapshot</id>
-			<name>oss-jfrog-artifactory-snapshot</name>
-			<url>https://oss.jfrog.org/artifactory/oss-snapshot-local</url>
+           <id>ossrh</id>
+           <name>OSSRH Snapshot</name>
+           <url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
 	<ciManagement>
@@ -217,15 +205,6 @@
 					</plugin>
 				</plugins>
 			</build>
-<!-- reficio.org seems down, but the plugin should be on MavenCentral
-			<pluginRepositories>
-				<pluginRepository>
-					<id>reficio</id>
-					<url>http://repo.reficio.org/maven/</url>
-				</pluginRepository>
-			</pluginRepositories>
- -->			
 		</profile>
-	</profiles>
-	<version>2.1.1-SNAPSHOT</version>
+	</profiles>	
 </project>

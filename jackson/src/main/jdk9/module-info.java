@@ -1,6 +1,6 @@
 /*
- * Units of Measurement Common Library for Java
- * Copyright (c) 2005-2020, Werner Keil and others.
+ * Units of Measurement Jackson Library
+ * Copyright (c) 2005-2021, Werner Keil and others.
  *
  * All rights reserved.
  *
