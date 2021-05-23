@@ -5,7 +5,7 @@
     <parent>
         <groupId>tech.uom.lib</groupId>
         <artifactId>uom-lib</artifactId>
-        <version>2.1</version>
+        <version>2.1.1-SNAPSHOT</version>
     </parent>
     <artifactId>uom-lib-yasson</artifactId>
     <name>Units of Measurement Jakarta JSON-B Library</name>
@@ -215,7 +215,6 @@
         </pluginManagement>
     </build>    
     
-    <!-- TODO could be removed later after switch to 2.1.1 -->
     <!-- Additional repositories -->
     <repositories>
         <repository>
