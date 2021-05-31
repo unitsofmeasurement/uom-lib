@@ -29,44 +29,72 @@
  */
 package tech.uom.lib.yasson;
 
+import static tech.uom.lib.yasson.Mode.UCUM;
+
 import java.lang.reflect.Type;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import javax.json.JsonObject;
+import java.text.ParsePosition;
 import javax.json.bind.serializer.DeserializationContext;
 import javax.json.bind.serializer.JsonbDeserializer;
 import javax.json.stream.JsonParser;
+import javax.json.stream.JsonParser.Event;
 import javax.measure.Unit;
 
+import systems.uom.ucum.format.UCUMFormat;
+import systems.uom.ucum.format.UCUMFormat.Variant;
 import tech.units.indriya.AbstractUnit;
 
 /**
  * @author Werner Keil
- * @version 0.1
+ * @version 0.2
  */
 public class UnitJsonDeserializer implements JsonbDeserializer<Unit> {
 
     /**
-     * Deserializes a unit by decomposing it's base dimension map.
+     * @since 2.0.2
+     */
+    private final Mode mode;
+    
+    private UnitJsonDeserializer(Mode mode) {
+    	this.mode = mode;
+    }
+    
+    public UnitJsonDeserializer() {
+    	this(UCUM);
+    }
+	
+    /**
+     * Deserializes a unit.
      *
      * @param parser    	the JSON parser
      * @param ctx 			the DeserializationContext as provided by {@link JsonbDeserializer}
      * @param runtimeType 	the type of the returned object
      */
 	@Override
-	public Unit deserialize(JsonParser parser, DeserializationContext ctx, Type runtimeType) {
-		//JsonArray array = parser.getArray(); //.getArrayStream().collect(Collectors.toMap(p -> p.getId(), p -> p));
-		JsonObject obj = parser.getObject();
-		Set<String> keys = obj.keySet();		
-		//Map<String, Integer> baseDimensionsStrings = parser.readValueAs(Map.class);
-		Map<String, Integer> baseDimensionsStrings = new HashMap<>();
-		
-		for (String key : keys) {
-			baseDimensionsStrings.put(key, obj.getInt(key));
-		}
-		
+	public Unit deserialize(JsonParser parser, DeserializationContext ctx, Type runtimeType) {			   
         Unit retValue = AbstractUnit.ONE;
+        
+		//JsonArray array = parser.getArray(); //.getArrayStream().collect(Collectors.toMap(p -> p.getId(), p -> p));
+		while (parser.hasNext()) { 		
+		
+			Event evt = parser.next();
+			switch (evt) {
+			case VALUE_STRING:
+				String str = parser.getString();
+				
+				switch(mode) {
+            	// currently we use only UCUM	
+            	default:
+            		retValue = UCUMFormat.getInstance(Variant.CASE_SENSITIVE).parse(str, new ParsePosition(0));
+            		break;
+            	}
+				 
+				break;
+			default:
+				break;
+			}
+		
+		}
+
         return retValue;
 	}
 }

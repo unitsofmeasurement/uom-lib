@@ -63,8 +63,7 @@ public class UnitJacksonModuleTest {
 	private static final String ERRORMSG_TEMP = "Expected JSON with a UCUM representation of the temperature unit";
 	private static final String ERRMSG_PARSE_LEN = "The Unit<Length> in the parsed JSON doesn't match";
 
-	// can't directly unit test the Jackson Module classes; need to go through
-	// JsonFactory
+	// can't directly unit test the Jackson Module classes; need to go through JsonFactory
 	private JsonFactory jsonFactory;
 
 	@BeforeEach

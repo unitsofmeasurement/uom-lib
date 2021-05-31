@@ -89,7 +89,7 @@ public class UnitJacksonModule extends SimpleModule {
      * @since 2.0.2
      */
     public UnitJacksonModule(Mode mode) {
-        super("UnitJsonSerializationModule", new Version(1, 3, 3, null, 
+        super("UnitJsonSerializationModule", new Version(2, 1, 0, null, 
                 UnitJacksonModule.class.getPackage().getName(), "uom-lib-jackson"));
         this.mode = mode;
         addSerializer(Unit.class, new UnitJsonSerializer());

@@ -29,32 +29,24 @@
  */
 package tech.uom.lib.yasson;
 
-import javax.json.bind.serializer.JsonbSerializer;
-import javax.json.bind.serializer.SerializationContext;
-import javax.json.stream.JsonGenerator;
-import javax.measure.Unit;
+import systems.uom.ucum.format.UCUMFormat;
+import tech.units.indriya.format.EBNFUnitFormat;
+import tech.units.indriya.format.SimpleUnitFormat;
 
 /**
- * @author Werner Keil
- * @version 0.2
+ * @since 2.1
  */
-public class UnitJsonSerializer implements JsonbSerializer<Unit> {
-
+public enum Mode {
     /**
-     * Serializes a unit.
-     *
-     *
-     * @param value     the unit to serialize
-     * @param generator the generator as provided by {@link JsonbSerializer}
-     * @param ctx 		the SerializationContext as provided by {@link JsonbSerializer}
+     * Serialization-mode using {@link SimpleUnitFormat}.
      */
-	@Override
-	public void serialize(Unit value, JsonGenerator generator, SerializationContext ctx) {
-       generator.writeStartObject();
-       //ctx.serialize(value.getClass().getName(), value, generator);
-       //ctx.serialize(value.getBaseDimensions(), generator);
-       //generator.w
-
-       generator.writeEnd();		
-	}
-}
+    SIMPLE,
+    /**
+     * Serialization-mode using {@link EBNFUnitFormat}.
+     */
+    EBNF,
+    /**
+     * Serialization-mode using {@link UCUMFormat}. This is the <strong>default</strong> mode if none is explicitly selected.
+     */
+    UCUM
+};
