@@ -34,11 +34,12 @@ import tech.units.indriya.format.EBNFUnitFormat;
 import tech.units.indriya.format.SimpleUnitFormat;
 
 /**
+ * The Serialization-mode, either {@code SIMPLE}, {@code EBNF} or {@code UCUM}
  * @since 2.1
  */
-public enum Mode {
+public enum SerializationMode {
     /**
-     * Serialization-mode using {@link SimpleUnitFormat}.
+     * Serialization-mode using {@link SimpleUnitFormat}. This is the <strong>default</strong> mode if none is explicitly selected.
      */
     SIMPLE,
     /**
@@ -46,7 +47,7 @@ public enum Mode {
      */
     EBNF,
     /**
-     * Serialization-mode using {@link UCUMFormat}. This is the <strong>default</strong> mode if none is explicitly selected.
+     * Serialization-mode using {@link UCUMFormat}.
      */
     UCUM
 };

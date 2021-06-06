@@ -29,7 +29,7 @@
  */
 package tech.uom.lib.yasson;
 
-import static tech.uom.lib.yasson.Mode.UCUM;
+import static tech.uom.lib.yasson.SerializationMode.SIMPLE;
 
 import java.lang.reflect.Type;
 import java.text.ParsePosition;
@@ -38,28 +38,41 @@ import javax.json.bind.serializer.JsonbDeserializer;
 import javax.json.stream.JsonParser;
 import javax.json.stream.JsonParser.Event;
 import javax.measure.Unit;
+import javax.measure.format.UnitFormat;
 
 import systems.uom.ucum.format.UCUMFormat;
 import systems.uom.ucum.format.UCUMFormat.Variant;
 import tech.units.indriya.AbstractUnit;
+import tech.units.indriya.format.EBNFUnitFormat;
+import tech.units.indriya.format.SimpleUnitFormat;
 
 /**
  * @author Werner Keil
- * @version 0.2
+ * @version 0.5
  */
 public class UnitJsonDeserializer implements JsonbDeserializer<Unit> {
 
     /**
      * @since 2.0.2
      */
-    private final Mode mode;
+    private final SerializationMode mode;
     
-    private UnitJsonDeserializer(Mode mode) {
+    private UnitJsonDeserializer(SerializationMode mode) {
     	this.mode = mode;
     }
     
     public UnitJsonDeserializer() {
-    	this(UCUM);
+    	this(SIMPLE);
+    }
+    
+    /**
+     * Returns {@code UnitJsonDeserializer} using the given {@code SerializationMode}.
+     *
+     * @param mode the {@code SerializationMode} to use
+     * @return a {@code UnitJsonDeserializer} using the specified serialization-mode
+     */
+    public static UnitJsonDeserializer ofMode(SerializationMode mode) {
+    	return new UnitJsonDeserializer(mode);
     }
 	
     /**
@@ -71,30 +84,32 @@ public class UnitJsonDeserializer implements JsonbDeserializer<Unit> {
      */
 	@Override
 	public Unit deserialize(JsonParser parser, DeserializationContext ctx, Type runtimeType) {			   
-        Unit retValue = AbstractUnit.ONE;
+        Unit retValue = AbstractUnit.ONE; // TODO or null?
+        final UnitFormat format = getFormat(mode); // TODO could cache this on an instance level
         
-		//JsonArray array = parser.getArray(); //.getArrayStream().collect(Collectors.toMap(p -> p.getId(), p -> p));
 		while (parser.hasNext()) { 		
 		
 			Event evt = parser.next();
 			switch (evt) {
 			case VALUE_STRING:
 				String str = parser.getString();
-				
-				switch(mode) {
-            	// currently we use only UCUM	
-            	default:
-            		retValue = UCUMFormat.getInstance(Variant.CASE_SENSITIVE).parse(str, new ParsePosition(0));
-            		break;
-            	}
-				 
+				retValue = format.parse(str, new ParsePosition(0));				 
 				break;
 			default:
 				break;
-			}
-		
+			}		
 		}
-
         return retValue;
+	}
+	
+	private static final UnitFormat getFormat(final SerializationMode mode) { 
+		switch(mode) {	
+		case UCUM:
+			return UCUMFormat.getInstance(Variant.CASE_SENSITIVE);
+		case EBNF:
+			return EBNFUnitFormat.getInstance();
+		default:
+			return SimpleUnitFormat.getInstance();
+		}
 	}
 }

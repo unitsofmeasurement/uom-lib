@@ -29,17 +29,48 @@
  */
 package tech.uom.lib.yasson;
 
+import static tech.uom.lib.yasson.SerializationMode.SIMPLE;
+
 import javax.json.bind.serializer.JsonbSerializer;
 import javax.json.bind.serializer.SerializationContext;
 import javax.json.stream.JsonGenerator;
 import javax.measure.Unit;
+import javax.measure.format.UnitFormat;
+
+import systems.uom.ucum.format.UCUMFormat;
+import systems.uom.ucum.format.UCUMFormat.Variant;
+import tech.units.indriya.format.EBNFUnitFormat;
+import tech.units.indriya.format.SimpleUnitFormat;
 
 /**
  * @author Werner Keil
- * @version 0.2
+ * @version 0.5
  */
 public class UnitJsonSerializer implements JsonbSerializer<Unit> {
-
+	
+    /**
+     * @since 2.0.2
+     */
+    private final SerializationMode mode;
+    
+    private UnitJsonSerializer(SerializationMode mode) {
+    	this.mode = mode;
+    }
+    
+    public UnitJsonSerializer() {
+    	this(SIMPLE);
+    }    
+    
+    /**
+     * Returns {@code UnitJsonSerializer} using the given {@code SerializationMode}.
+     *
+     * @param mode the {@code SerializationMode} to use
+     * @return a {@code UnitJsonSerializer} using the specified serialization-mode
+     */
+    public static UnitJsonSerializer ofMode(SerializationMode mode) {
+    	return new UnitJsonSerializer(mode);
+    }
+    
     /**
      * Serializes a unit.
      *
@@ -50,11 +81,24 @@ public class UnitJsonSerializer implements JsonbSerializer<Unit> {
      */
 	@Override
 	public void serialize(Unit value, JsonGenerator generator, SerializationContext ctx) {
-       generator.writeStartObject();
-       //ctx.serialize(value.getClass().getName(), value, generator);
-       //ctx.serialize(value.getBaseDimensions(), generator);
-       //generator.w
-
-       generator.writeEnd();		
+	   final UnitFormat format = getFormat(mode); // TODO could cache this on an instance level       
+	   
+	   if (value == null) {
+		   generator.writeNull();
+	   } else {
+		   String formattedUnit = format.format(value);
+		   generator.write(formattedUnit);	   
+       }
+	}
+	
+	private static final UnitFormat getFormat(final SerializationMode mode) { 
+		switch(mode) {	
+		case UCUM:
+			return UCUMFormat.getInstance(Variant.CASE_SENSITIVE);
+		case EBNF:
+			return EBNFUnitFormat.getInstance();
+		default:
+			return SimpleUnitFormat.getInstance();
+		}
 	}
 }
