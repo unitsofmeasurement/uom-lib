@@ -47,9 +47,6 @@
 		<additionalparam>-Xdoclint:none</additionalparam>
 		<compile.exclude.files>module-info.java</compile.exclude.files>
 		<thisYear>2021</thisYear>
-		<!-- Plugins TODO revisit which are still needed here -->
-		<maven.jar.version>3.1.0</maven.jar.version>
-		<maven.source.version>3.1.0</maven.source.version>
 	</properties>
 
 	<dependencies>
