@@ -43,6 +43,7 @@ import com.fasterxml.jackson.databind.deser.std.StdScalarDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.ser.std.StdScalarSerializer;
 import javax.measure.Dimension;
+import javax.measure.Quantity;
 import javax.measure.Unit;
 import tech.units.indriya.format.EBNFUnitFormat;
 import tech.units.indriya.format.SimpleUnitFormat;
@@ -96,6 +97,7 @@ public class UnitJacksonModule extends SimpleModule {
         addSerializer(Dimension.class, new DimensionJsonSerializer());
         addDeserializer(Unit.class, new UnitJsonDeserializer());
         addDeserializer(Dimension.class, new DimensionJsonDeserializer());
+        addDeserializer(Quantity.class, new QuantityJsonDeserializer());
     }
     
     public UnitJacksonModule() {
