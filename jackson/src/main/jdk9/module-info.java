@@ -31,6 +31,7 @@ module tech.uom.lib.jackson {
     requires transitive java.measure;
     requires tech.units.indriya;
     requires transitive systems.uom.quantity;
+    requires transitive tech.uom.lib.common;
     requires systems.uom.ucum;
     requires com.fasterxml.jackson.core;
     requires com.fasterxml.jackson.databind;
