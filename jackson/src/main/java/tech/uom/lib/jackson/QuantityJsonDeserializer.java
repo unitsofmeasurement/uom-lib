@@ -36,6 +36,7 @@ import javax.measure.Quantity;
 import javax.measure.Quantity.Scale;
 import javax.measure.Unit;
 
+import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.JsonToken;
@@ -87,6 +88,17 @@ public class QuantityJsonDeserializer extends StdDeserializer<Quantity> {
                     break;
             }
         }
+
+        if(value == null){
+            throw new JsonParseException(jp, "Value not found for quantity type.");
+        }
+        if(unit == null){
+            throw new JsonParseException(jp, "Unit not found for quantity type.");
+        }
+        if(scale == null){
+            throw new JsonParseException(jp, "Scale not found for quantity type.");
+        }
+
         return Quantities.getQuantity(value, unit, scale);
     }
 }
