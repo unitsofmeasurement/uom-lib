@@ -46,7 +46,7 @@
         <maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
         <ri.version>2.1.2</ri.version>
         <ucum.version>2.1</ucum.version>
-        <jackson.version>2.11.2</jackson.version>
+        <jackson.version>2.12.6.1</jackson.version>
         <compile.exclude.files>module-info.java</compile.exclude.files>
     </properties>
     <dependencies>
