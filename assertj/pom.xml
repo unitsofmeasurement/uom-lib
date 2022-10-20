@@ -34,16 +34,6 @@
             <timezone>+1</timezone>
         </developer>
     </developers>
-    
-    <dependencyManagement>
-        <dependencies>
-                <dependency>
-                <groupId>org.junit.platform</groupId>
-                <artifactId>junit-platform-commons</artifactId>
-                <version>${junit.platform.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -63,7 +53,6 @@
         <dependency>
             <groupId>tech.units</groupId>
             <artifactId>indriya</artifactId>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>jakarta.annotation</groupId>
@@ -78,30 +67,9 @@
 		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
+			<artifactId>junit-jupiter</artifactId>
+            <version>${junit.jupiter.version}</version>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-params</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-engine</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-commons</artifactId>
-        </dependency>
-		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-launcher</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-runner</artifactId>
 		</dependency>
     </dependencies>
 
@@ -115,6 +83,7 @@
      	             <version>3.0.0-M5</version>
 		 			<configuration>
 		          		<shutdown>kill</shutdown>
+                        <useModulePath>false</useModulePath>
 		        	</configuration>
 				</plugin>
 	        </plugins>

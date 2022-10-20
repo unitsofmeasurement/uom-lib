@@ -32,7 +32,7 @@ module tech.uom.lib.assertj {
     requires tech.uom.lib.common;
     requires java.annotation;
     requires org.assertj.core;
-    requires org.junit.platform.commons;
+    requires tech.units.indriya;
     
     exports tech.uom.lib.assertj;
     exports tech.uom.lib.assertj.assertions;
