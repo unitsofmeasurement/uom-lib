@@ -32,7 +32,7 @@ package tech.uom.lib.assertj;
 /**
  * Entry point for BDD assertions of different data types.
  */
-@javax.annotation.Generated(value = "assertj-assertions-generator")
+@jakarta.annotation.Generated(value = "assertj-assertions-generator")
 public class BddAssertions {
 
     /**

@@ -37,7 +37,7 @@ import javax.measure.Unit;
  * Although this class is not final to allow Soft assertions proxy, if you wish to extend it,
  * extend {@link AbstractUnitAssert} instead.
  */
-@javax.annotation.Generated(value = "assertj-assertions-generator")
+@jakarta.annotation.Generated(value = "assertj-assertions-generator")
 public class UnitAssert extends AbstractUnitAssert<UnitAssert, Unit> {
 
     /**

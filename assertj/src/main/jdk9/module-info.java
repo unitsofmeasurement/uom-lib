@@ -30,7 +30,7 @@
 module tech.uom.lib.assertj {
     requires transitive java.measure;
     requires tech.uom.lib.common;
-    requires java.annotation;
+    requires jakarta.annotation;
     requires org.assertj.core;
     requires tech.units.indriya;
     

@@ -37,7 +37,7 @@ import javax.measure.Dimension;
  * Although this class is not final to allow Soft assertions proxy, if you wish to extend it,
  * extend {@link AbstractDimensionAssert} instead.
  */
-@javax.annotation.Generated(value = "assertj-assertions-generator")
+@jakarta.annotation.Generated(value = "assertj-assertions-generator")
 public class DimensionAssert extends AbstractDimensionAssert<DimensionAssert, Dimension> {
 
     /**

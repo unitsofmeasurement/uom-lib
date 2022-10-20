@@ -37,7 +37,7 @@ import javax.measure.Quantity;
  * Although this class is not final to allow Soft assertions proxy, if you wish to extend it,
  * extend {@link AbstractQuantityAssert} instead.
  */
-@javax.annotation.Generated(value = "assertj-assertions-generator")
+@jakarta.annotation.Generated(value = "assertj-assertions-generator")
 public class QuantityAssert extends AbstractQuantityAssert<QuantityAssert, Quantity> {
 
     /**
