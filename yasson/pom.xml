@@ -5,7 +5,7 @@
     <parent>
         <groupId>tech.uom.lib</groupId>
         <artifactId>uom-lib</artifactId>
-        <version>2.1.1-SNAPSHOT</version>
+        <version>2.2-SNAPSHOT</version>
     </parent>
     <artifactId>uom-lib-yasson</artifactId>
     <name>Units of Measurement Jakarta JSON-B Library</name>
@@ -44,7 +44,6 @@
         <jdkVersion>1.8</jdkVersion>
         <maven.compile.targetLevel>1.8</maven.compile.targetLevel>
         <maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-        <ri.version>2.1.2</ri.version>
         <ucum.version>2.1</ucum.version>
         <yasson.version>1.0.8</yasson.version>
     </properties>
