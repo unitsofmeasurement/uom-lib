@@ -13,7 +13,7 @@
 	<parent>
 		<groupId>tech.uom.lib</groupId>
 		<artifactId>uom-lib</artifactId>
-		<version>2.1.1-SNAPSHOT</version>
+		<version>2.2-SNAPSHOT</version>
 	</parent>
 
 	<scm>
@@ -46,7 +46,7 @@
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<additionalparam>-Xdoclint:none</additionalparam>
 		<compile.exclude.files>module-info.java</compile.exclude.files>
-		<thisYear>2021</thisYear>
+		<thisYear>2023</thisYear>
 	</properties>
 
 	<dependencies>
@@ -55,9 +55,9 @@
 			<artifactId>unit-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>javax.inject</groupId>
-			<artifactId>javax.inject</artifactId>
-			<version>1</version>
+		  	<groupId>jakarta.inject</groupId>
+		  	<artifactId>jakarta.inject-api</artifactId>
+		  	<version>2.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hamcrest</groupId>
