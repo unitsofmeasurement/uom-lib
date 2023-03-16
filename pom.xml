@@ -191,7 +191,7 @@
 						<header>src/main/config/header.txt</header>
 						<properties>
 							<owner>Werner Keil and others</owner>
-							<currentYear>2021</currentYear>
+							<currentYear>2023</currentYear>
 						</properties>
 						<excludes>
 							<exclude>**/README</exclude>
@@ -201,6 +201,7 @@
 							<exclude>src/main/resources/**</exclude>
 							<exclude>src/main/config/**</exclude>
 							<exclude>src/etc/**</exclude>
+							<exclude>docs/**</exclude>
 							<exclude>*.css</exclude>
 							<exclude>*.editorconfig</exclude>
 							<exclude>*.jpg</exclude>

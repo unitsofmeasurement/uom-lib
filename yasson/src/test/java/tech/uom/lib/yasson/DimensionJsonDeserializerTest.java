@@ -1,6 +1,6 @@
 /*
  * Units of Measurement Jakarta JSON-B Library
- * Copyright (c) 2005-2021, Werner Keil and others.
+ * Copyright (c) 2005-2023, Werner Keil and others.
  *
  * All rights reserved.
  *
