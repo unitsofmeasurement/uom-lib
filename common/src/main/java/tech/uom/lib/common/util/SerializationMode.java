@@ -37,17 +37,34 @@ import javax.measure.format.UnitFormat;
  * @since 2.2
  * @see UnitFormat
  */
-public enum SerializationMode {
+public enum SerializationMode implements DescriptiveEnum<SerializationMode> {
     /**
      * Serialization-mode using {@code SimpleUnitFormat}. This is the <strong>default</strong> mode if none is explicitly selected.
      */
-    SIMPLE,
+    SIMPLE("Simple formatting"),
     /**
      * Serialization-mode using an {@code EBNF} instance of {@link UnitFormat}.
+     * @see <a href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">Wikipedia: Extended Backus–Naur form</a> 
      */
-    EBNF,
+    EBNF("EBNF style formatting"),
     /**
      * Serialization-mode using a {@code UCUM} instance of {@link UnitFormat}.
      */
-    UCUM
-};
+    UCUM("UCUM based formatting");
+	
+	private final String description;
+	
+	private SerializationMode(final String desc) {
+    	this.description = desc;
+    }
+
+	@Override
+	public String getDescription() {
+		return description;
+	}
+
+	@Override
+	public DescriptiveEnum<SerializationMode>[] dValues() {
+		return SerializationMode.values();
+	}
+}

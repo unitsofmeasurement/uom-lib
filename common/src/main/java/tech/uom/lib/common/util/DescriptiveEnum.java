@@ -35,7 +35,7 @@ import tech.uom.lib.common.function.DescriptionSupplier;
  * This interface is used to provide a <code>getDescription()</code> method to enums.
  *
  * @author Werner Keil
- * @version 0.4
+ * @version 1.0
  * @param <D> the value parameter
  * @since 1.0.2
  */
@@ -43,7 +43,9 @@ public interface DescriptiveEnum<D extends DescriptiveEnum<D>> extends Descripti
 
     String name(); // this is just a compatibility measure with the original enum
 
-    String getDescription();
+    default String getDescription() {
+    	return "";
+    }
 
     DescriptiveEnum<D>[] dValues();
 }
