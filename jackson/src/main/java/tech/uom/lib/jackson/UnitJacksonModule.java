@@ -86,6 +86,17 @@ public class UnitJacksonModule extends SimpleModule {
     public UnitJacksonModule() {
     	this(UCUM);
     }
+    
+    /**
+     * Returns {@code UnitJsonSerializer} using the given {@code SerializationMode}.
+     *
+     * @param mode the {@code SerializationMode} to use
+     * @return a {@code UnitJsonSerializer} using the specified serialization-mode
+     * @since 2.2
+     */
+    public static UnitJacksonModule ofMode(SerializationMode mode) {
+    	return new UnitJacksonModule(mode);
+    }
 
     @SuppressWarnings("rawtypes")
     private class UnitJsonSerializer extends StdScalarSerializer<Unit> {
