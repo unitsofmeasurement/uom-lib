@@ -36,7 +36,7 @@ import java.util.Comparator;
 /**
  * Compares two {@linkplain Number} objects with each other
  * @author Werner
- * @version 0.2
+ * @version 1.0
  * @since 1.0.2
  */
 public class NumberComparator implements Comparator<Number> {

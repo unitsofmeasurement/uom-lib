@@ -29,39 +29,25 @@
  */
 package tech.uom.lib.common.util;
 
-import java.util.Comparator;
-import javax.measure.Unit;
+import javax.measure.format.UnitFormat;
 
 /**
- * Comparator to sort units by natural order, looking at both the name and symbol.
- *
- * @author <a href="mailto:werner@uom.technology">Werner Keil</a>
- * @version 1.2
- * @param <U> the type to compare
- * @return <b>Given:</b>
- *         <p>
- *         Quantity&lt;Time&gt; day = timeFactory.create(1, Units.DAY);
- *         </p>
- *         <p>
- *         Quantity&lt;Time&gt; hours = timeFactory.create(18, Units.HOUR);
- *         </p>
- *         <p>
- *         Quantity&lt;Time&gt; minutes = timeFactory.create(15, Units.HOUR);
- *         </p>
- *         <p>
- *         Quantity&lt;Time&gt; seconds = timeFactory.create(100, Units.HOUR);
- *         </p>
- *         will return: seconds, minutes, hours, day
- * @since 2.0
+ * The Serialization-mode, either {@code SIMPLE}, {@code EBNF} or {@code UCUM}
+ * @version 1.5
+ * @since 2.2
+ * @see UnitFormat
  */
-public class UnitComparator<U extends Unit<?>> implements Comparator<U> {
-
-    @Override
-    public int compare(U u1, U u2) {
-        if (u1.getName() != null && u1.getName().equals(u2.getName())) {
-            return u1.toString().compareTo(u2.toString());
-            // TODO why is this the same as below?
-        }
-        return u1.toString().compareTo(u2.toString());
-    }
-}
+public enum SerializationMode {
+    /**
+     * Serialization-mode using {@code SimpleUnitFormat}. This is the <strong>default</strong> mode if none is explicitly selected.
+     */
+    SIMPLE,
+    /**
+     * Serialization-mode using an {@code EBNF} instance of {@link UnitFormat}.
+     */
+    EBNF,
+    /**
+     * Serialization-mode using a {@code UCUM} instance of {@link UnitFormat}.
+     */
+    UCUM
+};
