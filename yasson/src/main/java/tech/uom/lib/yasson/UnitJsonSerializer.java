@@ -81,7 +81,7 @@ public class UnitJsonSerializer implements JsonbSerializer<Unit> {
      */
 	@Override
 	public void serialize(Unit value, JsonGenerator generator, SerializationContext ctx) {
-	   final UnitFormat format = getFormat(mode); // TODO could cache this on an instance level       
+	   final UnitFormat format = getFormat(mode); // TODO could we cache this on an instance level
 	   
 	   if (value == null) {
 		   generator.writeNull();

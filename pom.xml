@@ -307,4 +307,8 @@
 			</build>
 		</profile>
 	</profiles>
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/unitsofmeasurement/uom-lib/issues</url>
+	</issueManagement>
 </project>
