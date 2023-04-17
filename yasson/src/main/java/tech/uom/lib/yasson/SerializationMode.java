@@ -36,6 +36,7 @@ import tech.units.indriya.format.SimpleUnitFormat;
 /**
  * The Serialization-mode, either {@code SIMPLE}, {@code EBNF} or {@code UCUM}
  * @since 2.1
+ * @deprecated use common SerializationMode
  */
 public enum SerializationMode {
     /**

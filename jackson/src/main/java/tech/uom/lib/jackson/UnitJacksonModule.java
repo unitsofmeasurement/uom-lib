@@ -29,7 +29,7 @@
  */
 package tech.uom.lib.jackson;
 
-import static tech.uom.lib.jackson.UnitJacksonModule.Mode.UCUM;
+import static tech.uom.lib.common.util.SerializationMode.UCUM;
 
 import java.io.IOException;
 import java.text.ParsePosition;
@@ -47,6 +47,7 @@ import javax.measure.Quantity;
 import javax.measure.Unit;
 import tech.units.indriya.format.EBNFUnitFormat;
 import tech.units.indriya.format.SimpleUnitFormat;
+import tech.uom.lib.common.util.SerializationMode;
 import systems.uom.ucum.format.UCUMFormat;
 import systems.uom.ucum.format.UCUMFormat.Variant;
 
@@ -60,36 +61,18 @@ public class UnitJacksonModule extends SimpleModule {
      *
      */
     private static final long serialVersionUID = 7601584599518016604L;
-    
+       
     /**
      * @since 2.0.2
      */
-    public enum Mode {
-        /**
-         * Serialization-mode using {@link SimpleUnitFormat}.
-         */
-        SIMPLE,
-        /**
-         * Serialization-mode using {@link EBNFUnitFormat}.
-         */
-        EBNF,
-        /**
-         * Serialization-mode using {@link UCUMFormat}. This is the <strong>default</strong> mode if none is explicitly selected.
-         */
-        UCUM
-    };
-    
-    /**
-     * @since 2.0.2
-     */
-    final Mode mode;
+    final SerializationMode mode;
     
     /**
      * 
      * @param mode the serialization-mode
-     * @since 2.0.2
+     * @since 2.2 
      */
-    public UnitJacksonModule(Mode mode) {
+    public UnitJacksonModule(SerializationMode mode) {
         super("UnitJsonSerializationModule", new Version(2, 1, 0, null, 
                 UnitJacksonModule.class.getPackage().getName(), "uom-lib-jackson"));
         this.mode = mode;
