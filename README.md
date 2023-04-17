@@ -14,8 +14,8 @@ Currently the following libraries are defined
 
 * [**Common**](common) a common library reusable across JVMs complementing the JSR 385 API.
 * [**AssertJ**](assertj) Assertions adding JSR 385 support to test cases based on [AssertJ](http://joel-costigliola.github.io/assertj/)
-* [**Jackson**](jackson) Serializers and Deserializers adding JSR 385 support for the [Jackson](https://github.com/FasterXML/jackson) project
-* [**Yasson**](yasson) Serializers and Deserializers adding JSR 385 support for [Jakarta JSON Binding](http://json-b.net/)
+* [**Jackson**](jackson) Serializers and Deserializers adding JSR 385 support for [Jackson Databind](https://github.com/FasterXML/jackson-databind) 
+* [**Yasson**](yasson) Serializers and Deserializers adding JSR 385 support for [Jakarta JSON Binding](https://jakarta.ee/specifications/jsonb/)
 
 Planning
 ------------
