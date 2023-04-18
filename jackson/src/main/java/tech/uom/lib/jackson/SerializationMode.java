@@ -1,5 +1,5 @@
 /*
- * Units of Measurement Common Library for Java
+ * Units of Measurement Jackson Library
  * Copyright (c) 2005-2023, Werner Keil and others.
  *
  * All rights reserved.
@@ -27,9 +27,14 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
  * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package tech.uom.lib.common.util;
+package tech.uom.lib.jackson;
 
 import javax.measure.format.UnitFormat;
+
+import tech.uom.lib.common.util.DescriptiveEnum;
+import systems.uom.ucum.format.UCUMFormat;
+import tech.units.indriya.format.EBNFUnitFormat;
+import tech.units.indriya.format.SimpleUnitFormat;
 
 /**
  * The Serialization-mode, either {@code SIMPLE}, {@code EBNF} or {@code UCUM}
@@ -39,16 +44,16 @@ import javax.measure.format.UnitFormat;
  */
 public enum SerializationMode implements DescriptiveEnum<SerializationMode> {
     /**
-     * Serialization-mode using {@code SimpleUnitFormat}. This is the <strong>default</strong> mode if none is explicitly selected.
+     * Serialization-mode using {@link SimpleUnitFormat}. This is the <strong>default</strong> mode if none is explicitly selected.
      */
     SIMPLE("Simple formatting"),
     /**
-     * Serialization-mode using an {@code EBNF} instance of {@link UnitFormat}.
+     * Serialization-mode using {@link EBNFUnitFormat}.
      * @see <a href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">Wikipedia: Extended Backus–Naur form</a> 
      */
     EBNF("EBNF style formatting"),
     /**
-     * Serialization-mode using a {@code UCUM} instance of {@link UnitFormat}.
+     * Serialization-mode using {@link UCUMFormat}.
      */
     UCUM("UCUM based formatting");
 	

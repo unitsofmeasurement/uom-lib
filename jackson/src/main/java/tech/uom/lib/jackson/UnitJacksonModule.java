@@ -29,7 +29,7 @@
  */
 package tech.uom.lib.jackson;
 
-import static tech.uom.lib.common.util.SerializationMode.UCUM;
+import static tech.uom.lib.jackson.SerializationMode.UCUM;
 
 import java.io.IOException;
 import java.text.ParsePosition;
@@ -47,7 +47,6 @@ import javax.measure.Quantity;
 import javax.measure.Unit;
 import tech.units.indriya.format.EBNFUnitFormat;
 import tech.units.indriya.format.SimpleUnitFormat;
-import tech.uom.lib.common.util.SerializationMode;
 import systems.uom.ucum.format.UCUMFormat;
 import systems.uom.ucum.format.UCUMFormat.Variant;
 
@@ -72,7 +71,7 @@ public class UnitJacksonModule extends SimpleModule {
      * @param mode the serialization-mode
      * @since 2.2 
      */
-    public UnitJacksonModule(SerializationMode mode) {
+    public UnitJacksonModule(final SerializationMode mode) {
         super("UnitJsonSerializationModule", new Version(2, 1, 0, null, 
                 UnitJacksonModule.class.getPackage().getName(), "uom-lib-jackson"));
         this.mode = mode;

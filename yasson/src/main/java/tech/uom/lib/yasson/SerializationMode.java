@@ -29,26 +29,47 @@
  */
 package tech.uom.lib.yasson;
 
+import javax.measure.format.UnitFormat;
+
+import tech.uom.lib.common.util.DescriptiveEnum;
 import systems.uom.ucum.format.UCUMFormat;
 import tech.units.indriya.format.EBNFUnitFormat;
 import tech.units.indriya.format.SimpleUnitFormat;
 
 /**
  * The Serialization-mode, either {@code SIMPLE}, {@code EBNF} or {@code UCUM}
- * @since 2.1
- * @deprecated use common SerializationMode
+ * @version 1.5
+ * @since 2.2
+ * @see UnitFormat
  */
-public enum SerializationMode {
+public enum SerializationMode implements DescriptiveEnum<SerializationMode> {
     /**
      * Serialization-mode using {@link SimpleUnitFormat}. This is the <strong>default</strong> mode if none is explicitly selected.
      */
-    SIMPLE,
+    SIMPLE("Simple formatting"),
     /**
      * Serialization-mode using {@link EBNFUnitFormat}.
+     * @see <a href="https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form">Wikipedia: Extended Backus–Naur form</a> 
      */
-    EBNF,
+    EBNF("EBNF style formatting"),
     /**
      * Serialization-mode using {@link UCUMFormat}.
      */
-    UCUM
-};
+    UCUM("UCUM based formatting");
+	
+	private final String description;
+	
+	private SerializationMode(final String desc) {
+    	this.description = desc;
+    }
+
+	@Override
+	public String getDescription() {
+		return description;
+	}
+
+	@Override
+	public DescriptiveEnum<SerializationMode>[] dValues() {
+		return SerializationMode.values();
+	}
+}

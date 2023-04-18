@@ -44,7 +44,7 @@ import tech.units.indriya.format.SimpleUnitFormat;
 
 /**
  * @author Werner Keil
- * @version 0.5
+ * @version 0.6
  */
 public class UnitJsonSerializer implements JsonbSerializer<Unit> {
 	
@@ -53,7 +53,7 @@ public class UnitJsonSerializer implements JsonbSerializer<Unit> {
      */
     private final SerializationMode mode;
     
-    private UnitJsonSerializer(SerializationMode mode) {
+    private UnitJsonSerializer(final SerializationMode mode) {
     	this.mode = mode;
     }
     
