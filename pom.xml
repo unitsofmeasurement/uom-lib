@@ -311,4 +311,5 @@
 		<system>GitHub</system>
 		<url>https://github.com/unitsofmeasurement/uom-lib/issues</url>
 	</issueManagement>
+	<version>2.2.1-SNAPSHOT</version>
 </project>
