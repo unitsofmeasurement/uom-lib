@@ -45,6 +45,7 @@
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
 		<ri.version>2.2</ri.version><!-- NOT for common -->
 		<lib.version>${project.version}</lib.version>
+		<lib.common.version>2.2</lib.common.version>
 		<hamcrest.junit.version>2.0.0.0</hamcrest.junit.version>
 	</properties>
 

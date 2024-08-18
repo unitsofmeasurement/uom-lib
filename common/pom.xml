@@ -13,7 +13,7 @@
 	<parent>
 		<groupId>tech.uom.lib</groupId>
 		<artifactId>uom-lib</artifactId>
-		<version>2.2.1-SNAPSHOT</version>
+		<version>2.2</version>
 	</parent>
 
 	<scm>
@@ -186,7 +186,7 @@
 											<id>javax.measure:unit-api:${jsr.version}</id>
 										</artifact>
 										<artifact>
-											<id>tech.uom.lib:uom-lib-common:${lib.version}</id>
+											<id>tech.uom.lib:uom-lib-common:${lib.common.version}</id>
 										</artifact>
 										<artifact>
 											<id>tech.units:indriya:${project.version}</id>
@@ -200,4 +200,5 @@
 			</build>
 		</profile>
 	</profiles>	
+	<version>2.2.1-SNAPSHOT</version>
 </project>
