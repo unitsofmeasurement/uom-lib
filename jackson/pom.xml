@@ -44,7 +44,7 @@
         <jdkVersion>1.8</jdkVersion>
         <maven.compile.targetLevel>1.8</maven.compile.targetLevel>
         <maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-        <ucum.version>2.2-SNAPSHOT</ucum.version>
+        <ucum.version>2.2.1</ucum.version>
         <jackson.version>2.14.2</jackson.version>
         <compile.exclude.files>module-info.java</compile.exclude.files>
     </properties>
@@ -56,17 +56,15 @@
         <dependency>
             <groupId>javax.measure</groupId>
             <artifactId>unit-api</artifactId>
-            <version>2.2</version><!-- TODO remove after parent change -->
         </dependency>
         <dependency>
             <groupId>tech.units</groupId>
             <artifactId>indriya</artifactId>
-            <version>2.2</version><!-- TODO remove after parent change -->
         </dependency>
         <dependency>
             <groupId>systems.uom</groupId>
             <artifactId>systems-quantity</artifactId>
-            <version>${ucum.version}</version>
+            <version>${systems.version}</version>
         </dependency>
         <dependency>
             <groupId>systems.uom</groupId>

@@ -44,10 +44,11 @@
 		<project.build.javaVersion>${jdkVersion}</project.build.javaVersion>
 		<maven.compile.targetLevel>${jdkVersion}</maven.compile.targetLevel>
 		<maven.compile.sourceLevel>${jdkVersion}</maven.compile.sourceLevel>
-		<ri.version>2.2.3</ri.version><!-- NOT for common -->
+		<ri.version>2.2.4</ri.version><!-- NOT for common -->
 		<lib.version>${project.version}</lib.version>
 		<lib.common.version>2.2</lib.common.version>
 		<hamcrest.junit.version>2.0.0.0</hamcrest.junit.version>
+		<systems.version>2.2.1</systems.version>
 		<sonatype.central.snapshotsUrl>https://central.sonatype.com/repository/maven-snapshots/</sonatype.central.snapshotsUrl>
 	</properties>
 
@@ -56,7 +57,7 @@
 			<dependency>
 				<groupId>tech.units</groupId>
 				<artifactId>indriya</artifactId>
-				<version>${ri.version}</version>
+				<version>[${ri.version},)</version>
 			</dependency>
 
 			<dependency>
@@ -121,7 +122,7 @@
 				<plugin>
 					<groupId>biz.aQute.bnd</groupId>
 					<artifactId>bnd-maven-plugin</artifactId>
-					<version>5.2.0</version>
+					<version>7.0.0</version>
 					<executions>
 						<execution>
 							<goals>
